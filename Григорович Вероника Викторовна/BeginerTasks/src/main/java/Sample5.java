@@ -19,12 +19,13 @@ public class Sample5 {
    processMonth(month);
     }
 
-    private static int do2dig(int dig){
+    private static String do2dig(int dig){
         if(dig>=0 && dig<10) {
-            return dig;
+            return "0"+dig;
         } else if(dig>9) {
-            return dig;
-        } else { return "Ошибка";}
+            return String.valueOf(dig);
+        } else {return "Ошибка";
+        }
          }
 
     private static void processMonth(int dig) {
