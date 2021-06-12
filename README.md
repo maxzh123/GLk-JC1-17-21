@@ -1,5 +1,8 @@
 # GLk-JC1-17-21
 
+##Задание 12.06.2021-16.06.2021:
+BeginerTasks\src\main\java\Sample6.java
+
 ##Задание 09.06.2021-12.06.2021:
 1. скачать и распаковать Java + Maven 
    настроить переменные JAVA_HOME MAVEN_HOME
