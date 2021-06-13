@@ -5,6 +5,6 @@ public class Dog {
         Enimal dog=new Enimal();
         dog.age=8;
         dog.name = "Щарик";
-        dog.barkdog();1321231231241
+        dog.barkdog();
     }
 }
