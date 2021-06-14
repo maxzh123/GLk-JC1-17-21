@@ -51,7 +51,7 @@ public class sample5 {
             o++;
         }
         int k = 1;
-        while (k <= 31) {
+        while (k <= 30) {
             System.out.println(k + ".11.2021");
             k++;
         }
