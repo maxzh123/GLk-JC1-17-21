@@ -9,28 +9,45 @@ import java.text.DecimalFormat;
 public class Sample_Temp_6 {
 
     public static void main(String[] args) {
-        System.out.println("Совпадение букв в словах состовляет в долях: " + Simile("окно", "окна"));
+        System.out.println("Совпадение букв в словах состовляет в долях: " + Simile("окна", "окна"));
     }
-
-
-
 
     public static String Simile(String word1, String word2) { // создаем метод который будет принимать два слова, для их дальнейшего сравнения.
         int fact = 0;
-        double max = 17.0; // по заданию Максима максимальное совпадение букв в слове '4' и баллов за такое совпадение 1+2+4+10 балов.
+        double max = 28;// по заданию Максима максимальное совпадение букв в слове '4'
 //TODO мне кажется здесь остро нехвататет цикла. потому как похожесть слов окна и окно должна быть процентов 80% но никак не 41.
         //и цикл видимо нужен стобы перебирать все вложенные цепочки, а не только первую. т.е.:
         // искать о, потом к.. н о, потом ок..  кн... но.. потом окн и кно.
-        fact += word1.charAt(0) == word2.charAt(0) ? 1 : 0;
-        if (fact == 1) {
-            fact += word1.charAt(1) == word2.charAt(1) ? 2 : 0;
-            if (fact == 3) {
-                fact += word1.charAt(2) == word2.charAt(2) ? 4 : 0;
-                if (fact == 7) {
-                    fact += word1.charAt(3) == word2.charAt(3) ? 10 : 0;
-                }
+        for (int i =0;i <=3; i++) {
+            int count =0;
+            do {
+                fact += word1.charAt(i) == word2.charAt(count) ? 1 : 0;
+                count += 1;
             }
+            while ( count < 4);// проверяем до тех пора не пройдемся по всем буквам второго слова.
+            count=0;
         }
+        for (int i =0;i <=2; i++) { // для сравнение 2-ух букв.
+            int count =0;
+            do {
+                fact += word1.charAt(i) + word1.charAt(i+1) == word2.charAt(count) + word2.charAt(count + 1) ? 2 : 0;
+                count += 1; }
+            while (count < 3);
+            count =0;
+        }
+        for (int i =0;i <=1; i++) { //для сравнения 3-ух букв
+            int count =0;
+            do {
+                fact += word1.charAt(i) + word1.charAt(i+1)+ word1.charAt(i+2) == word2.charAt(count) + word2.charAt(count + 1)+word2.charAt(count + 2) ? 4 : 0;
+                count += 1; }
+            while (count <2);
+            count =0;
+        }
+             //для сравнения 4-ух букв можно без цикла, потому как слово состоит из 4 букв.
+            int count =0;
+            int k = 0;
+              fact += word1.charAt(k) + word1.charAt(k+1)+ word1.charAt(k+2) +word1.charAt(k+3)  == word2.charAt(count) + word2.charAt(count + 1)+word2.charAt(count + 2) + word2.charAt(count + 3)? 10 : 0;
+
             return Decimal((fact/max)); // сделаем метод который будет округлять наш результат.
 
     }
@@ -39,5 +56,4 @@ public class Sample_Temp_6 {
         String decimalResult = decimalFormat.format(result);
     return decimalResult;
     }
-
 }
