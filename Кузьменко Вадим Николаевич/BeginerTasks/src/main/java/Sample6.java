@@ -1,4 +1,3 @@
-
 public class Sample6 {//Сообщаем компилятору что Это класс и мы дали ему имя Sample6
     private static int count=0;
     /* Это зарезервированное имя. функция класса с таким именем и параметрами, может быть вызвана из вне JVM, т.е являться точкой входа
@@ -12,17 +11,16 @@ public class Sample6 {//Сообщаем компилятору что Это к
         System.out.println("Произвели сравнений остатка от деления:"+count);//Достаем системный поток out и вызываем его метод println (напечатать и перевести строку). В качестве аргумента передаем то, что хотим напечатать.
     }
 
-    private static boolean isPrime(int number){
-        int i, a;
-        boolean isprime;
-        for(i=2; i < 1000; i++) {
-            isprime = true;
-            // нужно проверить на остаток.
-            for (a=2; a <= i/a; a++)
-                // если остатка нету, значит не простое
-                if((i%a) == 0) isprime = false;
-            if (isprime)
-                System.out.println(i);
+    private static boolean isPrime(int number) {
+        count++; //Деление на 2 это тоже деление на 2
+        if (number%2==0 && number!=2)
+        {return false; } //проверили делимость на 2 и то, что число само не 2
+        int num = (int) Math.sqrt(number);
+        for (int i=3;i<=num;i=i+2) {//все что делится на 2 не простое, кроме самой двойки
+            count++;
+            if (number % i == 0) {
+                return false;
+            }
         }
         return true;
     }
