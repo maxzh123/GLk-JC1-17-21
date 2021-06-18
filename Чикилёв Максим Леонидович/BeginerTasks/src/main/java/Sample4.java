@@ -15,8 +15,12 @@ public class Sample4 {//Сообщаем компилятору что Это к
     }
 
     //определяем функцию не возвращающую результата и принимающую 2 целочисленных параметра
-    private static void processNumber(int i,int index){
-            System.out.println("Значение масива № "+index+ " равняется "+i);//Достаем системный поток out и вызываем его метод println (напечатать и перевести строку). В качестве аргумента передаем то, что хотим напечатать.
+    private static void processNumber(int i, int index) {
+        if (i % 3 == 0)
+            System.out.println("значение масива №" + index + " и число " + i + " делится на 3");
+        else
+            System.out.println("значение масива №" + index + " и число " + i + " не делится на 3");
     }
 
 }
+
