@@ -1,4 +1,4 @@
-public class Simple6 {//Сообщаем компилятору что Это класс и мы дали ему имя Sample6
+public class Sample6 {//Сообщаем компилятору что Это класс и мы дали ему имя Sample6
     private static int count=0;
     /* Это зарезервированное имя. функция класса с таким именем и параметрами, может быть вызвана из вне JVM, т.е являться точкой входа
      * */
@@ -12,6 +12,7 @@ public class Simple6 {//Сообщаем компилятору что Это к
     }
 
     private static boolean isPrime(int number) {
+        count++; //Деление на 2 это тоже деление на 2
         if (number%2==0 && number!=2)
         {return false; } //проверили делимость на 2 и то, что число само не 2
         int num = (int) Math.sqrt(number);
