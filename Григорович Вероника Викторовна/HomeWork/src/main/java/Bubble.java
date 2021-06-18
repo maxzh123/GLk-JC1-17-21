@@ -8,6 +8,8 @@ public class Bubble {
         bubbleSort(array);
         System.out.println(Arrays.toString(array));
     }
+    /* Если бы этот метод назывался DestroyGalaxy мы хотя бы понимали-бы что вы шутите :-)
+    * */
     public static void printArray(int [] arrays){
         for (int i = 0; i < arrays.length ; i++) {
             arrays[i]=(int)(Math.random()*50);
