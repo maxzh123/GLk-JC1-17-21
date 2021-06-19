@@ -4,7 +4,7 @@
 3. Переделать так, чтобы выводились ВСЕ даты года(с учетом того что в разных месяцах разное количество дней)
 * */
 public class Sample5 {
-    public static int [] days=new int[] {0,31,28,31,30,31,30,31,31,30,31,30,31};//Сообщаем компилятору что Это класс и мы дали ему имя Sample5
+    public static int [] days=new int[] {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
     /* Это зарезервированное имя. функция класса с таким именем и параметрами, может быть вызвана из вне JVM, т.е являться точкой входа
     * */
@@ -19,12 +19,13 @@ public class Sample5 {
    processMonth(month);
     }
 
-    private static int do2dig(int dig){
+    private static String do2dig(int dig){
         if(dig>=0 && dig<10) {
-            return dig;
+            return "0"+dig;
         } else if(dig>9) {
-            return dig;
-        } else { return "Ошибка";}
+            return String.valueOf(dig);
+        } else {return "Ошибка";
+        }
          }
 
     private static void processMonth(int dig) {

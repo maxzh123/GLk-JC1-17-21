@@ -3,14 +3,29 @@
 2. изменить количество повторений.
 * */
 
-public class Sample2 {//Сообщаем компилятору что Это класс и мы дали ему имя Sample2
+public class Sample2 {
 
-    /* Это зарезервированное имя. функция класса с таким именем и параметрами, может быть вызвана из вне JVM, т.е являться точкой входа
-    * */
-    public static void main (String[] arg){ //Сообщаем компилятору что класс имеет публичный метод, не возвращающий рельтатов, но принимающий в качестве аргументов масив строк.
-        for (int i=0;i<10;i++){//для цулочисленного i установить значение 0;выполнять блок пока i меньше 10; после каждого исполнения увеличить i на 1
-            System.out.println("Повторение №"+i);//Достаем системный поток out и вызываем его метод println (напечатать и перевести строку). В качестве аргумента передаем то, что хотим напечатать.
-        }
+    public static void main (String[] arg){
+
+      int x=734685;
+       int a=557;
+       int b=a^x;
+       print(b);
+       print(b^x);
+        print(a | 0b10011);
+        print(a | 0b10010);
+       print(a | 0b10000);
+    //    Object x=new NewNum();
+     //   if (x instanceof Number) {
+    //        Number a=(Number) x;
+     //       print(a.intValue());
+            }
+
+
+        private static void print(int x) {
+        System.out.print(x);
+        System.out.print("\t");
+        System.out.println(Integer.toBinaryString(x));
     }
 
 }
