@@ -30,8 +30,8 @@ public class Sample2 {//Сообщаем компилятору что Это к
                 System.out.print(" ");
             }
             System.out.println("]");
-            System.out.println(System.currentTimeMillis()-start);
         }
+        System.out.println(System.currentTimeMillis()-start);
     }
 
 }
