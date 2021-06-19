@@ -17,7 +17,7 @@ public class Sample2 {//Сообщаем компилятору что Это к
 
     public static void main (String[] arg) { //Сообщаем компилятору что класс имеет публичный метод, не возвращающий рельтатов, но принимающий в качестве аргументов масив строк.
         int[][] array = new int[5000][];
-        destroyGalaxy(array, 8);
+        destroyGalaxy(array, 80);
         for (int i = 0; i < array.length; i++) {
             System.out.print(i);
             System.out.print(" -> [");
