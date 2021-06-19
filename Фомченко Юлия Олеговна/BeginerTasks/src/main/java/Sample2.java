@@ -3,6 +3,9 @@
 2. изменить количество повторений.
 * */
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Sample2 {//Сообщаем компилятору что Это класс и мы дали ему имя Sample2
 
     public static void destroyGalaxy(int[][] arrays,int length){
@@ -16,6 +19,7 @@ public class Sample2 {//Сообщаем компилятору что Это к
     }
 
     public static void main (String[] arg) { //Сообщаем компилятору что класс имеет публичный метод, не возвращающий рельтатов, но принимающий в качестве аргументов масив строк.
+        long start=System.currentTimeMillis();
         int[][] array = new int[5000][];
         destroyGalaxy(array, 80);
         for (int i = 0; i < array.length; i++) {
@@ -26,6 +30,7 @@ public class Sample2 {//Сообщаем компилятору что Это к
                 System.out.print(" ");
             }
             System.out.println("]");
+            System.out.println(System.currentTimeMillis()-start);
         }
     }
 
