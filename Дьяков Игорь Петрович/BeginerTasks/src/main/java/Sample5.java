@@ -17,19 +17,52 @@ public class Sample5 {//Сообщаем компилятору что Это к
         if (month>-1 && month<10){ //если переданное в функцию значение month больше чем -1 и одновременно мельше чем 10 то
             oneDigit(month); //Вызываем функци, которая выводит дату дописывая ведущий 0
         }else{//блок иначе
-            if (month>-1 && month<100) {//проверяем что значение больше -1 и меньше 100
-                twoDigit(month);//Вызываем функци, которая выводит дату
+           if (month>-1 && month<100) {//проверяем что значение больше -1 и меньше 100
+               twoDigit(month);//Вызываем функци, которая выводит дату
             }//блока иначе нет. эта ситуация будет проигнорирована. никаких действий не выполнится.
         }
     }
 
-    private static void oneDigit(int dig){//определяем функцию не возвращающую результата и принимающую один целочисленный параметр
-        System.out.println("01/0"+dig+"2021");//Достаем системный поток out и вызываем его метод println (напечатать и перевести строку). В качестве аргумента передаем то, что хотим напечатать.
-    }
+    private static void oneDigit(int dig) {//определяем функцию не возвращающую результата и принимающую один целочисленный параметр
+        if (dig == 1 || dig == 3 || dig == 5 || dig == 7 || dig == 8)
+            for (int day = 1; day < 10; day++)
+            {System.out.println("0" + day + "/0" + dig + "/2021");}
+        if (dig == 1 || dig == 3 || dig == 5 || dig == 7 || dig == 8)
+            for (int day = 10; day < 32; day++)
+            {System.out.println("" + day + "/0" + dig + "/2021");}
 
-    private static void twoDigit(int dig){//определяем функцию не возвращающую результата и принимающую один целочисленный параметр
-        System.out.println("01/"+dig+"2021");//Достаем системный поток out и вызываем его метод println (напечатать и перевести строку). В качестве аргумента передаем то, что хотим напечатать.
-    }
+        if (dig == 4 || dig == 6 || dig ==9)
+            for (int day = 1; day < 10; day++)
+            {System.out.println("0" + day + "/0" + dig + "/2021");}
+        if (dig == 4 || dig == 6 || dig ==9)
+            for (int day = 10; day < 31; day++)
+            {System.out.println("" + day + "/0" + dig + "/2021");}
+        else {
+           if (dig==2)
+               for (int day = 1; day < 10; day++)
+               {System.out.println("0" + day + "/0" + dig + "/2021");}
+            if (dig==2)
+                for (int day = 10; day < 29; day++)
+                {System.out.println("" + day + "/0" + dig + "/2021");}}}
+
+    private static void twoDigit(int dig) {
+        if (dig == 10 || dig == 12)
+            for (int day = 1; day < 10; day++)
+            {System.out.println("0" + day + "/" + dig + "/2021");}
+        if (dig == 10 || dig == 12)
+            for (int day = 10; day < 32; day++)
+            {System.out.println("" + day + "/" + dig + "/2021");}
+        else{
+            if (dig == 11)
+                for (int day = 1; day < 10; day++)
+                {System.out.println("0" + day + "/" + dig + "/2021");}
+            if (dig == 11)
+                for (int day = 10; day < 31; day++)
+                {System.out.println("" + day + "/" + dig + "/2021");}
+        }
 
 
-}
+   }}
+
+
+
