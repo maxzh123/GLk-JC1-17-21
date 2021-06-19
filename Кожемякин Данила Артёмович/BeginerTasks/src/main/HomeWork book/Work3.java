@@ -4,4 +4,5 @@ public class Work3 {
         System.out.println("I like Java!");
     }
 }
+
 //Тема: Введение       Задание: 3

@@ -3,4 +3,5 @@ public class Work2 {
         System.out.println("Hello Belarus!");
     }
 }
+
 //Тема: Введение       Задание: 2
