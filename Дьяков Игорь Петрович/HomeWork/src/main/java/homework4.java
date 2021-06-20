@@ -8,8 +8,8 @@
            System.out.print(c);
        }
        static int metod(int a,int b){
-           int c=a+b+a*b;
-           return c;
+           int d=a+b+a*b;
+           return d;
            }
 }
 
