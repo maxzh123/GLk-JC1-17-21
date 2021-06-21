@@ -11,16 +11,16 @@ public class Tusk_09 {
         int iMonth = random.nextInt(month.length);
         int iYears = random.nextInt(years.length);
 
-        System.out.println("Текущая дата "+days[iDay]+ " " +month[iMonth]+ " "+ years[iYears]);
+        System.out.println("Текущая дата "+days[iDay]+ " /" +month[iMonth]+ " /"+ years[iYears]);
         //Завтра
-        if (days[iDay]==30 && month[iMonth]==12){
-        System.out.println("Завтра "+days[iDay+1]+ " " +month[iMonth+1]+ " "+ years[iYears+1]);
-            if(days[iDay]==30){
-                System.out.println("Завтра "+days[iDay+1]+ " " +month[iMonth+1]+ " "+ years[iYears]);
+        if (days[iDay]==29 && month[iMonth]==11){ // 29 и 11 потому как нумерация массива начинается с нуля.
+        System.out.println("Завтра "+days[0]+ " /" +month[0]+ " /"+ years[iYears+1]); // берем первый элемент day,month
+            if(days[iDay]==29){
+                System.out.println("Завтра "+days[0]+ " /" +month[iMonth+1]+ " /"+ years[iYears]);
             }
         }
         else{
-            System.out.println("Завтра "+days[iDay+1]+ " " +month[iMonth]+ " "+ years[iYears]);
+            System.out.println("Завтра "+days[iDay+1]+ " /" +month[iMonth]+ " /"+ years[iYears]);
         }
 
     }
