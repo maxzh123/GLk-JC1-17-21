@@ -9,13 +9,8 @@ public class HomeWork17 {
         v1(number);
         System.out.println("==");
         v2(number);
-    }
-    public static void main1(long n){
-        System.out.println("=="+n+"==");
-        v1(n);
         System.out.println("==");
-        v2(n);
-
+        v3(number);
     }
 
     public static long procSign(long num){
@@ -64,5 +59,20 @@ public class HomeWork17 {
 
     }
 
+    public static void v3(long tnum){
+        long num=procSign(tnum);
+        int log=(int)Math.floor(Math.log10(num));
+        int fulllog=log;
+        while (log>0){
+            long pow=(long)Math.pow(10,log);
+            long temp=num%pow;
+            long dig=(num-temp)/pow;
+            num=temp;
+            if(fulllog!=log && (log+1)%3==0){System.out.print(" ");}
+            System.out.print(dig);
+            log--;
+        }
+        System.out.println(num);
+    }
 
 }
