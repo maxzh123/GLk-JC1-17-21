@@ -1,4 +1,4 @@
-public class Tusk_10 {
+public class Task_10 {
     public static void main(String[] args) {
         int a=20; // сторона первого дома
         int b=10; // вторая сторона первого дома

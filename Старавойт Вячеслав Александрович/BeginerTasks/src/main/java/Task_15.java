@@ -1,4 +1,4 @@
-public class Tusk_15 {
+public class Task_15 {
 
     public static void main(String[] args) {
         int count = 0; // при каждом нахождении простого числа наш счетчик будем увеличивать на 1.

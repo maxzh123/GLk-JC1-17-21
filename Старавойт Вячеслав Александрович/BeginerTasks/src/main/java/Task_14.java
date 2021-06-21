@@ -1,6 +1,6 @@
 
 
-public class Tusk_14 {
+public class Task_14 {
     public static void main(String[] args) {
         long number = 7893823445L;
         long sum=0L;
