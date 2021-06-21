@@ -1,4 +1,4 @@
-public class Tusk_12 { //факториал целых чисел от 0 до  10
+public class Task_12 { //факториал целых чисел от 0 до  10
 
     public static void main(String[] args) {
         System.out.println(factorial(4));
