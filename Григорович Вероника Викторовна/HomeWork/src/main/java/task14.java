@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class task14 { //я тут переделала немного, чтобы long не вводить
@@ -5,7 +6,8 @@ public class task14 { //я тут переделала немного, чтоб�
         try {
             Scanner scanner=new Scanner(System.in);
             System.out.println("Введите целое положительное число");
-            int i=scanner.nextInt();
+            String str=scanner.nextLine();
+            int i=Integer.parseInt(str);
             int ostotdelenia=0;
             int summ=0;
             do {
@@ -14,9 +16,10 @@ public class task14 { //я тут переделала немного, чтоб�
                 i=i/10;
             } while (i>0);
             System.out.println(summ);
-        }
-        catch (Exception e) {
-            System.out.println("Вы ввели слишокм большое число, введите число меньше 2 147 483 647"+e);
+        } catch (NumberFormatException exp) {
+            System.out.println("Введите числовое представление числа, например не один, а 1 " + exp);
+    } catch (InputMismatchException e) {
+            System.out.println("Вы ввели слишком большое число, введите число меньше 2 147 483 647" + e);
         }
     }
 }
