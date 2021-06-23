@@ -1,3 +1,5 @@
+package Arrays;
+
 public class task23 {
     public static void main(String[] args) {
         int array[][] = new int[7][7];

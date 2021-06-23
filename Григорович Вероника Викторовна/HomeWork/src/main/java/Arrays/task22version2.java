@@ -1,3 +1,5 @@
+package Arrays;
+
 import java.util.Arrays;
 
 public class task22version2 { //а потом уже придумала через массив

@@ -1,3 +1,5 @@
+package sortMassiv;
+
 import java.util.Arrays;
 
 public class HairbrushSort {
