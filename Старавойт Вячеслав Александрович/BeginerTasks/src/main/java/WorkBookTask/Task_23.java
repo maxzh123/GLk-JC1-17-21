@@ -1,3 +1,5 @@
+package WorkBookTask;
+
 public class Task_23 {
     public static void main(String[] args) {
         int[][] array = new int[7][7]; // для вывода красивой бабочкой необходимо нечетное количество строк и столбцов

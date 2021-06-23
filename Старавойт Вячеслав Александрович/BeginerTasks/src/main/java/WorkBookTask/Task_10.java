@@ -1,3 +1,5 @@
+package WorkBookTask;
+
 public class Task_10 {
     public static void main(String[] args) {
         int a=20; // сторона первого дома

@@ -1,3 +1,5 @@
+package WorkBookTask;
+
 import java.util.Random;
 
 public class Task_09 {

@@ -1,3 +1,5 @@
+package WorkBookTask;
+
 public class Task_24 {
 
     public static void main(String[] args) {
@@ -12,9 +14,11 @@ public class Task_24 {
 
         }
 
-        private DistanceTime(int hour,int minute, int sec){ // 2-конструктор получающий все параметры по отдельности
+        private DistanceTime(int hour,int minute, int sec){ // 2-конструктор получающий все параметры по отдельн
 
-        }
+
+
+
 
     }
     public int isSec(int hour,int minute,int sec){ //Метод для получения полного количества секунд в объекте;
