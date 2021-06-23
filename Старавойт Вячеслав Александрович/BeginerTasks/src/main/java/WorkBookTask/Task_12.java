@@ -1,3 +1,5 @@
+package WorkBookTask;
+
 public class Task_12 { //факториал целых чисел от 0 до  10
 
     public static void main(String[] args) {

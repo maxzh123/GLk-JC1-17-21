@@ -1,3 +1,5 @@
+package WorkBookTask;
+
 public class Task_18 {
     public static void main(String[] args) {
         int[] array =new int[10];
