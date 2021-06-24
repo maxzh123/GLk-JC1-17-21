@@ -2,43 +2,27 @@ import java.util.Arrays;
 
 public class Task_21 {
     public static void main(String[] args) {
-        int[] array = new int[]{1, 1, 1, 5, 8, 2, 3, 8, 8};
+        int[] array = new int[]{4, 4, 4, 4, 4, 7, 4, 4, 4};
+        int[] MinArray = new int[]{};
+        int[] MaxArray = new int[]{};
         //   for (int i = 0; i < array.length; i++) {
         // array[i] = (int) (Math.random() * 200);
-        Arrays.sort(array);
-        System.out.println(checkNumber(array));
+        solve(array);
     }
 
-    public static int checkNumber(int[] array) {
-        int count = 1;
-        for (int i = 0; i < array.length; i++) { //проверка на случай если минимальных значений несколько
-            if (array[i] != array[i + 1]) {  // как только найдем различия в первых элементах, остальные которые совпадают заменим нулями
-                for (int j = 0; j < count; j++) {
-                    array[j] = 0;
-                }
-                break;
-            } else
-                count++;
+    public static void solve(int[] arr) {
+        int n = arr.length;
+        int [][] sum = new int[n][n];
+        int iMin = 0;
+        int iMax = 0;
+        for (int i = 0; i < n; i++) {
+            iMin = arr[i] <= arr[iMin] ? i : iMin;
+            iMax = arr[i] > arr[iMax] ? i : iMax;
+            sum[i][i] = arr[i];
+            for (int j = i + 1; j < n; j++) {
+                sum[i][j] = sum[j][i] = sum[i][j - 1] + arr[j];
+            }
         }
-        // проверка на случай когда максимальных значений в массиве несколько.
-        int cout = 1;
-        for (int i = array.length - 1; i > 0; i--) { //проверка на случай если максимальных значений несколько
-            if (array[i] != array[i - 1]) {  // как только найдем различия в последних элементах, остальные которые совпадают заменим нулями
-                for (int j = array.length - 1; j > ((array.length - 1) - cout); j--) {
-                    array[j] = 0;
-                }
-                break;
-            } else
-                cout++;
-
-        }
-        return Sum(array); // передадим чтобы отдельный метод посчитал сумму.
+        System.out.println(sum[iMin][iMax]);
     }
-    public static int Sum(int[] array){
-        int sum =0;
-        for (int i : array){
-            sum+=i;
-        }
-        return sum;
     }
-}

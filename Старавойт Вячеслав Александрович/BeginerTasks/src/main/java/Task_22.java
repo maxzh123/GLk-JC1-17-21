@@ -13,7 +13,7 @@ public class Task_22 {
         if (array == null || array.length <= 1) {
             return;
         }
-        for (int i = 0; i < array.length / 2; i++) {
+        for (int i = 0; i < array.length / 2; i++) { // через переменную все меняем
             int temp = array[i];
             array[i] = array[array.length - 1 - i];
             array[array.length - 1 - i] = temp;
