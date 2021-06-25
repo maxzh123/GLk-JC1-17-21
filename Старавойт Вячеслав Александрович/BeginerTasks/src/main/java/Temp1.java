@@ -31,7 +31,7 @@ public class Temp1 {
         sort =true;// для того
              for(int i =0; i< copy.size()-1; i++){
                  if(copy.get(i) > copy.get(i+1)){
-                  sort = false; //флажок указывает что массив не отсортирован.
+                  sort = false; //флажок указывает что массив не отсортирован, и опять используем while.
                   number1=copy.get(i); //делаем обмен через переменную number1.
                    copy.set(i,copy.get(i+1));
                    copy.set(i+1,number1);

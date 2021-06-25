@@ -4,8 +4,12 @@ import java.util.Scanner;
 public class HomeWork17 {
     public static void main(String[] args){
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Введите целое число:");
-        long number=scanner.nextLong();
+        String str="Введите целое число:";
+//        str=str.concat(" Java. ");
+
+        System.out.println(str);
+        long n=scanner.nextLong();
+        Long number=n;
         v1(number);
         System.out.println("==");
         v2(number);

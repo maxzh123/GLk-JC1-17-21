@@ -1,6 +1,5 @@
 import java.math.BigInteger;
-
-public class task13 { //тут что-то не получается
+public class task13 {
 
     public static void main (String [] args) {
         long i=1;
@@ -13,6 +12,5 @@ public class task13 { //тут что-то не получается
         } while (i<=25);
         System.out.println(summult);
         System.out.println(bigSumMult);
-        }
     }
-
+}
