@@ -9,6 +9,7 @@ public class task15 { //по заданию надо через break, но то
             for (int j = 2; j <= (int)(Math.sqrt(i)); j++) {
                 if ((i % j) == 0) {
                     isprime = false;
+                    break;
                 }
             }
             if (isprime) {
