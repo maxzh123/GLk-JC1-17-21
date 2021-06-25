@@ -1,6 +1,9 @@
 package Classes;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.sql.SQLOutput;
+import java.util.Random;
 
 public class Task24 implements Comparable<Task24> {
     public int sec;
@@ -31,12 +34,25 @@ public class Task24 implements Comparable<Task24> {
         Task24 time2 = new Task24(76564);
         comparisonOfTwoObjects(time1.compareTo(time2));
         //Сделй пожалуйста destroyGalaxy для:
-        Task24[] timeA = new Task24[30];
+        Task24[] timeA = new Task24[7];
+        Random r=new Random();
+        for (int i = 0; i < timeA.length; i++) {
+            timeA[i]=new Task24(0);
+            timeA[i]=new Task24(3);
+            timeA[i]=new Task24(6);
+            timeA[i]=new Task24(7);
+            timeA[i]=new Task24(9);
+            timeA[i]=new Task24(3);
+            timeA[i]=new Task24(7);
+        }
+
         //И пореопредели toString чтобы вот это стало красиво. Тыжеж девочка :-)
         System.out.println(java.util.Arrays.toString(timeA));
+        System.out.println();
         java.util.Arrays.sort(timeA);
         System.out.println(java.util.Arrays.toString(timeA));
     }
+
 
     public int convertToSecond() {
       int totalSecond = hour * 3600 + min * 60 + sec;
