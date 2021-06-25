@@ -1,8 +1,6 @@
 package Classes;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Task24 implements Comparable<Task24> {
@@ -37,21 +35,22 @@ public class Task24 implements Comparable<Task24> {
         Task24[] timeA = new Task24[7];
         Random r=new Random();
         for (int i = 0; i < timeA.length; i++) {
-            timeA[i]=new Task24(0);
-            timeA[i]=new Task24(3);
-            timeA[i]=new Task24(6);
-            timeA[i]=new Task24(7);
-            timeA[i]=new Task24(9);
-            timeA[i]=new Task24(3);
-            timeA[i]=new Task24(7);
+
+                timeA[i] = new Task24((int)(Math.random()*60));
+
         }
 
         //И пореопредели toString чтобы вот это стало красиво. Тыжеж девочка :-)
-        System.out.println(java.util.Arrays.toString(timeA));
-        System.out.println();
+        System.out.println(Arrays.toString(timeA));
+        System.out.println("_______________________________");
         java.util.Arrays.sort(timeA);
-        System.out.println(java.util.Arrays.toString(timeA));
+        System.out.println(Arrays.toString(timeA));
     }
+    @Override
+    public String toString() {
+        return String.format("%d секунд", this.sec);
+    }
+
 
 
     public int convertToSecond() {
