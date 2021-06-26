@@ -124,7 +124,7 @@ public class Task25version1 {
                 }
             }
             System.out.println("До свидания, хорошего дня");
-            Classes.Task25.totalSum();
+            Task25version1.totalSum();
             System.out.println("В банкомате " + count20 + " купюр номиналом 20 рублей, " + count50 +
                     " купюр номиналом 50 рублей, " + count100 + " купюр номиналом 100 рублей. Общая сумма денег в банкомате " + Classes.Task25.totalSum());
         }
