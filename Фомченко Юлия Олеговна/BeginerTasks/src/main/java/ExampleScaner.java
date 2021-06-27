@@ -1,3 +1,5 @@
+import task25.BelarusBank;
+
 import java.util.Scanner;
 
 public class ExampleScaner {

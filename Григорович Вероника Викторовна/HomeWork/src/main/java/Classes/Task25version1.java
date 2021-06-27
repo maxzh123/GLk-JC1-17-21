@@ -18,7 +18,7 @@ public class Task25version1 {
         }
 
         public static void main(String[] args) {
-            Task25version1 atm = new Task25version1(20, 4, 50);
+            Task25version1 atm = new Task25version1(10, 5, 25);
             System.out.println("Банкомат приветствует вас, выберите операцию:\n" +
                     "для снятия денег нажмите take\n" +
                     "для добавления денег нажмите add\nдля окончания работы нажимте exit");
@@ -58,6 +58,9 @@ public class Task25version1 {
                     "Введите сумму, которую вы хотите снять, меньшую или равную " + Task25version1.totalSum());
             System.out.println("Если вас не устраивает сумма в банкомате, нажмите 0 для окончания работы");
             int sum = scanner.nextInt();
+            if (sum>Task25version1.totalSum()) {
+                System.out.println( "Введите сумму, которую вы хотите снять, меньшую или равную " + Task25version1.totalSum());
+            System.exit(0); }
             if (sum == 0) {
                 System.out.println("До свидания, хорошего дня");
                 System.exit(0);
@@ -78,11 +81,15 @@ public class Task25version1 {
             if (numberOfFifty>banknotes50) {
                 numberOfFifty=banknotes50;
             }
-            if (sum%50==10) {
-                numberOfFifty=0;
+          if (sum%50==10) {
+               numberOfFifty=0;
                 int numberOfTwenty=(sum-(100*numberOfHundred))/20;
-            }
+           }
             int numberOfTwenty=(sum-(100*numberOfHundred)-(50*numberOfFifty))/20;
+                if (sum % 20 != 0) {
+                    System.out.println("Ввведите число кратное 20");
+                    System.exit(1);
+                }
             sumAfterTake = Task25version1.totalSum() - sum;
             count20=count20-numberOfTwenty;
             count50=count50-numberOfFifty;
@@ -117,7 +124,7 @@ public class Task25version1 {
                 }
             }
             System.out.println("До свидания, хорошего дня");
-            Classes.Task25.totalSum();
+            Task25version1.totalSum();
             System.out.println("В банкомате " + count20 + " купюр номиналом 20 рублей, " + count50 +
                     " купюр номиналом 50 рублей, " + count100 + " купюр номиналом 100 рублей. Общая сумма денег в банкомате " + Classes.Task25.totalSum());
         }
