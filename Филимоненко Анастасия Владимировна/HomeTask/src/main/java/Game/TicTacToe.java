@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
-public class TicTacToe extends JComponent {
+public class TicTacToe<diag, diag1> extends JComponent {
     public static final int EMPTY_FIELD=0;
     public static final int X_FIELD=10;
     public static final int O_FIELD=200;
@@ -38,14 +38,32 @@ public class TicTacToe extends JComponent {
     field[i][j] = isXturn?X_FIELD:O_FIELD;
     isXturn =!isXturn;
     repaint();
+    int res = checkState();
+    if (res!=0){
+        if (res == O_FIELD*3) {
+            JOptionPane.showMessageDialog(this, "Выиграли нолики!","Победа!", JOptionPane.INFORMATION_MESSAGE);
+        }else if(res == X_FIELD*3) {
+            JOptionPane.showMessageDialog(this, "Выиграли крестики!","Победа!", JOptionPane.INFORMATION_MESSAGE);
+        }else {
+            JOptionPane.showMessageDialog(this, "Ничья!","Ничья!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        initGame();
+        repaint();
+    }
             }
         }
     }
     @Override
     protected void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
+        graphics.clearRect(0, 0, getWidth(), getHeight());
         drawGrid(graphics);
+        drawXO(graphics);
     }
+
+    private void drawXO(Graphics graphics) {
+    }
+
     void drawGrid(Graphics graphics){
         int w= getWidth();
         int h= getHeight();
@@ -57,5 +75,4 @@ public class TicTacToe extends JComponent {
             graphics.drawLine(dw*i, 0, dw*i, h);
         }
     }
-
 }
