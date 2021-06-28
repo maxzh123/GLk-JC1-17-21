@@ -1,3 +1,5 @@
+package PreviousTasks;
+
 import java.util.Scanner;
 
 public class task17Version2 {

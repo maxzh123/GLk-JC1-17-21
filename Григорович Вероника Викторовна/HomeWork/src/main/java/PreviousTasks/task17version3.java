@@ -1,3 +1,5 @@
+package PreviousTasks;
+
 public class task17version3 {
     public static void main(String[] args) {
         int num =88767656;

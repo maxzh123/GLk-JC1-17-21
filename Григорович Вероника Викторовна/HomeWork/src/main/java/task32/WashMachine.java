@@ -8,4 +8,9 @@ public class WashMachine extends Abstractappliances{
     public String getType() {
         return "стиральная машина";
     }
+
+    @Override
+    public void getRandomColor() {
+
+    }
 }
