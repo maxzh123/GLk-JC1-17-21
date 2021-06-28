@@ -3,20 +3,23 @@ package XYZ;
 import javax.swing.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
-public class Main extends JComponent implements KeyListener, ActionListener {
+public class Main extends JComponent implements KeyListener, ActionListener, MouseListener, MouseMotionListener {
     int x,y,z;
+
+    boolean bBeginDrag = false;
+    public int oldX, oldY;
+
+
     static class MonitorCord {
         int monitorX, monitorY;
     }
 
     static class Coordinates3d {
         int x, y, z;
-        public Coordinates3d(int x, int y, int z){
+
+        public Coordinates3d(int x, int y, int z) {
             this.x = x;
             this.y = y;
             this.z = z;
@@ -26,12 +29,13 @@ public class Main extends JComponent implements KeyListener, ActionListener {
     public static double angleVisionAlfa=PI/4, angleVisionBeta=PI/3;
 
     public static void main(String[] args) {
-
         Main t = new Main();
         JFrame f = new JFrame("Rotating Cube test");
         f.setSize(600, 600);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.addKeyListener(t);
+        f.addMouseListener(t);
+        f.addMouseMotionListener(t);
         f.add(new Main());
         f.add(t);
         f.setVisible(true);
@@ -112,6 +116,54 @@ public class Main extends JComponent implements KeyListener, ActionListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+
+    }
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        bBeginDrag = true;
+        oldX= e.getX();
+        oldY=e.getY();
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        bBeginDrag = false;
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        int newX, newY;
+        double dX = 0, dY=0;
+        if (bBeginDrag) {
+            System.out.println("OLD: "+oldX+" "+ oldY);
+            newX = e.getX();
+            newY = e.getY();
+            dX -= newX - oldX;
+            dY -= newY- oldY;
+            angleVisionAlfa += (dX / 600);
+            angleVisionBeta += (dY / 600);
+            repaint();
+        }
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
 
     }
 }
