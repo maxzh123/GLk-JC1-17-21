@@ -10,9 +10,9 @@ public class Runner {
         AbstractTV samsung = new SamsungTV(65, "Ultra HD", "Smart TV");
         AbstractTV philips = new PhilipsTV(48, "HD");
 
-        workWithRemoteControl(samsung);
+        workWithRemoteControl(samsung); // самсунг придется включать пользователю
         workWithRemoteControl(philips);
-        philips.offOn();
+        philips.offOn(); // метод который включает телевизор, потому как они с завода включены))))
 
     }
 
@@ -23,20 +23,19 @@ public class Runner {
     private static void workWithRemoteControl(TV tv) {
         while (tv.isAlive()) {
 
-
-            if (!tv.offOn()) {     //если телевизор выключен
+            if (tv.offOn()) {     //если телевизор выключен
                 tv.printOffMenu();
                 int cmd1 = readKeyboard();   // первый раз запросили
                 if (!tv.userCommand(cmd1)) {
                     tv.printMenu();
-                    int cmd2 = readKeyboard(); // второй раз запросили выключить
+                    int cmd2 = readKeyboard();
                     if (tv.userCommand(cmd2)) {
                         return;
                     }
                 }
             } else {
                     tv.printMenu();
-                    int cmd2 = readKeyboard(); // второй раз запросили выключить
+                    int cmd2 = readKeyboard();
                     if (tv.userCommand(cmd2)) {
                         tv.printOffMenu();
                         return;

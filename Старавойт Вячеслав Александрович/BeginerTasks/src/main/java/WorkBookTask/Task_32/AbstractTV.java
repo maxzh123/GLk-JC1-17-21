@@ -5,7 +5,7 @@ public abstract class AbstractTV implements TV {
     protected int screenDiameter;
     protected String screenResolution;
     protected String smartTv;
-    private boolean tvOn=true;
+    private boolean tvOn=false;
 
 
     public AbstractTV(int screenDiameter,String screenResolution,String smartTv){
@@ -28,22 +28,20 @@ public abstract class AbstractTV implements TV {
     //TODO попробуй tvOn=!tvOn;
     @Override
     public boolean offOn(){
-        return  tvOn=false;
+        return  tvOn=true;
     }
 
     //TODO Я там понаписывал, а оно уже как надо оказывается.
     @Override
     public boolean isAlive() {
-        return tvOn;
+        return !tvOn;
     }
 
     @Override
     public void printMenu() {
-        //Какой такой магазин? Цеж телевизер.
-        System.out.println("Вас приветствует наш магазин телевизоров!!!");
         System.out.println("Вы выбрали один из лучших телевизоров под брэндом: ");
         System.out.println("--------------"+ getName()+"---------------");
-        System.out.println("Мои характеристики следующие: " + screenDiameter + " дюймов; " + screenResolution + " разрешение; " + smartTv+ " есть." );
+        System.out.println("Мои характеристики следующие: " + screenDiameter + " дюймов; " + screenResolution + " разрешение; " +  " Cмарт тв : " + smartTv);
         System.out.println(" Если вам не трудно, выключи меня <<НАЖМИ>> 2");
     }
 
