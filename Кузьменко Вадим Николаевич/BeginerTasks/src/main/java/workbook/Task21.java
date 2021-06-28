@@ -1,4 +1,6 @@
-public class Main {
+package workbook;
+
+public class Task21 {
     public static void main(String[] args) {
         int[] array = new int[]{1, 1010, 0, 98, 90, 1000, 14, 26, 87, 2, 2012};
 

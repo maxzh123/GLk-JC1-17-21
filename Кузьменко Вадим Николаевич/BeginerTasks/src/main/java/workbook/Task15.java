@@ -1,5 +1,7 @@
+package workbook;
 
-    public class main {//Сообщаем компилятору что Это класс и мы дали ему имя Sample6
+
+    public class Task15 {//Сообщаем компилятору что Это класс и мы дали ему имя Sample6
         private static int count = 0;
 
         public static void main(String[] arg) { //Сообщаем компилятору что класс имеет публичный метод, не возвращающий рельтатов, но принимающий в качестве аргументов масив строк.

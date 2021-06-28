@@ -1,4 +1,6 @@
-public class ch {
+package workbook;
+
+public class Task5v2 {
    int timeSecond;
 
     void ShowTime () {

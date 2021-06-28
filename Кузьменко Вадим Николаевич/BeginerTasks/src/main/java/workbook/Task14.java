@@ -1,4 +1,6 @@
-public class main {
+package workbook;
+
+public class Task14 {
     public static void main(String[] args) {
         int i = 789382344;
         double sum = 0;

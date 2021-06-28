@@ -1,4 +1,6 @@
-public class main {
+package workbook;
+
+public class Task16 {
     public static void main(String[] args) {
 
         for (int e=1; e<100;e++){

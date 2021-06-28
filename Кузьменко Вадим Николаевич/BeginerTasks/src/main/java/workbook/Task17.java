@@ -1,5 +1,7 @@
+package workbook;
 
-public class main {
+
+public class Task17 {
     public static void main(String[] args) {
         String str = "123456789";
         str = str.replaceAll("(.{3})", "$1 ");

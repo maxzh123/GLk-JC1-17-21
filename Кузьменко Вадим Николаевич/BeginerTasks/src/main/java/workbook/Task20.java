@@ -1,5 +1,7 @@
+package workbook;
 
-public class main {
+
+public class Task20 {
     public static void main(String[] args) {
         int [] mas = {10,12,41,51,0,14,1428,44,18,939};
         int maxNumber = 0;

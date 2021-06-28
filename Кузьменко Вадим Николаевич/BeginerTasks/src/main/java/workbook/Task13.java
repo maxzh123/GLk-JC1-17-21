@@ -1,4 +1,6 @@
-public class main {
+package workbook;
+
+public class Task13 {
     public static void main(String[] args) {
         int pro = 1;
         int i = 1;

@@ -1,6 +1,9 @@
+package workbook;
+
 import javax.swing.*;
 import java.util.Scanner;
-    public class main {
+
+    public class Task9 {
         public static void main (String [] args) {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Введите число: ");

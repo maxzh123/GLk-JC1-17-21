@@ -1,5 +1,7 @@
+package workbook;
+
 import java.util.Scanner;
-public class money {
+public class Task8v2 {
     public static void main (String [] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите целое число: ");

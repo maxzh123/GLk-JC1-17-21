@@ -1,4 +1,6 @@
-public class Main {
+package workbook;
+
+public class Task22 {
     public static void main(String[] args) {
         int[] mas = {1, 3, 4, 5, 6, 8, 10, 15, 25, 54};
         for (int i = 0; i < mas.length; i++) {
