@@ -16,6 +16,7 @@ public class Runner {
 
     }
 
+    //TODO Это должен делать метод printInfo обьекта
     public static void infoAboutWashMashine(WashMachine wash) {
         System.out.println("Вас приветствует " + wash.getType() + ", размерами " + wash.length + " см длина, " +
                 wash.width + " см ширина.");
@@ -24,6 +25,7 @@ public class Runner {
         System.out.println("У стиральной машины сообщение для вас: "+wash.say());
         wash.isOn(); //включили лампочку
     }
+    //TODO Это должен делать метод printInfo обьекта
     public static void infoAboutRefrigerator(Refrigerator refr) {
         System.out.println("Вас приветствует " + refr.getType() + ", размерами " + refr.length + " см длина, " +
                 refr.width + " см ширина, "+ refr.height+ " см высота");
@@ -34,13 +36,14 @@ public class Runner {
         refr.isOn();
         }
 
-
+    //TODO Enum с цветами вместо строки и функцию сравнения в обьект, а лучше в интерфейс и потом реализовать в обьекте/обьектах
     public static void checkingForWhite(Refrigerator refr) {
         if(refr.getColor().equalsIgnoreCase("белый")) {
             System.out.println("Давай покрасим холодильник в черный цвет");
         }
     }
 
+    //TODO Это должен делать метод printInfo обьекта
     public static void infoAboutFreezer(Freezer freezer) {
         System.out.println("Вас приветствует " + freezer.getType() + ", размерами " + freezer.length + " см длина, " +
                 freezer.width + " см ширина, "+ freezer.height+ " см высота");

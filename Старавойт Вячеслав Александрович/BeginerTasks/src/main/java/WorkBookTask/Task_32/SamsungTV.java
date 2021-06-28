@@ -12,11 +12,14 @@ public class SamsungTV  extends AbstractTV{
     }
 
 
+    //TODO вынести в родителя и сделать там свойство, которое будет менятся вызовом этого метода. И возвращаться в isAlive
     @Override
     public boolean offOn() {
         return false;
     }
 
+//Плагиатор :-)
+//А зачем переопределять и копипастить? онож не поменялось. выкосить
     @Override
     public void printMenu(){
         System.out.println("Вас приветствует наш магазин телевизоров!!!");

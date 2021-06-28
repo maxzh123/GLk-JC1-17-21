@@ -19,7 +19,7 @@ public class Runner {
     private static int readKeyboard() {
         return scanner.nextInt();
     }
-
+//В целом идея верная
     private static void workWithRemoteControl(TV tv) {
         while (tv.isAlive()) {
 

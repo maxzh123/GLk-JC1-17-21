@@ -25,11 +25,13 @@ public abstract class AbstractTV implements TV {
         return "Какой-то безымянный телик, этикетка стерлась";
     }
 
+    //TODO попробуй tvOn=!tvOn;
     @Override
     public boolean offOn(){
         return  tvOn=false;
     }
 
+    //TODO Я там понаписывал, а оно уже как надо оказывается.
     @Override
     public boolean isAlive() {
         return tvOn;
@@ -37,6 +39,7 @@ public abstract class AbstractTV implements TV {
 
     @Override
     public void printMenu() {
+        //Какой такой магазин? Цеж телевизер.
         System.out.println("Вас приветствует наш магазин телевизоров!!!");
         System.out.println("Вы выбрали один из лучших телевизоров под брэндом: ");
         System.out.println("--------------"+ getName()+"---------------");
