@@ -150,7 +150,6 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
         int newX, newY;
         double dX = 0, dY=0;
         if (bBeginDrag) {
-            System.out.println("OLD: "+oldX+" "+ oldY);
             newX = e.getX();
             newY = e.getY();
             dX -= newX - oldX;
