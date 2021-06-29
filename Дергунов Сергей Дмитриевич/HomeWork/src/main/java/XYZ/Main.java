@@ -50,11 +50,16 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
     }
 
     public void paint(Graphics gr) {
-        Graphics2D graphic = (Graphics2D) gr;
-        ((Graphics2D) gr).scale(scaleX,scaleY);
+        ((Graphics2D) gr).scale(scaleX, scaleY);
+        InformationOut(gr);
         XYZaxes(gr);
         Function(gr);
-        tempPoint = new MonitorCord(0,0);
+    }
+
+    public void InformationOut(Graphics gr) {
+        gr.drawString("Функция Z = sin R (R = sqr(x2+y2))", 20, 20);
+        gr.drawString("Амплитуда: " + amplitude, 20, 50);
+        gr.drawString("Длина волны: " + waveLength, 20, 80);
     }
 
     public void XYZaxes(Graphics gr){
