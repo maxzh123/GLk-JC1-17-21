@@ -10,12 +10,12 @@ public class Runner {
         System.out.println("У стиральной машины сообщение для вас: " + wash.say());
         System.out.println("______________________________________________");
 
-        Refrigerator refr = new Refrigerator("холодильник", 60, 60, 200);
-        refr.printInfo();
-        refr.isOn();
-        refr.messages(Mistakes.SomethingHasLeaked);
-        System.out.println("У холодильника сообщение для вас: " + refr.say());
-        refr.getRandomColor();
+        Refrigerator refrigerator = new Refrigerator("холодильник", 60, 60, 200);
+        refrigerator.printInfo();
+        refrigerator.isOn();
+        refrigerator.messages(Mistakes.SomethingHasLeaked);
+        System.out.println("У холодильника сообщение для вас: " + refrigerator.say());
+        refrigerator.getRandomColor();
         System.out.println("______________________________________________");
 
         Freezer freezer = new Freezer("морозильник", 60, 60, 150);

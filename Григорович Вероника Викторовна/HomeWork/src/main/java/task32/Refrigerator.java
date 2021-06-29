@@ -14,7 +14,7 @@ public class Refrigerator extends Abstractappliances {
 
     @Override
     public String getType() {
-        return "холодильник";
+        return "Холодильник";
     }
 
     public int getVolume() {

@@ -6,7 +6,7 @@ public class WashMachine extends Abstractappliances{
     }
     @Override
     public String getType() {
-        return "стиральная машина";
+        return "Стиральная машина";
     }
 
     @Override

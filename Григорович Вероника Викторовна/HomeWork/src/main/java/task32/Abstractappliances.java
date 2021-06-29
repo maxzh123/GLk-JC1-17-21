@@ -20,12 +20,12 @@ public abstract class Abstractappliances implements Appliances{
 
     @Override
     public void isOn() {
-        System.out.println(getType()+ ": включено в розетку");
+        System.out.println(getType()+ ": включено в розетку.");
     }
 
     @Override
     public void isOf() {
-        System.out.println(getType()+ ": не включено в розетку");
+        System.out.println(getType()+ ": не включено в розетку.");
     }
 
     @Override

@@ -6,7 +6,7 @@ public class Freezer extends Refrigerator{
     }
     @Override
     public String getType() {
-        return "морозильник";
+        return "Морозильник";
     }
 
     }
