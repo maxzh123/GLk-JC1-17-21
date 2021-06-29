@@ -1,3 +1,5 @@
+package PreviousTasks;
+
 public class task3 {
     public static void main (String [] args) {
         byte b=0x55;

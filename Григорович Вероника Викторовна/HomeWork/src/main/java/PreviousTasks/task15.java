@@ -1,3 +1,5 @@
+package PreviousTasks;
+
 import java.util.ArrayList;
 
 public class task15 { //по заданию надо через break, но то ли лыжи не едут, но я так не поняла как через break решить

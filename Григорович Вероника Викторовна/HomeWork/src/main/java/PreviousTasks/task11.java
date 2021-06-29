@@ -1,3 +1,5 @@
+package PreviousTasks;
+
 import java.util.Random;
 
 public class task11 {

@@ -7,5 +7,7 @@ public interface Appliances {
     public void isOf();
     public int getArea();
     public String say();
+    public void printInfo();
     String getCodeOfMistakes(CodeOfMistakes code);
+    public void getRandomColor();
 }

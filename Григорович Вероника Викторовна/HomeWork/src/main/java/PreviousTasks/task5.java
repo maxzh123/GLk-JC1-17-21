@@ -1,3 +1,5 @@
+package PreviousTasks;
+
 public class task5 {
     public static void main (String [] args) {
         int sec = 604800;
