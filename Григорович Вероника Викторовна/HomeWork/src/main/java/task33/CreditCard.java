@@ -1,22 +1,39 @@
 package task33;
 
 
-public class CreditCard extends AbstractBankCard{
+public class CreditCard extends DebitCard{
     int loanPayment; //ежемесячный платеж по кредиту
-    public CreditCard(String type, int loanPayment) {
-        super(type);
+
+    public CreditCard(String type, int cardBalance, int loanPayment) {
+        super(type, cardBalance);
         this.loanPayment = loanPayment;
+    }
+
+
+    @Override
+    public String getType()
+    {
+        return "кредитная карточка";
     }
     @Override
     public int repayCredit() {
-        return addMoney()-loanPayment;
+         return addMoney() - takeOffMoney() - loanPayment;
+
+        
     }
 
-    public void CheckingSolvency() {
+    public String сheckingSolvency() {
         if (repayCredit()>=0) {
-            System.out.println("Кредит погашен");
+            return "Кредит погашен.";
         } else {
-            System.out.println("на вашей банковской карте недостаточно средств");
+            return "На вашей банковской карте недостаточно средств.";
         }
+    }
+
+    @Override
+    public  void printInfo() {
+        System.out.println("Это "+getType()+", ежемесячный платеж по кредиту составляет: "
+                +loanPayment+". После уплаты по кредиту баланс зарплатной карточки составит: "+repayCredit());
+        System.out.println("Проверка оплаты кредита: "+ сheckingSolvency());
     }
 }

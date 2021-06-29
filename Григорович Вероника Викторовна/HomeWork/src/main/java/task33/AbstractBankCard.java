@@ -1,6 +1,6 @@
 package task33;
 
-public class AbstractBankCard implements BankCards{
+public class AbstractBankCard implements BankCards {
     protected String type;
 
     public AbstractBankCard(String type) {
@@ -8,10 +8,15 @@ public class AbstractBankCard implements BankCards{
     }
 
     @Override
-    public String getType()
-        {
-            return type;
-        }
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int monthlyPaymentByInstallment() {
+        return 0;
+    }
+
 
     @Override
     public int addMoney() {
@@ -29,12 +34,16 @@ public class AbstractBankCard implements BankCards{
     }
 
     @Override
-    public int issueInstallment() {
-        return 0;
+    public boolean issueInstallment() { return false;
     }
 
     @Override
-    public void CheckingSolvency() {
-
+    public String сheckingSolvency() {
+        return null;
     }
-}
+
+        @Override
+        public void printInfo() {
+        }
+    }
+
