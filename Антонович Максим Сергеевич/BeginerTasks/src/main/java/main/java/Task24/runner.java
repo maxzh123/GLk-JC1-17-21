@@ -8,6 +8,7 @@ public class runner {
         Time h4 = new Time(4534543);
         System.out.println(h3);
         System.out.println(h1);
+        System.out.println(h2);
        System.out.println(h1.compareTo(h3));
        System.out.println(h1.compareTo(h4));
     }
