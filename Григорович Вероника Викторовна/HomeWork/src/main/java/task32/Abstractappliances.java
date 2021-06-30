@@ -13,7 +13,6 @@ public abstract class Abstractappliances implements Appliances{
         this.width=width;
     }
 
-
     @Override
     public String getType() {
         return type;
@@ -21,12 +20,12 @@ public abstract class Abstractappliances implements Appliances{
 
     @Override
     public void isOn() {
-        System.out.println(getType()+ " включено в розетку");
+        System.out.println(getType()+ ": включено в розетку.");
     }
 
     @Override
     public void isOf() {
-        System.out.println(getType()+ " не включено в розетку");
+        System.out.println(getType()+ ": не включено в розетку.");
     }
 
     @Override
@@ -42,10 +41,18 @@ public abstract class Abstractappliances implements Appliances{
     }
 
     @Override
+    public void printInfo() {
+        System.out.println(getType()+": " + length +" см длина, "+ width+" см ширина." );
+        System.out.println("Занимаемая площадь: " + getArea() + " сантиметров квадратных.");
+    }
+
+
+    @Override
     public String getCodeOfMistakes(CodeOfMistakes code) {
         if (code instanceof Mistakes) {return (messages((Mistakes) code)); }
         return  messages(code);
     }
+
 
     public String messages(CodeOfMistakes code) {
         return null;
