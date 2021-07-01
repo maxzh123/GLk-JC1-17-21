@@ -28,13 +28,12 @@ public class TicTacToe<diag, diag1> extends JComponent {
     @Override
     protected void processMouseEvent(MouseEvent mouseEvent){
         super.processMouseEvent(mouseEvent);
-        int getButton;
-        if(MouseEvent.getButton() == MouseEvent.BUTTON1){
+        if(mouseEvent.getButton() == MouseEvent.BUTTON1){
             int x = mouseEvent.getX();
             int y = mouseEvent.getY();
             int i = (int) ((float) x / getWidth() * 3);
             int j = (int) ((float) y / getHeight() * 3);
-            if (field[i][j]) == EMPTY_FIELD) {
+            if (field[i][j] == EMPTY_FIELD) {
     field[i][j] = isXturn?X_FIELD:O_FIELD;
     isXturn =!isXturn;
     repaint();
@@ -53,6 +52,11 @@ public class TicTacToe<diag, diag1> extends JComponent {
             }
         }
     }
+
+    private int checkState() {
+        return 0;
+    }
+
     @Override
     protected void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
