@@ -7,8 +7,8 @@ public class Refrigerator extends Abstractappliances {
     Random random = new Random();
     protected int height;
 
-    public Refrigerator(String type, int length, int width, int height) {
-        super(type, length, width);
+    public Refrigerator(int length, int width, int height) {
+        super(length, width);
         this.height = height;
     }
 
@@ -29,28 +29,15 @@ public class Refrigerator extends Abstractappliances {
         System.out.println("Занимаемый объем: " + getVolume() + " сантиметров кубических.");
     }
 
-    @Override
-    public void getRandomColor() {
-        int index = random.nextInt(colors.length);
-        System.out.println("В зависимости от цвета выбранной модели, имееются особенности эксплуатации. Цвет: "+colors[index]);
-        switch (index) {
-            case 0:
-                System.out.println("дополнительный лоток для винишка");
-                break;
-            case 1:
-                System.out.println("запрещено рисовать на холодильнике красные полосы");
-                break;
-            case 2:
-                System.out.println("запрещено рисовать на холодильнике белые полосы");
-                break;
-            case 3:
-                System.out.println("защита от детей и домашних животных");
-                break;
-            case 4:
-                System.out.println("без особенносте1");
-                break;
-            default:
+    public String messages(Mistakes code) {
+        if(code==Mistakes.SomethingHasLeaked) {
+            return phrase="У меня что-то протекло, например молоко";
         }
+        return null;
+    }
+    public void printInfoAboutMistakes() {
+        System.out.println("Внезапное сообщение об ошибке ");
+        messages(Mistakes.SomethingHasLeaked);
     }
 }
 

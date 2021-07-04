@@ -14,6 +14,9 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
     MonitorCord point, tempPoint, pointStart;
     double scaleX=1, scaleY=1;
     int waveLength=40, amplitude=30;
+    int gridSize = 10;
+    public static final double PI=3.1415926;
+    public static double angleVisionAlfa=PI/4, angleVisionBeta=PI/3;
 
     static class MonitorCord {
         int monitorX, monitorY;
@@ -32,8 +35,6 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
             this.z = z;
         }
     }
-    public static final double PI=3.1415926;
-    public static double angleVisionAlfa=PI/4, angleVisionBeta=PI/3;
 
     public static void main(String[] args) {
         PrintInstruction();
@@ -53,7 +54,7 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
         ((Graphics2D) gr).scale(scaleX, scaleY);
         InformationOut(gr);
         XYZaxes(gr);
-        Function(gr);
+        DrawGrid(gr, 400, gridSize);
     }
 
     public void InformationOut(Graphics gr) {
@@ -92,23 +93,25 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
         gr.setColor(Color.black);
     }
 
-    public void Function(Graphics gr) {
-        for (int x = -200; x <= 200; x += 10) {
-            point3d = new Coordinates3d(x, -200, (int) (Math.sin(Math.sqrt(x * x + 200 * 200) / waveLength) * amplitude));
+    public void DrawGrid(Graphics gr, int size, int gridSize) {
+        for (int x = -size/2; x <= size/2; x += gridSize) {
+            int y= -size/2;
+            point3d = new Coordinates3d(x, y,Function(x,y));
             tempPoint = point = Convert(point3d);
-            for (int y = -200; y <= 200; y += 10) {
-                z = (int) (Math.sin(Math.sqrt(x * x + y * y) / waveLength) * amplitude);
+            for (y = -size/2; y <= size/2; y += gridSize) {
+                z= Function(x,y);
                 point3d = new Coordinates3d(x, y, z);
                 point = Convert(point3d);
                 gr.drawLine(tempPoint.monitorX, tempPoint.monitorY, point.monitorX, point.monitorY);
                 tempPoint = point;
             }
         }
-        for (int y = -200; y <= 200; y += 10) {
-            point3d = new Coordinates3d(-200, y, (int) (Math.sin(Math.sqrt(y * y + 200 * 200) / waveLength) * amplitude));
+        for (int y = -size/2; y <= size/2; y += gridSize) {
+            x= -size/2;
+            point3d = new Coordinates3d(x, y, Function(x,y));
             tempPoint = point = Convert(point3d);
-            for (int x = -200; x <= 200; x += 10) {
-                z = (int) (Math.sin(Math.sqrt(x * x + y * y) / waveLength) * amplitude);
+            for (int x = -size/2; x <= size/2; x += gridSize) {
+                z= Function(x,y);
                 point3d = new Coordinates3d(x, y, z);
                 point = Convert(point3d);
                 gr.drawLine(tempPoint.monitorX, tempPoint.monitorY, point.monitorX, point.monitorY);
@@ -117,9 +120,16 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
         }
     }
 
+    public int Function(int x, int y) {
+        double r = Math.sqrt(x * x + y * y)/ waveLength;
+        z=  (int) (((Math.sin(r)) * amplitude)*(10/(r+2)));
+        return z;
+    }
+
     public static void PrintInstruction(){
         System.out.println("Привет. Немного математики)) ");
         System.out.println("Стрелки - вращение модели. Можно также использовать мышь.");
+        System.out.println("Изменение размера сетки +/- Numpad 8/2 ");
         System.out.println("Изменение амплитуды +/- Numpad 1/7 ");
         System.out.println("Изменение длины волны +/- Numpad 3/9");
         System.out.println("Изменение масштаба +/- PAGE UP/PAGE DOWN");
@@ -192,8 +202,14 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
             waveLength +=1;
         }
         if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
-            waveLength -=1;
+            if (waveLength > 5) waveLength -=1;
         }
+        if (e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
+            if (gridSize<200) gridSize +=1;
+        }if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
+            if(gridSize>4)gridSize -=1;
+        }
+
        repaint();
     }
 
