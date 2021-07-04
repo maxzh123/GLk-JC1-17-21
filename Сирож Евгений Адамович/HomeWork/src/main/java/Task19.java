@@ -3,7 +3,7 @@ public class Task19 {
     public static void main(String[] args) {
         int array[] = new int[10];
 
-        for (int i = 1; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 50 + 1);
             processNumber(array[i],i);
         }
