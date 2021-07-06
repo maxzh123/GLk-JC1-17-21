@@ -1,4 +1,4 @@
-package main;
+package main.java;
 
 public class Sample3 {
     public static void main (String[] arg){ //Сообщаем компилятору что класс имеет публичный метод, не возвращающий рельтатов, но принимающий в качестве аргументов масив строк.
