@@ -30,8 +30,8 @@ public class task31 {
 
     public static void additionOfLines() {
         count=0;
-        while (count<1000000) {
-            sum=string+string;
+        while (count<100000) {
+            sum=sum+string;
             count++;
         }
 
@@ -40,7 +40,7 @@ public class task31 {
     public static void additionWithBuilder() {
         count=0;
         StringBuilder stringBuilder=new StringBuilder();
-        while (count<1000000) {
+        while (count<100000) {
             stringBuilder.append(string);
             count++;
         }

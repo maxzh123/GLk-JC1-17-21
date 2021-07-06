@@ -52,7 +52,7 @@ public class Task26_29 {
 
     public static void findHexNumber() { //task29
         String st="0x141D12 0x0 0xXedff 123 0b234 0XABC11";
-        Pattern pattern=Pattern.compile("(0[xX])[0-9A-D]+");
+        Pattern pattern=Pattern.compile("(0[xX])[0-9A-F]+");
         matcher=pattern.matcher(st);
         while (matcher.find()) {
             int start=matcher.start();

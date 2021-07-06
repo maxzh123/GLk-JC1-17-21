@@ -28,8 +28,10 @@ public class Task21 {
             stop = tmp;
         }
         int sum = 0;
+        System.out.println("Суммируем диапазон ["+(start + 1) +","+(stop-1) +"]");
         for (int i = start + 1; i < stop; i++) {
             sum += arr[i];
+            System.out.println("Добавили элемент №"+i+" равный: "+arr[i]+" Промежуточный  результат:"+sum);
         }
             System.out.println(sum);
 
