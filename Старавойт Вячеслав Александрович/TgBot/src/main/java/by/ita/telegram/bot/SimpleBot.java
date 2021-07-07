@@ -186,7 +186,7 @@ public class SimpleBot extends TelegramLongPollingBot implements MessageSender{
         try {
             return sendApiMethod(method);
         } catch (TelegramApiException e) {
-            LOG.error("Ошибка при отправке ",e);
+            LOG.error("Ошибка при отправке",e);
         }
         return null;
     }
@@ -196,7 +196,7 @@ public class SimpleBot extends TelegramLongPollingBot implements MessageSender{
      * @return имя бота*/
     @Override
     public String getBotUsername() {
-        return "glkGroupBot";
+        return "имя бота";
     }
 
     /**
@@ -205,7 +205,7 @@ public class SimpleBot extends TelegramLongPollingBot implements MessageSender{
      */
     @Override
     public String getBotToken() {
-        return "1868346347:AAHmVCsybuw-mx28JAK5Owzd9tKOpa6D47U";
+        return "токен";
     }
 
 
