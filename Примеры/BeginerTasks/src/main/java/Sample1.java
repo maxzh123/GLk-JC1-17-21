@@ -4,8 +4,15 @@
 * */
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class Sample1 { //Сообщаем компилятору что Это класс и мы дали ему имя Sample1
     public static class NewNum extends Number{
@@ -32,6 +39,25 @@ public class Sample1 { //Сообщаем компилятору что Это �
     /* Это зарезервированное имя. функция класса с таким именем и параметрами, может быть вызвана из вне JVM, т.е являться точкой входа
     * */
     public static void main (String[] arg){ //Сообщаем компилятору что класс имеет публичный метод, не возвращающий рельтатов, но принимающий в качестве аргументов масив строк.
+        //https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+        //Date d=new Date(1000L*Integer.MAX_VALUE);
+        Date d=new Date();
+        System.out.println(d);
+
+        Locale loc=new Locale("EN","GB");
+        DateFormat df=new SimpleDateFormat("yyyy-MM-dd zzz", loc);
+        System.out.println(df.format(d));
+        try {
+            d=df.parse("2021-06-14 MSK");
+            Calendar cal=Calendar.getInstance(TimeZone.getTimeZone("Minsk/Europe"),loc);
+            cal.setTime(d);
+            cal.add(Calendar.DAY_OF_MONTH,-35);
+            System.out.println(cal.getTime());
+
+        } catch (ParseException ошыпко) {
+            ошыпко.printStackTrace();
+        }
+        System.out.println(d);
 //        int a=-1;
 //        print(a);
 //        print(a<<1);
@@ -42,12 +68,7 @@ public class Sample1 { //Сообщаем компилятору что Это �
 //            Number a=(Number) x;
 //            print(a.intValue());
 //        }
-        //https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
-        Date d=new Date(1000L*Integer.MAX_VALUE);
-        System.out.println(d);
-        DateFormat df=new SimpleDateFormat("dd-MM-yyyy");
-        System.out.println(df.format(d));
-    }
+}
 
     private static void print(int x){
         System.out.print(x);
