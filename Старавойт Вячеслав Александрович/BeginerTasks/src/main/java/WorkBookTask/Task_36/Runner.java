@@ -10,13 +10,13 @@ public class Runner {
 //        int winter =Season.WINTER.getId() ;
 //        int spring =Season.SPRING.getId();
 //        int summer =Season.SUMMER.getId();
-        switch (countSeason){
-            case Season.WINTER.getId():
-                System.out.println("Следующее Весна");
+        Season.WINTER.nameNext(countSeason);
+        if (countSeason>0 && countSeason<5){
+            nameNext(countSeason);
         }
-             case Season.WINTER.getId() :
-        System.out.println("Следующее лето");
+
+        }
+
 
 
     }
-}
