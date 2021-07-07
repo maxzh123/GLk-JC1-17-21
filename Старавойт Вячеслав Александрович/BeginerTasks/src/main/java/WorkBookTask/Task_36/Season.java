@@ -15,9 +15,4 @@ public enum Season {
         return id;
     }
 
-    public String nameNext (int id){
-
-        }
-        return
-    }
 }
