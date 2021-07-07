@@ -1,6 +1,6 @@
 public class Task23 {
     public static void main(String[] args) {
-        int[][] array1 = new int[5][5];
+        int[][] array1 = new int[8][8];
         for (int i = 0; i < array1.length / 2 + 1; i++) {
             for (int j = 0; j < array1[i].length; j++) {
                 if (j >= array1[i].length - i || j<i) {
