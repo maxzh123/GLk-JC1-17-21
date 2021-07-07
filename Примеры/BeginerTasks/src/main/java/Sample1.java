@@ -3,6 +3,10 @@
 2. внести хоть какие-то изменения, которые меняют результат. и заставить это работать.
 * */
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Sample1 { //Сообщаем компилятору что Это класс и мы дали ему имя Sample1
     public static class NewNum extends Number{
         @Override
@@ -33,11 +37,16 @@ public class Sample1 { //Сообщаем компилятору что Это �
 //        print(a<<1);
 //        print(a>>1);
 //        print(a>>>1);
-        Object x=new NewNum();
-        if ( x instanceof Number){
-            Number a=(Number) x;
-            print(a.intValue());
-        }
+//        Object x=new NewNum();
+//        if ( x instanceof Number){
+//            Number a=(Number) x;
+//            print(a.intValue());
+//        }
+        //https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+        Date d=new Date(1000L*Integer.MAX_VALUE);
+        System.out.println(d);
+        DateFormat df=new SimpleDateFormat("dd-MM-yyyy");
+        System.out.println(df.format(d));
     }
 
     private static void print(int x){
