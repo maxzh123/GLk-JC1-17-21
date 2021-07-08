@@ -11,4 +11,9 @@ public abstract class Vehicle {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return " Ваше траспортное ср-во : " + getName();
+    }
 }
