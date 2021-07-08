@@ -1,4 +1,4 @@
-package main;
+package main.java;
 
 public class Quest18 {
     public static void main(String[] args) {
