@@ -7,16 +7,20 @@ public class Runner {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int countSeason = scanner.nextInt();
-//        int winter =Season.WINTER.getId() ;
-//        int spring =Season.SPRING.getId();
-//        int summer =Season.SUMMER.getId();
-        switch (countSeason){
-            case Season.WINTER.getId():
-                System.out.println("Следующее Весна");
+// Зима-1, Весна-2, Лето-3,Осень-4
+// согласно условия вывел следующий сезон который человек ввел.
+        if (countSeason>0 && countSeason<5){
+            Season cArray[] = Season.values();
+            if(countSeason==4){
+                System.out.println(cArray[countSeason-countSeason]);
+            }
+            else{
+            System.out.println(cArray[countSeason]);
+            }
         }
-             case Season.WINTER.getId() :
-        System.out.println("Следующее лето");
-
+        else{
+            System.out.println("Нет такого числа сезонов всего 4.");
+        }
 
     }
-}
+    }
