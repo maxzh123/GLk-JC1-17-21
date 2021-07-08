@@ -16,6 +16,10 @@ public class HomeWork{
             this.name = name;
             this.grade = grade;
         }
+        @Override
+        public String toString(){
+            return "Имя: " + name + "\t Оценка : " + grade;
+        }
     }
 
     //Создать список оценок учеников с помощью ArrayList,
@@ -52,7 +56,8 @@ public class HomeWork{
 
     static void PrintList() {
         for (Student student : grades) {
-            System.out.println("Имя: " + student.name + "\t Оценка : " + student.grade);
+            System.out.println(student);
         }
     }
+
 }
