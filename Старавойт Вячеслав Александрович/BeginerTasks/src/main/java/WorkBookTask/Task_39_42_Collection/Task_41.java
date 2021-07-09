@@ -22,12 +22,6 @@ public class Task_41 {
             // numbersIterator.remove(); //А Это как удалить текущий
             if (max<el){max=el;}
         }
-        // Как с помощью итератора сделать я не знаю
-//         for(int i=0; i< array.size(); i++){
-//              if(max<array.get(i)){
-//                  max= array.get(i);
-//              }
-//            }
             System.out.println("--------------" + max+"--------------");
             // Вывод для себя проверка чего наворотил
             for (Integer print : array) {
