@@ -10,9 +10,6 @@ import java.awt.event.MouseEvent;
 public class TicTacToe<diag, diag1> extends JComponent {
     private final Model model;
     private final Controller controller;
-    public static final int EMPTY_FIELD=0;
-    public static final int X_FIELD=10;
-    public static final int O_FIELD=200;
 
     public TicTacToe(Model model,Controller controller) {
         this.model=model;
