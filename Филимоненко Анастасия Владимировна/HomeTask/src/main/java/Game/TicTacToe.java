@@ -2,6 +2,7 @@ package Game;
 
 import Game.mvc.Controller;
 import Game.mvc.Model;
+import Game.mvc.View;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,10 +11,12 @@ import java.awt.event.MouseEvent;
 public class TicTacToe<diag, diag1> extends JComponent {
     private final Model model;
     private final Controller controller;
+    private final View view;
 
-    public TicTacToe(Model model,Controller controller) {
+    public TicTacToe(Model model, Controller controller, View view) {
         this.model=model;
         this.controller=controller;
+        this.view=view;
         enableEvents(AWTEvent.MOUSE_EVENT_MASK);
     }
 
@@ -27,6 +30,7 @@ public class TicTacToe<diag, diag1> extends JComponent {
             int j = (int) ((float) y / getHeight() * 3);
             try {
                 controller.doStep(i,j);
+                view.setTitle("Сейчас ходит:"+controller.getСейчасХодит());
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(),"Беда!", JOptionPane.ERROR_MESSAGE);
             }
