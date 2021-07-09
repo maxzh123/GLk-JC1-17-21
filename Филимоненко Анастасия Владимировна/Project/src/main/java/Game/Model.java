@@ -1,7 +1,7 @@
 package Game;
 
 public class Model<CELLS> {
-    private final int CELLS=3;
+    public final int CELLS=3;
     private final Amount[][] field=new Amount[CELLS][CELLS];
     private final Win win=null;
     private final int winNum=-1;
@@ -77,7 +77,7 @@ public class Model<CELLS> {
     public Amount[][] getField() {
         Amount[][] ret=new Amount[3][3];
         for(int i=0;i< field.length;i++){
-            for(int j=0;i< field[i].length;j++){
+            for(int j=0;j< field[i].length;j++){
                 ret[i][j]=field[i][j];
             }
         }
