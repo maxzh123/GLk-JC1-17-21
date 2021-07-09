@@ -5,7 +5,7 @@ import Game.Победа;
 
 public class Model {
 
-    private final int CELLS=3;
+    public final int CELLS=3;
     private final Значение[][] field=new Значение[CELLS][CELLS];
     private Победа win=null;
     private int winNum=-1;
@@ -81,7 +81,7 @@ public class Model {
     public Значение[][] getField() {
         Значение[][] ret=new Значение[3][3];
         for(int i=0;i< field.length;i++){
-            for(int j=0;i< field[i].length;j++){
+            for(int j=0;j< field[i].length;j++){
                 ret[i][j]=field[i][j];
             }
         }

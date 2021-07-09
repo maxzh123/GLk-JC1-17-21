@@ -23,11 +23,11 @@ public class TicTacToe<diag, diag1> extends JComponent {
     @Override
     protected void processMouseEvent(MouseEvent mouseEvent){
         super.processMouseEvent(mouseEvent);
-        if(mouseEvent.getButton() == MouseEvent.BUTTON1){
+        if(mouseEvent.getButton() == MouseEvent.BUTTON1 && mouseEvent.getID()==MouseEvent.MOUSE_CLICKED){
             int x = mouseEvent.getX();
             int y = mouseEvent.getY();
-            int i = (int) ((float) x / getWidth() * 3);
-            int j = (int) ((float) y / getHeight() * 3);
+            int i =  ( x* model.CELLS / getWidth() );
+            int j =  ( y* model.CELLS / getHeight() );
             try {
                 controller.doStep(i,j);
                 view.setTitle("Сейчас ходит:"+controller.getСейчасХодит());
@@ -63,10 +63,10 @@ public class TicTacToe<diag, diag1> extends JComponent {
     void drawGrid(Graphics graphics){
         int w= getWidth();
         int h= getHeight();
-        int dw = w/3;
-        int dh = h/3;
+        int dw = w/model.CELLS;
+        int dh = h/model.CELLS;
         graphics.setColor(Color.BLACK);
-        for (int i=1; i<3; i++){
+        for (int i=1; i<model.CELLS; i++){
             graphics.drawLine(0, dh*i, w, dh*i);
             graphics.drawLine(dw*i, 0, dw*i, h);
         }
