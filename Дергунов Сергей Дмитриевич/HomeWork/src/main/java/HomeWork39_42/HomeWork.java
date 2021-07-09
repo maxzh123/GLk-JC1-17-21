@@ -70,7 +70,7 @@ public class HomeWork{
         Iterator <Student>iterator = grades.iterator();
         Student bestStudent= iterator.next();
         while (iterator.hasNext()){
-            Student  tempStudent = iterator.next();
+           Student  tempStudent = iterator.next();
            if (bestStudent.grade< tempStudent.grade){
                bestStudent=tempStudent;}
         }
