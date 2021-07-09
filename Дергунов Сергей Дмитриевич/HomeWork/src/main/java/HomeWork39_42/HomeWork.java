@@ -37,7 +37,7 @@ public class HomeWork{
         //RemoveNonAcceptable(4);
         System.out.println("После сессии: (с оценкой " +minGrade +" и ниже отчислены)");
         PrintList();
-        System.out.println("Лучший студент :" + FindTheBestWithStream());;
+        System.out.println("Лучший студент :" + FindTheBestWithStream());
         //System.out.println("Лучший студент :" + FindTheBest());
         //но это не точно)).. их может быть несколько.. это надо доделывать.
     }
@@ -74,12 +74,11 @@ public class HomeWork{
 
     static Student FindTheBestWithStream() {
         Stream<Student> studentsStream = grades.stream();
-        Student bestStudent = studentsStream.max((std1,std2)-> compare(std1,std2)).get();
-        return bestStudent;
+        return studentsStream.max(HomeWork::compare).get();
     }
 
     private static int compare(Student std1, Student std2) {
-        return ((std1.grade < std2.grade) ? -1 : (std1.grade == std2.grade) ? 0 : 1);
+        return (Integer.compare(std1.grade, std2.grade));
     }
 
     // 41. Создать список оценок учеников с помощью ArrayList,
