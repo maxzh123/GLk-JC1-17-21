@@ -9,7 +9,7 @@ public class TicTacToe<diag, diag1> extends JComponent {
     private final Controller controller;
     private View view = null;
 
-    public TicTacToe(Model model, Controller controller) {
+    public TicTacToe(Model model, Controller controller,View view) {
         this.model=model;
         this.controller=controller;
         this.view=view;
@@ -28,6 +28,7 @@ public class TicTacToe<diag, diag1> extends JComponent {
                 view.setTitle("Сейчас ходит:"+controller.getСейчасХодит());
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(),"Беда!", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
             }
             redraw();
             Amount win=model.getWinner();

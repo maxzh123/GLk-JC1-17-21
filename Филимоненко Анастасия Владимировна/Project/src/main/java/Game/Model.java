@@ -1,6 +1,6 @@
 package Game;
 
-public class Model<CELLS> {
+public class Model{
     public final int CELLS=3;
     private final Amount[][] field=new Amount[CELLS][CELLS];
     private final Win win=null;
