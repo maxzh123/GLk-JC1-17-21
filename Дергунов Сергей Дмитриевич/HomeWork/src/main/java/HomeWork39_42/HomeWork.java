@@ -3,10 +3,8 @@ package HomeWork39_42;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.Comparator;
 
 public class HomeWork{
-    public static Stream<Student> studentStream, studentStream1;
     public static ArrayList<Student> grades;
     private static Student student;
 
@@ -30,13 +28,14 @@ public class HomeWork{
 
     public static void main(String[] args) {
         int count = 10;
+        int minGrade = 4;
         grades = new ArrayList<>();
         Fill(count);
         System.out.println("До сессии: ");
         PrintList();
-        RemoveNonAcceptableWithStream(4);
+        RemoveNonAcceptableWithStream(minGrade);
         //RemoveNonAcceptable(4);
-        System.out.println("После сессии: (с оценкой ниже 5 отчислены)");
+        System.out.println("После сессии: (с оценкой " +minGrade +" и ниже отчислены)");
         PrintList();
         System.out.println("Лучший студент :" + FindTheBestWithStream());;
         //System.out.println("Лучший студент :" + FindTheBest());
@@ -64,8 +63,7 @@ public class HomeWork{
 
     static void RemoveNonAcceptableWithStream(int grade) {
         Stream<Student> studentsStream = grades.stream();
-        System.out.println();
-        grades = (ArrayList<Student>) studentsStream.filter(x -> x.grade > grade).collect(Collectors.toList());
+         grades = (ArrayList<Student>) studentsStream.filter(x -> x.grade > grade).collect(Collectors.toList());
     }
 
     static void PrintList() {
