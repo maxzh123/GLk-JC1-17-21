@@ -2,6 +2,7 @@ package HomeWork39_42;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class HomeWork{
@@ -34,6 +35,8 @@ public class HomeWork{
         RemoveNonAcceptable(4);
         System.out.println("После сессии: (с оценкой ниже 5 отчислены)");
         PrintList();
+        System.out.println("Лучший студент :" + FindTheBest());
+        //но это не точно)).. их может быть несколько.. это надо доделывать.
     }
 
     static void Fill(int count) {
@@ -58,6 +61,20 @@ public class HomeWork{
         for (Student student : grades) {
             System.out.println(student);
         }
+    }
+
+    // 41. Создать список оценок учеников с помощью ArrayList,
+    //заполнить случайными оценками. Найти самую высокую оценку с использованием итератора.
+
+    static Student FindTheBest() {
+        Iterator <Student>iterator = grades.iterator();
+        Student bestStudent= iterator.next();
+        while (iterator.hasNext()){
+           Student  tempStudent = iterator.next();
+           if (bestStudent.grade< tempStudent.grade){
+               bestStudent=tempStudent;}
+        }
+        return bestStudent;
     }
 
 }
