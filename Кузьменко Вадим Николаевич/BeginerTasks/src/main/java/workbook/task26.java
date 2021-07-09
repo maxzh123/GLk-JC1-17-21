@@ -1,3 +1,6 @@
+package workbook;
+//FIXME 1. Исходники должны выть валидными и корректными.
+//FIXME 2. Данное задание на регулярные выражения. В частности где обработка многоточия.
 public class task26 {
     public static void main(String[] args) {
         int n = 0;
