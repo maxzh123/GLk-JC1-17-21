@@ -15,14 +15,19 @@ public class Task_41 {
             array.add((int) (Math.random() * 100));
         }
         int max =array.get(0);
-       // Iterator<Integer> numbersIterator = array.iterator();
-        //while (numbersIterator.hasNext()){
+        //Като - так.
+        Iterator<Integer> numbersIterator = array.iterator();
+        while (numbersIterator.hasNext()){
+            Integer el=numbersIterator.next();
+            // numbersIterator.remove(); //А Это как удалить текущий
+            if (max<el){max=el;}
+        }
         // Как с помощью итератора сделать я не знаю
-         for(int i=0; i< array.size(); i++){
-              if(max<array.get(i)){
-                  max= array.get(i);
-              }
-            }
+//         for(int i=0; i< array.size(); i++){
+//              if(max<array.get(i)){
+//                  max= array.get(i);
+//              }
+//            }
             System.out.println("--------------" + max+"--------------");
             // Вывод для себя проверка чего наворотил
             for (Integer print : array) {
