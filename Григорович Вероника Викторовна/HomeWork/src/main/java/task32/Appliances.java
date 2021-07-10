@@ -3,9 +3,13 @@ package task32;
 
 public interface Appliances {
     String getType();
-    public void isOn();
-    public void isOf();
-    public int getArea();
-    public String say();
+    void isOn();
+    void isOf();
+    int getArea();
+    String say();
+    void printInfo();
+    void getRandomColor();
     String getCodeOfMistakes(CodeOfMistakes code);
+    public void printInfoAboutMistakes();
+
 }
