@@ -7,14 +7,16 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("введите сезон");
         String translation = scanner.nextLine();
+        {
 //
-        if (translation == "Лето") translation = "Summer";
-        else if (translation == "Осень") translation = "Winter";
-        else if (translation == "Зима") translation = "Spring";
-        else if (translation == "Весни") translation = "Autumn";
+            if (translation == "Лето") translation = "Summer";
+            else if (translation == "Осень") translation = "Winter";
+            else if (translation == "Зима") translation = "Spring";
+            else if (translation == "Весни") translation = "Autumn";
 
 
-        System.out.println(translation);
+            System.out.println(translation);
+        }
     }
 }
 
