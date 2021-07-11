@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        season Season = season.SPRING;
+        Scanner scanner = new Scanner (System.lineSeparator());
+        String Season = scanner.nextLine();
         if (Season == season.SPRING) Season = season.SUMMER;
         if (Season == season.SUMMER) Season = season.AUTUMN;
         if (Season == season.AUTUMN) Season = season.WINTER;
