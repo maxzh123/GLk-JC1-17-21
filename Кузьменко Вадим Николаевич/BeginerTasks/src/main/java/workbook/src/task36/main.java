@@ -1,13 +1,22 @@
-package task36;
+package task36; /// Не понимаю чего не работает
 import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        season Season = season.SPRING;
-        if (Season == season.SPRING) Season = season.SUMMER;
-        if (Season == season.SUMMER) Season = season.AUTUMN;
-        if (Season == season.AUTUMN) Season = season.WINTER;
-        if (Season == season.WINTER) Season = season.SPRING;
-        System.out.println(Season);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("введите сезон");
+        String translation = scanner.nextLine();
+        {
+//
+            if (translation == "Лето") translation = "Summer";
+            else if (translation == "Осень") translation = "Winter";
+            else if (translation == "Зима") translation = "Spring";
+            else if (translation == "Весни") translation = "Autumn";
+
+
+            System.out.println(translation);
+        }
     }
 }
+
