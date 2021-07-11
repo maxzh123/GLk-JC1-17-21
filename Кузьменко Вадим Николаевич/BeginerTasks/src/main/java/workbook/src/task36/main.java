@@ -4,13 +4,16 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
 
-        season Season = season.SUMMER;
-        if (Season == season.SPRING) Season = season.SUMMER;
-        else if (Season == season.SUMMER) Season = season.AUTUMN;
-        else if (Season == season.AUTUMN) Season = season.WINTER;
-        else if (Season == season.WINTER) Season = season.SPRING;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("введите сезон");
+        String translation = scanner.nextLine();
 
-        System.out.println(Season);
+        if (translation == "Лето") translation = "Summer";
+        else if (translation == "Осень") translation = "Winter";
+        else if (translation == "Зима") translation = "Spring";
+        else if (translation == "Весни") translation = "Autumn";
+
+        System.out.println(translation);
     }
 }
 
