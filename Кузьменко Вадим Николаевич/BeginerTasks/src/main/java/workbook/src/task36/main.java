@@ -3,12 +3,14 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.lineSeparator());
-        String Season = scanner.nextLine();
+
+        season Season = season.SUMMER;
         if (Season == season.SPRING) Season = season.SUMMER;
-        if (Season == season.SUMMER) Season = season.AUTUMN;
-        if (Season == season.AUTUMN) Season = season.WINTER;
-        if (Season == season.WINTER) Season = season.SPRING;
+        else if (Season == season.SUMMER) Season = season.AUTUMN;
+        else if (Season == season.AUTUMN) Season = season.WINTER;
+        else if (Season == season.WINTER) Season = season.SPRING;
+
         System.out.println(Season);
     }
 }
+
