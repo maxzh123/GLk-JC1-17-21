@@ -1,4 +1,4 @@
-package task36;
+package task36; /// Не понимаю чего не работает
 import java.util.Scanner;
 
 public class main {
@@ -12,6 +12,7 @@ public class main {
         else if (translation == "Осень") translation = "Winter";
         else if (translation == "Зима") translation = "Spring";
         else if (translation == "Весни") translation = "Autumn";
+
 
         System.out.println(translation);
     }

@@ -7,11 +7,11 @@ public enum season {
     SUMMER ("Лето"),
     AUTUMN ("Весна");
 
-    private String translation;
+    public String translation;
     season(String translation) {
         this.translation = translation;
     }
-    private String getTranslation() {
+    public String getTranslation() {
         return translation;
     }
 
