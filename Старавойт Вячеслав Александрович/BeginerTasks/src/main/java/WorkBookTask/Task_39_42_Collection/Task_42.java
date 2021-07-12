@@ -39,9 +39,12 @@ public class Task_42 {
         System.out.println("----------------после сортировки----------------------");
     }
 
-    static void PrintSortMap(Map<String, Integer> map) { // для вывода сортированной мапы
-        String[] words = map.keySet().toArray(new String[map.keySet().size()]);
-        Arrays.sort(words);
+    static void PrintSortMap(Map<String, Integer> map) { // для вывода сортированной мапы, используем преоброзования Set ключей в массив.
+        String[] words = map.keySet().toArray(new String[map.keySet().size()]); // создаем пустой массив 'words' нужной длины(map.keySet().size())
+        // для тех кто не понял эту строчку сверху.Перепишем ее по другому.
+        // String[] words = new String[map.keySet().size()] - пустой массив нужной нам длины
+        // map.keySet().toArray(words) - передаем наше множество ключей в метод toArray, который вставит их в массив words
+        Arrays.sort(words); // сортируем наш массив.
         for (String word : words) {
             System.out.println(word + ">>>>" + map.get(word));
         }
