@@ -27,37 +27,24 @@ public class HomeWork{
     // заполнить случайными оценками. Удалить неудовлетворительные оценки из списка.
 
     public static void main(String[] args) {
-        int count = 10;
-        int minGrade = 4;
+        int count = 12;//Количество студентов
+        int minGrade = 4;//С оценкой ниже будут отчислены
         grades = new ArrayList<>();
         Fill(count);
         System.out.println("До сессии: ");
-        PrintList();
+        PrintList(grades);
         RemoveNonAcceptableWithStream(minGrade);
-        //RemoveNonAcceptable(4);
-        System.out.println("После сессии: (с оценкой " +minGrade +" и ниже отчислены)");
-        PrintList();
-        System.out.println("Лучший студент :" + FindTheBestWithStream());
-        //System.out.println("Лучший студент :" + FindTheBest());
-        //но это не точно)).. их может быть несколько.. это надо доделывать.
-    }
+        System.out.printf("После сессии: (с оценкой %d и ниже отчислены)\n",minGrade);
+        PrintList(grades);
+        System.out.println("Лучший(е) студент(ы) :");
+        PrintList(FindTheBestsWithStream());
+      }
 
     static void Fill(int count) {
         String[] names = new String[]{"Миша", "Маша", "Петя", "Вова", "Максим", "Игорь"};
         for (int i = 0; i < count; i++) {
             student = new Student(names[(int) (Math.random() * 6)], (int) (Math.random() * 10) + 1);
             grades.add(student);
-        }
-
-    }
-
-    static void RemoveNonAcceptable(int grade) {
-        int i = 0;
-        while (i < grades.size()) {
-            student = grades.get(i);
-            if (student.grade <= grade) {
-                grades.remove(student);
-            } else i++;
         }
     }
 
@@ -66,32 +53,22 @@ public class HomeWork{
          grades = (ArrayList<Student>) studentsStream.filter(x -> x.grade > grade).collect(Collectors.toList());
     }
 
-    static void PrintList() {
-        for (Student student : grades) {
+    static void PrintList(ArrayList<Student> arrayList) {
+        for (Student student : arrayList) {
             System.out.println(student);
         }
     }
 
-    static Student FindTheBestWithStream() {
+    static ArrayList FindTheBestsWithStream() {
         Stream<Student> studentsStream = grades.stream();
-        return studentsStream.max(HomeWork::compare).get();
+        Student bestStudent = studentsStream.max(HomeWork::compare).get();
+        studentsStream = grades.stream();
+        ArrayList theBests = (ArrayList<Student>) studentsStream.filter(x -> x.grade == bestStudent.grade).collect(Collectors.toList());
+        return theBests;
     }
 
     private static int compare(Student std1, Student std2) {
         return (Integer.compare(std1.grade, std2.grade));
-    }
-
-    // 41. Создать список оценок учеников с помощью ArrayList,
-    //заполнить случайными оценками. Найти самую высокую оценку с использованием итератора.
-    static Student FindTheBest() {
-        Iterator <Student>iterator = grades.iterator();
-        Student bestStudent= iterator.next();
-        while (iterator.hasNext()){
-           Student  tempStudent = iterator.next();
-           if (bestStudent.grade< tempStudent.grade){
-               bestStudent=tempStudent;}
-        }
-        return bestStudent;
     }
 
 }
