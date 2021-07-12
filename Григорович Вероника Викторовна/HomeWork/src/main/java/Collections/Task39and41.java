@@ -11,12 +11,14 @@ public class Task39and41 {
         ArrayList<Student> list = new ArrayList<Student>();
         addStudents(list);
         System.out.println();
+        badStudentsWithIterator(list);
+        System.out.println();
         deleteBadGrades(list);
         System.out.println();
         deleteBadGradesWithIterator(list);
         System.out.println();
         findBestGrades(list);
-        badStudentsWithIterator(list);
+
     }
 
     public static void addStudents(ArrayList<Student> list) {
@@ -77,7 +79,7 @@ public class Task39and41 {
                 badStudents.add(student);
             }
         }
-        System.out.println(badStudents);
+        System.out.println("Список учеников с неудовлетворительными оценками "+badStudents);
     }
 
 }
