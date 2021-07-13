@@ -1,4 +1,4 @@
-package workbook;
+package workbook; //
 
 public class Task22 {
     public static void main(String[] args) {
@@ -6,14 +6,14 @@ public class Task22 {
         for (int i = 0; i < mas.length; i++) {
             System.out.print(mas[i]);
         }
-        System.out.println();
+        System.out.println(); ////
         int n = mas.length;
         int temp;
         for (int i = 0; i < n / 2; i++) {
             temp = mas[n - i - 1];
             mas[n - i - 1] = mas[i];
-            mas[i] = temp;
-        }
+            mas[i] = temp; // kdk
+        }//
         for (int i = 0; i < mas.length; i++) {
             System.out.print(mas[i]);
         }

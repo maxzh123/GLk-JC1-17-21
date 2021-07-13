@@ -1,9 +1,5 @@
 package Game;
 
-import Game.mvc.Controller;
-import Game.mvc.Model;
-import Game.mvc.View;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -11,15 +7,14 @@ import java.awt.event.MouseEvent;
 public class TicTacToe<diag, diag1> extends JComponent {
     private final Model model;
     private final Controller controller;
-    private final View view;
+    private View view = null;
 
-    public TicTacToe(Model model, Controller controller, View view) {
+    public TicTacToe(Model model, Controller controller,View view) {
         this.model=model;
         this.controller=controller;
         this.view=view;
         enableEvents(AWTEvent.MOUSE_EVENT_MASK);
     }
-
     @Override
     protected void processMouseEvent(MouseEvent mouseEvent){
         super.processMouseEvent(mouseEvent);
@@ -33,10 +28,11 @@ public class TicTacToe<diag, diag1> extends JComponent {
                 view.setTitle("Сейчас ходит:"+controller.getСейчасХодит());
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(),"Беда!", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
             }
             redraw();
-            Значение win=model.getWinner();
-            if (win!=Значение.Пусто){
+            Amount win=model.getWinner();
+            if (win!=Amount.Пусто){
                 JOptionPane.showMessageDialog(this, "Выиграли "+win+"!","Победа!", JOptionPane.INFORMATION_MESSAGE);
             }else if (!model.hasEmptyFields()){
                 JOptionPane.showMessageDialog(this, "Ничья!","Ничья!", JOptionPane.INFORMATION_MESSAGE);
