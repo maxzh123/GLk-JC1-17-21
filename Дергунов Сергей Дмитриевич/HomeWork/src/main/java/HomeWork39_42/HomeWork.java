@@ -6,7 +6,6 @@ import java.util.stream.Stream;
 
 public class HomeWork{
     public static ArrayList<Student> grades;
-    private static Student student;
 
     public static class Student {
         String name;
@@ -43,7 +42,7 @@ public class HomeWork{
     static void Fill(int count) {
         String[] names = new String[]{"Миша", "Маша", "Петя", "Вова", "Максим", "Игорь"};
         for (int i = 0; i < count; i++) {
-            student = new Student(names[(int) (Math.random() * 6)], (int) (Math.random() * 10) + 1);
+            Student student = new Student(names[(int) (Math.random() * 6)], (int) (Math.random() * 10) + 1);
             grades.add(student);
         }
     }
@@ -54,17 +53,14 @@ public class HomeWork{
     }
 
     static void PrintList(ArrayList<Student> arrayList) {
-        for (Student student : arrayList) {
-            System.out.println(student);
-        }
+        arrayList.forEach(System.out::println);
     }
 
     static ArrayList FindTheBestsWithStream() {
         Stream<Student> studentsStream = grades.stream();
         Student bestStudent = studentsStream.max(HomeWork::compare).get();
         studentsStream = grades.stream();
-        ArrayList theBests = (ArrayList<Student>) studentsStream.filter(x -> x.grade == bestStudent.grade).collect(Collectors.toList());
-        return theBests;
+        return (ArrayList) studentsStream.filter(x -> x.grade == bestStudent.grade).collect(Collectors.toList());
     }
 
     private static int compare(Student std1, Student std2) {
