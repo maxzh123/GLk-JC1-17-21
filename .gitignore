@@ -29,3 +29,8 @@ target
 target/*
 target/**
 /classes/**
+/Станкевич Михаил Александрович/TgBot/${project.build.directory}/classes/logback.xml
+/Станкевич Михаил Александрович/HomeWork/${project.build.directory}/classes/logback.xml
+/Фомченко Юлия Олеговна/BeginerTasks/${project.build.directory}/classes/logback.xml
+/Фомченко Юлия Олеговна/TgBot/${project.build.directory}/classes/logback.xml
+/Фомченко Юлия Олеговна/HomeWork/${project.build.directory}/classes/logback.xml
