@@ -3,6 +3,7 @@ package XYZ;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Main extends JComponent implements KeyListener, ActionListener, MouseListener, MouseMotionListener {
     int x,y,z;
@@ -11,12 +12,13 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
     public int oldX, oldY;
     static MonitorCord pointZero = new MonitorCord(512,400);
     Coordinates3d point3d;
-    MonitorCord point, tempPoint, pointStart;
+    MonitorCord point, tempPoint;
     double scaleX=1, scaleY=1;
     int waveLength=40, amplitude=30;
     int gridSize = 10;
     public static final double PI=3.1415926;
     public static double angleVisionAlfa=PI/4, angleVisionBeta=PI/3;
+    public static ArrayList<AxesLines> axesLinesArrayList;
 
     static class MonitorCord {
         int monitorX, monitorY;
@@ -25,7 +27,13 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
             monitorY = y;
         }
     }
-
+    static class line2d {
+        MonitorCord start, end;
+        public line2d(MonitorCord start, MonitorCord end){
+            this.start = start;
+            this.end = end;
+        }
+    }
     static class Coordinates3d {
         int x, y, z;
 
@@ -38,6 +46,7 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
 
     public static void main(String[] args) {
         PrintInstruction();
+        axesLinesArrayList = AxesLines.AxesLines();
         Main t = new Main();
         JFrame f = new JFrame("Rotating Cube test");
         f.setSize(1024, 768);
@@ -64,31 +73,18 @@ public class Main extends JComponent implements KeyListener, ActionListener, Mou
     }
 
     public void XYZaxes(Graphics gr){
-        Coordinates3d point3d = new Coordinates3d(300, 0, 0);
-        point = Convert(point3d);
-        pointStart = point;
+        ArrayList<line2d> linesArray = new ArrayList<>();
+        axesLinesArrayList.forEach(x -> linesArray.add(new line2d(
+                (Convert(x.startPoint)),
+                (Convert(x.endPoint)))));
         gr.setColor(Color.RED);
-        gr.drawLine(pointZero.monitorX, pointZero.monitorY, point.monitorX, point.monitorY);
-        point = Convert(new Coordinates3d(295, 5, 0));
-        gr.drawLine(pointStart.monitorX, pointStart.monitorY, point.monitorX, point.monitorY);
+        linesArray.forEach(x -> gr.drawLine(
+                x.start.monitorX,x.start.monitorY,x.end.monitorX,x.end.monitorY));
         point = Convert(new Coordinates3d(295, -5, 0));
-        gr.drawLine(pointStart.monitorX, pointStart.monitorY, point.monitorX, point.monitorY);
         gr.drawString("X", point.monitorX - 20, point.monitorY + 20);
-        point = Convert(new Coordinates3d(0, 300, 0));
-        pointStart = point;
-        gr.drawLine(pointZero.monitorX, pointZero.monitorY, point.monitorX, point.monitorY);
-        point = Convert(new Coordinates3d(5, 295, 0));
-        gr.drawLine(pointStart.monitorX, pointStart.monitorY, point.monitorX, point.monitorY);
         point = Convert(new Coordinates3d(-5, 295, 0));
-        gr.drawLine(pointStart.monitorX, pointStart.monitorY, point.monitorX, point.monitorY);
         gr.drawString("Y", point.monitorX - 20, point.monitorY + 20);
-        point = Convert(new Coordinates3d(0, 0, 300));
-        gr.drawLine(pointZero.monitorX, pointZero.monitorY, point.monitorX, point.monitorY);
-        pointStart = point;
-        point = Convert(new Coordinates3d(5, 0, 295));
-        gr.drawLine(pointStart.monitorX, pointStart.monitorY, point.monitorX, point.monitorY);
         point = Convert(new Coordinates3d(-5, 0, 295));
-        gr.drawLine(pointStart.monitorX, pointStart.monitorY, point.monitorX, point.monitorY);
         gr.drawString("Z", point.monitorX - 20, point.monitorY + 20);
         gr.setColor(Color.black);
     }
