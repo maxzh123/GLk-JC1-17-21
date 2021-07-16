@@ -16,20 +16,20 @@ public class Task_46 {
         File[] array =file.listFiles();
         List<File> list = Arrays.asList(array);
 
-        CheckIsDirectory(list);
+        filterIsDirectory(list);
         System.out.println("--------------И собственно ниже файлы которые хранятся в этой директрии: ");
-        CheckIsFile(list);
+        filterIsFile(list);
     }
 
 
-    static void CheckIsDirectory(List<File> list) {
+    static void filterIsDirectory(List<File> list) {
         for (int i = 0; i < list.size(); i++) {
          if(list.get(i).isDirectory()){
              System.out.println(list.get(i));
          }
         }
     }
-    static void CheckIsFile(List<File> list) {
+    static void filterIsFile(List<File> list) {
         for (int i = 0; i < list.size(); i++) {
             if(list.get(i).isFile()){
                 System.out.println(list.get(i));
