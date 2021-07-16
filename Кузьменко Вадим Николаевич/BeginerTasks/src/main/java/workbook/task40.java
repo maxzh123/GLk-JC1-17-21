@@ -1,3 +1,5 @@
+package workbook;
+
 import java.util.Arrays;
 
 public class task40 {

@@ -1,3 +1,5 @@
+package workbook;
+
 import java.util.ArrayList;
 
 public class task39 {
@@ -21,7 +23,7 @@ public class task39 {
 
         Object[] scoreArray = score.toArray();
         for (Object scor : scoreArray) {
-            System.out.println(scor);
+            System.out.println(scor); //
         }
     }
 }

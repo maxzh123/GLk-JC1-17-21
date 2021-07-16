@@ -1,19 +1,19 @@
 package Game;
 
+import Game.mvc.Controller;
+import Game.mvc.Model;
+import Game.mvc.View;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Main {
     public static void main(String[] args){
-       System.out.println("Начать игру...");
-        JFrame window= new JFrame("TicTacToe");
-        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        window.setSize(400,400);
-        window.setLayout(new BorderLayout());
-        window.setLocationRelativeTo(null);
-        window.setVisible(true);
-        TicTacToe game= new TicTacToe();
-        window.add(game);
-       System.out.println("Завершить игру...");
+       Model model=new Model();
+        Controller controller=new Controller(model);
+        System.out.println("Начать игру...");
+        View view=new View(model,controller);
+        view.redraw();
+        System.out.println("Завершить игру...");
     }
 }

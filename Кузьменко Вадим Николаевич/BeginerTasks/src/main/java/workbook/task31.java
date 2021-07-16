@@ -1,3 +1,6 @@
+package workbook;
+
+//TODO Смотрите примеры
 public class task31 {
     public static String sum; // сумма строк
     public static int count =0; // счётчик
