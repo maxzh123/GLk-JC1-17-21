@@ -3,7 +3,7 @@ package WorkBookTask.Task_46_51_WorkWithFile;
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+// Создать файл с текстом, прочитать подсчитать кол-во знаков препинания и слов, вывести на экран.
 public class Task_47 {
     public static int count = 0;
     public static int countWords = 0;
