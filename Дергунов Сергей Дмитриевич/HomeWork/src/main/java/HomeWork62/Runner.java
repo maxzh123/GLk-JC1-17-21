@@ -24,6 +24,7 @@ public class Runner {
         CreatePersonsList();
         Stream<Person> streamPersons = personsList.stream();
         PrintList(personsList);
+        System.out.println();
         acceptableSurnames = (ArrayList<String>) streamPersons.
                 filter(x -> x.age < 21).                            //Фильтр возраст менее 21
                 peek(System.out::println).                          //напечатать
@@ -38,7 +39,7 @@ public class Runner {
 
     static void CreatePersonsList(){
         for(int i=0; i<100;i++){
-            age=(int)(Math.random()*100);
+            age=(int)(15+Math.random()*15);
             name = Name.values()[(int)(Math.random()*10)];
             surname= Surname.values()[(int)(Math.random()*10)];
             Person person= new Person (name,surname,age);
