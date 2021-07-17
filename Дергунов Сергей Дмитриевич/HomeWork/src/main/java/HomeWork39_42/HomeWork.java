@@ -56,11 +56,11 @@ public class HomeWork{
         arrayList.forEach(System.out::println);
     }
 
-    static ArrayList FindTheBestsWithStream() {
+    static ArrayList <Student>FindTheBestsWithStream() {
         Stream<Student> studentsStream = grades.stream();
         Student bestStudent = studentsStream.max(HomeWork::compare).get();
         studentsStream = grades.stream();
-        return (ArrayList) studentsStream.filter(x -> x.grade == bestStudent.grade).collect(Collectors.toList());
+        return (ArrayList<Student>) studentsStream.filter(x -> x.grade == bestStudent.grade).collect(Collectors.toList());
     }
 
     private static int compare(Student std1, Student std2) {
