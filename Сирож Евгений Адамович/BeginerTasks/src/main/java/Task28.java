@@ -14,7 +14,7 @@ public class Task28 {
 
 
 
-        Pattern pattern = Pattern.compile("[а-яА-ЯЁ-ё\\-]+");
+        Pattern pattern = Pattern.compile("[а-яА-ЯЁ\\-]+");
 
         Matcher matcher = pattern.matcher(str);
 
