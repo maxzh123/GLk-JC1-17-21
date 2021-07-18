@@ -10,7 +10,7 @@ public class Task_47 {
     private static StringBuffer stringBuffer = new StringBuffer();
 
     public static void main(String[] args) throws IOException {
-        String path = "/Users//Победитель/GLk-JC1-17-21/Старавойт Вячеслав Александрович/BeginerTasks/src/main/java/WorkBookTask/Task_46_51_WorkWithFile/text1.txt";
+        String path = "/Users/Победитель/GLk-JC1-17-21/Старавойт Вячеслав Александрович/BeginerTasks/src/main/java/WorkBookTask/Task_46_51_WorkWithFile/text1.txt";
         BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
         readingAndAdding(bufferedReader);
         findPunctuationAndWords();
@@ -24,6 +24,7 @@ public class Task_47 {
             stringBuffer.append(res + " ");
             res = bufferedReader.readLine();
         }
+        bufferedReader.close();
         return stringBuffer;
     }
 

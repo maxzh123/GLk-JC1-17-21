@@ -1,4 +1,4 @@
-package JavaRush;
+package JavaRush.task8;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 //Создать массив на 20 чисел.
