@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 //Задание создать файл с тескстом в котором присутствуют числа.Найти все числа , вывести на экран, посчитать сумму, убрать все повторяющиеся числа и снова вывести на экран.
 
 public class Task_48 {
@@ -53,22 +51,22 @@ public class Task_48 {
         return sum;
     }
 
-    public static ArrayList<Integer> deleteCopyNumbers() {
-        ArrayList<Integer> copyList = new ArrayList<>(list);
-        for (int i = 0; i < copyList.size(); i++) {
-            for (int j = i + 1; j < copyList.size(); j++)
-                if (copyList.get(i).equals(copyList.get(j))) {
-                    copyList.remove(j);
-                    j--;
-                }
-        }
-        printWithoutCopyNumbers(copyList);
-        return copyList;
+    public static void  deleteCopyNumbers() {
+        Set<Integer> set =new HashSet<>(list); // преобразуем в множество, чтобы убрать повторения чисел.
+//        ArrayList<Integer> copyList = new ArrayList<>(list);
+//        for (int i = 0; i < copyList.size(); i++) {
+//            for (int j = i + 1; j < copyList.size(); j++)
+//                if (copyList.get(i).equals(copyList.get(j))) {
+//                    copyList.remove(j);
+//                    j--;
+//                }
+//        }
+        printWithoutCopyNumbers(set);
     }
 
-    public static void printWithoutCopyNumbers(ArrayList<Integer> copyList) {
-        System.out.println("Следующий результат после удаления:");
-        for (Integer n : copyList) {
+    public static void printWithoutCopyNumbers(Set<Integer> set) {
+        System.out.println("Следующий результат после преоброзования:");
+        for (Integer n : set) {
             System.out.print("[" + n + "] ");
         }
     }
