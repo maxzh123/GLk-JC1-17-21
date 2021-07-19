@@ -17,4 +17,5 @@ public class ExampleEnum {
         System.out.println(Еда.Каша.getVal1());
 
     }
+
 }
