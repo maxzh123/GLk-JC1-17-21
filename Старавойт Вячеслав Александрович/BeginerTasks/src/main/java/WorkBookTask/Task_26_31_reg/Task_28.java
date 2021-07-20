@@ -17,6 +17,8 @@ public class Task_28 {
         Matcher matcher = pattern.matcher(simples);
         while (matcher.find()){
             stringBuilder.append(simples.charAt(matcher.end() - 1));
+
+
         }
         System.out.println(stringBuilder);
 
