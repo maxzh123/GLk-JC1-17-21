@@ -50,7 +50,7 @@ public class Task47 {
             while (matcherPunctuationMarks.find()) {
                 punctuationMarks++;
             }
-            Pattern patternWords=Pattern.compile("[\\s\\S]?[а-яА-ЯЁ-ё\\-]+[\\s\\S]?");
+            Pattern patternWords=Pattern.compile("([а-яА-ЯЁё]+-[а-яА-ЯЁё]+)|([а-яА-ЯЁё]+)");
             Matcher matcherWords=patternWords.matcher(str);
             while (matcherWords.find()) {
                 countWords++;
