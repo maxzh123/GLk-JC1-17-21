@@ -37,15 +37,15 @@ public class Runner {
         PrintSurnameList(acceptableSurnames);
       }
 
-    static void CreatePersonsList(){
-        for(int i=0; i<100;i++){
-            age=(int)(15+Math.random()*15);
-            name = Name.values()[(int)(Math.random()*10)];
-            surname= Surname.values()[(int)(Math.random()*10)];
-            Person person= new Person (name,surname,age);
+    static void CreatePersonsList() {
+        for (int i = 0; i < 100; i++) {
+            age = (int) (15 + Math.random() * 15);
+            name = Name.values()[(int) (Math.random() * 10)];
+            surname = Surname.values()[(int) (Math.random() * 10)];
+            Person person = new Person(name, surname, age);
             personsList.add(person);
-                   }
-           }
+        }
+    }
 
     static void PrintList(ArrayList<Person> arrayList) {
       arrayList.forEach(System.out::println);
