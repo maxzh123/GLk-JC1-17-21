@@ -6,7 +6,12 @@ import java.util.stream.Stream;
 public class RunMe {
 
     public static void main(String[] args) {
-          Task52 Task52 =  new Task52(10);
+        System.out.println("----------------TASK 52-------------------");
+        Task52 Task52 =  new Task52(10);
+
+        System.out.println("----------------TASK 54-------------------");
+        Task54 Task54 = new Task54(5);
+
     }
 
     public static ArrayList<Integer> CreateCollectionOfRnd(int count) {
