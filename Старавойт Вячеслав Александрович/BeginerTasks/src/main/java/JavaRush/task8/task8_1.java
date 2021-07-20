@@ -1,4 +1,4 @@
-package JavaRush;
+package JavaRush.task8;
 
 import java.util.HashSet;
 import java.util.Set;

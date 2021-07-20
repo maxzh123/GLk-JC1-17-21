@@ -1,4 +1,4 @@
-package JavaRush;
+package JavaRush.task8;
 
 // заменить первые буквы слов  на Заглавные.
 
