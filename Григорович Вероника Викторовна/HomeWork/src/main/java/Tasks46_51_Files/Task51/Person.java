@@ -9,7 +9,7 @@ public class Person {
     String name;
     String surname;
     int age;
-    Person [] people=new Person[10];
+    static Person [] people=new Person[10];
 
     public Person(String name, String surname, int age) {
         this.name = name;
