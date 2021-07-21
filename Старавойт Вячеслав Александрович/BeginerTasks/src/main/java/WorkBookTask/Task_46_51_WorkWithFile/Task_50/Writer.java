@@ -9,6 +9,16 @@ import java.io.IOException;
 
 public class Writer {
 
+    public static void writeInFile2(File file) {
+        // Это писалка. Ей фиолетово что и куда писать. Она просто делает свою работу.
+        Writer2 writer=new Writer2(file);
+        //А здесь мы абстрагируемся от внутренностей писалки, и просто реализуем свою идею.
+        for (int i = 1; i < 11; i++) { // заполняем 10 случайными числами.
+            int random = (int)(Math.random()*1000);
+            writer.write(String.valueOf(random)+" ");
+        }
+        writer.close();
+    }
 
     protected static void writeInFile(File file) {
         FileWriter output = null;
