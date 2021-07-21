@@ -18,7 +18,7 @@ public class Runner {
         creater.сreateFileDirectory(file);// файл который будет содержать список файлов данного каталога.
 
          for (int i =0; i<Creater.array.length;i++){  // запись данных в файлы,будут записаны числа рандомом.
-               Writer.writeInFile2(Creater.array[i]);
+               Writer.writeInFile(Creater.array[i]);
          }
             Reader.readingFile(Creater.array); // передаем в чтение файлы которые нужно прочитать и обработать.
             Writer.writeInFileGlobal(Creater.global); // запись данных в в один общий файл
