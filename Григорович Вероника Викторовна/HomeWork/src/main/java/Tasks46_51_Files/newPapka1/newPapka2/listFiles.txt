@@ -1,8 +1,8 @@
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\GeneralFile.txt 
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\listFiles.txt 
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\newPapka3 
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\newPapka3newFile1.txt 
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\newPapka3newFile2.txt 
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\newPapka3newFile3.txt 
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\newPapka3newFile4.txt 
-C:\Users\WorkBook\GLk-JC1-17-21\Григорович Вероника Викторовна\HomeWork\src\main\java\Tasks46_51_Files\newPapka1\newPapka2\newPapka3newFile5.txt 
+GeneralFile.txt 
+listFiles.txt 
+newPapka3 
+newPapka3newFile1.txt 
+newPapka3newFile2.txt 
+newPapka3newFile3.txt 
+newPapka3newFile4.txt 
+newPapka3newFile5.txt 

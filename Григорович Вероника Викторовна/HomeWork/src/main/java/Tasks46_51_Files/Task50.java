@@ -118,9 +118,9 @@ public class Task50 {
     public static void createListFilesWithAllFilesAndDirectories() {
 
         try(DirectoryStream<Path> files=Files.newDirectoryStream(Path.of("C:\\Users\\WorkBook\\GLk-JC1-17-21\\Григорович Вероника Викторовна\\HomeWork\\src\\main\\java\\Tasks46_51_Files\\newPapka1\\newPapka2"));
-            FileWriter fileWriter = new FileWriter("C:\\Users\\WorkBook\\GLk-JC1-17-21\\Григорович Вероника Викторовна\\HomeWork\\src\\main\\java\\Tasks46_51_Files\\newPapka1\\newPapka2\\listFiles.txt")) {
+            FileWriter fileWriter = new FileWriter("C:\\Users\\WorkBook\\GLk-JC1-17-21\\Григорович Вероника Викторовна\\HomeWork\\src\\main\\java\\Tasks46_51_Files\\newPapka1\\newPapka2\\listFiles.txt", false)) {
             for (Path p : files) {
-                fileWriter.write(String.valueOf(p)+" "+'\n');
+                fileWriter.write(p.getFileName()+" "+'\n');
 
             }
         } catch (IOException e) {
