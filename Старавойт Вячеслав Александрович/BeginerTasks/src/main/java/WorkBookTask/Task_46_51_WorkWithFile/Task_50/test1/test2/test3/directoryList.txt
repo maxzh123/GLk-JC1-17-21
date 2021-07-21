@@ -1,0 +1,8 @@
+directoryList.txt
+ global.txt
+ tes1.txt
+ tes2.txt
+ tes3.txt
+ tes4.txt
+ tes5.txt
+ 

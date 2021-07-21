@@ -1,4 +1,4 @@
-package JavaRush;
+package JavaRush.task8;
 // чтобы возращала true если количество дней с начала года нечетное
 
 import java.util.Date;
