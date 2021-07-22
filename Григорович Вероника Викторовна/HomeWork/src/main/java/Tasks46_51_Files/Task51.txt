@@ -1,0 +1,10 @@
+Person{name='Милана', surname='Нестеренко', age=16} 
+Person{name='Катя', surname='Петрова', age=45} 
+Person{name='Саша', surname='Войтова', age=58} 
+Person{name='Вероника', surname='Нестеренко', age=70} 
+Person{name='Кристина', surname='Козлова', age=11} 
+Person{name='Маша', surname='Савицкая', age=5} 
+Person{name='Паулина', surname='Савицкая', age=13} 
+Person{name='Влада', surname='Козлова', age=32} 
+Person{name='Катя', surname='Антоненко', age=92} 
+Person{name='Катя', surname='Смирнова', age=47} 
