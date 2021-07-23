@@ -1,11 +1,9 @@
 package MultyTreadHomeWork;
 
 import java.util.ArrayList;
-import java.util.concurrent.Callable;
 
-class Thread52 implements Callable {
-    @Override
-    public Long call() {
+public class CompletableFuture52 {
+    public static Long CompletableFuture() {
         System.out.println("Запущен поток :" + Thread.currentThread().getName());
         ArrayList<Integer> arrayList;
         arrayList = RunMe.CreateCollectionOfRnd(10);
