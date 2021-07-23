@@ -6,20 +6,13 @@ import java.util.stream.Stream;
 
 public class Task52CompletableFuture {
     public Task52CompletableFuture(int countThread) throws ExecutionException, InterruptedException {
-        CompletableFuture<Long> longCompletableFuture = null;
+        CompletableFuture<Void> longCompletableFuture = null;
         ArrayList<CompletableFuture> list = new ArrayList<>();
         for (int i = 1; i <= countThread; i++) {
             longCompletableFuture = CompletableFuture
-                    .supplyAsync(CompletableFuture52::CompletableFuture);
-            list.add(longCompletableFuture);
-        }
-        Stream<CompletableFuture> futureStream = list.stream();
-        futureStream.forEach(x -> {
-            try {
-                System.out.println("Среднее значение: " + x.get());
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
-        });
+                    .supplyAsync(CompletableFuture52::CompletableFuture)
+                    .thenAcceptAsync(result -> System.out.println(result));
+        }//.get не вызывается.
+        Thread.sleep(5000);// дождаться результата,т.к потоки-демоны убиваются при окончании программы
     }
 }
