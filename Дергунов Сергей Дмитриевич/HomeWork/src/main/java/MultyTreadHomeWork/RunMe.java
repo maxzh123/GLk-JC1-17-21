@@ -1,24 +1,26 @@
 package MultyTreadHomeWork;
 
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class RunMe {
 
     public static void main(String[] args) {
         System.out.println("----------------TASK 52-------------------");
-        Task52 Task52 =  new Task52(10);
+        Task52 Task52 =  new Task52(10);//
 
         System.out.println("----------------TASK 54-------------------");
         Task54 Task54 = new Task54(5);
-
     }
 
     public static ArrayList<Integer> CreateCollectionOfRnd(int count) {
-        ArrayList <Integer> rndArrayList = new <Integer> ArrayList();
-        for (int i = 0; i < count; i++) {
-            rndArrayList.add((int) Math.round(Math.random() * 1000));
-        }
+        ArrayList <Integer> rndArrayList = (ArrayList<Integer>) new Random()
+                .ints(0,1000)
+                .limit(count)
+                .boxed()
+                .collect(Collectors.toList());
         return rndArrayList;
     }
 
