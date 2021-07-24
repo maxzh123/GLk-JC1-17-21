@@ -1,0 +1,8 @@
+GeneralFile.txt 
+listFiles.txt 
+newPapka3 
+newPapka3newFile1.txt 
+newPapka3newFile2.txt 
+newPapka3newFile3.txt 
+newPapka3newFile4.txt 
+newPapka3newFile5.txt 
