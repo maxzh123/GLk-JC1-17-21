@@ -11,6 +11,7 @@ public class Quest39 {
             arrayList.add((int) (Math.random() * 10));
         }
         Iterator<Integer> numbersIterator = arrayList.iterator();
+        //От це - гарно. И с первого раза.
         while (numbersIterator.hasNext()) {
             Integer next=numbersIterator.next();
             if (next<4){

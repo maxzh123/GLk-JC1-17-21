@@ -12,7 +12,7 @@ public class Quest30 {
     public static int count;
 
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("<p.+>");
+        Pattern pattern = Pattern.compile("<p.+>");//FIXME Нужен квантификатор жадности иначе эта регулярка может нати больше чем надо
         Matcher matcher = pattern.matcher(str);
         System.out.println(str.replaceAll("<p.+>", "<p>"));
         while (matcher.find()) {

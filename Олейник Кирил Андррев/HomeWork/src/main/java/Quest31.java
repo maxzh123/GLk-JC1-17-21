@@ -34,6 +34,7 @@ public class Quest31 {
             stringBuilder.append(string);
             count++;
         }
+        //FIXME нет получения результата. Вы сравниваете половину работы с целой работой
     }
 }
 
