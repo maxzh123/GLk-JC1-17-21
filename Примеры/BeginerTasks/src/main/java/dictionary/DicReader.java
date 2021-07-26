@@ -16,7 +16,7 @@ public class DicReader {
     public static void readDic(String dic){
         InputStream is = DicReader.class.getClassLoader().getResourceAsStream(dic);
         Pattern p= Pattern.compile("^\\s*((?:[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*|\"[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*\"))\\s+\\(.*");
-        Pattern p2= Pattern.compile("\\s*((?:[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*|\"[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*\"))\\s+(\\(.*?)");
+        Pattern p2= Pattern.compile("\\s*((?:[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*|\"[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*\"))\\s+(\\(.*?(?=$|\\s+((?:[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*|\"[А-ЯЁA-Z](?:[А-ЯЁA-Z]|\\s+[А-ЯЁA-Z-]+)*\"))\\s+\\())");
         BufferedReader r=null;
         StringBuilder sb=new StringBuilder();
         try {
