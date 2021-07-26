@@ -12,6 +12,7 @@ public class Quest40 {
         for (int i = 0; i < array.size(); i++) {
             for (int j = i+1; j < array.size(); j++) {
                 if (array.get(i) == array.get(j)) {
+                    //Плохая затея. наступите на кучу граблей перед тем как это начнет работать верно.
                     array.remove(j);
                     j--;
                 }

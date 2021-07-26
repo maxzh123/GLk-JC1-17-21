@@ -10,7 +10,7 @@ public class Quest42 {
         static ArrayList<String> array = new ArrayList<String>();
         public static void main(String[] args) {
             String text = "повторить еще разок это слово еще, комбинация ничем не связанных слов, да у меня нет фантазии, но есть слово повторить";
-            Pattern pattern = Pattern.compile("[а-яА-ЯЁ-ё\\-]+");
+            Pattern pattern = Pattern.compile("[а-яА-ЯЁ-ё\\-]+");//FIXME Ё-ё плохо. правильно Ёё Вспоминаем про таблицу символов если сомневаемся.
             Matcher matcher = pattern.matcher(text);
             while (matcher.find()) {
                 array.add(matcher.group());
@@ -24,7 +24,7 @@ public class Quest42 {
                 for (int j = i + 1; j < copyArray.size(); j++) {
                     if (copyArray.get(i).equals(copyArray.get(j))) {
                         count++;
-                        copyArray.remove(j);
+                        copyArray.remove(j);//Очень плохая затея.
                         j--;
                     }
                 }
