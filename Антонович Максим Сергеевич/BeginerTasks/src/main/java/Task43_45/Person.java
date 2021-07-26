@@ -22,9 +22,9 @@ public class Person {
 
     public void goAut () throws ThePersonIsNotReadyToGoOut{
         if (hatIsOn&shoesAreDressed&clothesAreOn){
-            System.out.println("Можно выйти на улицу " + name);
+            System.out.println( name + " Можно выйти на улицу ");
         } else {
-            throw new ThePersonIsNotReadyToGoOut( "человек " + name + " оденься!!!!! ");
+            throw new ThePersonIsNotReadyToGoOut(name + " оденься!!!!! ");
         }
     }
 }

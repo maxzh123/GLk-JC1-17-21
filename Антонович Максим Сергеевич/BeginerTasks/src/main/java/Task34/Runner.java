@@ -6,7 +6,7 @@ public class Runner {
     n.showInfo();
     Manager i = new Manager(10, "Тема");
     i.showInfo();
-    Direktor g = new Direktor(8888, "Прп");
+    Direktor g = new Direktor(8888, "Гена");
     g.showInfo();
     }
 }
