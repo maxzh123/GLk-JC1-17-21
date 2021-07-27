@@ -9,8 +9,7 @@ public class Task52 {
     static List <Integer> integerList=new ArrayList<Integer>();
 
     public static void main(String[] args) throws InterruptedException {
-        integerList=createList();
-        integerList.forEach(System.out::println);
+
         createThreads();
     }
 
@@ -29,7 +28,7 @@ public class Task52 {
         for (int i = 0; i < 10; i++) {
             threads[i]=new TestThread();
             threads[i].start();
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }
     }
 
