@@ -196,7 +196,8 @@ public class SimpleBot extends TelegramLongPollingBot implements MessageSender{
      * @return имя бота*/
     @Override
     public String getBotUsername() {
-        return "имя бота";
+
+        return "fanctioncoin1_bot";
     }
 
     /**
@@ -205,8 +206,8 @@ public class SimpleBot extends TelegramLongPollingBot implements MessageSender{
      */
     @Override
     public String getBotToken() {
-        return "токен";
+        return "1815275762:AAEMt7c49D5e5VgLWcDlQ34XZB_CCbsR2Rg";} // я подставил токен
     }
 
 
-}
+
