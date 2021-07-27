@@ -1,14 +1,26 @@
 package MultyTreadHomeWork;
 
+import java.util.ArrayList;
+import java.util.concurrent.*;
+import java.util.stream.Stream;
+
 public class Task52 {
-       public Task52(int countThread) {
-           String nameTread;
+    public Task52(int countThread) {
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+        ArrayList<Future> list = new ArrayList<>();
+        Callable callable = new Thread52();
         for (int i = 1; i <= countThread; i++) {
-            Thread52 t1 = new Thread52();
-            nameTread = "My thread for t.52 " + i;
-            t1.setName(nameTread);
-            System.out.println("Создан поток: "+nameTread);
-            t1.start();
+            Future future = executor.submit(callable);
+            list.add(future);
         }
+        Stream<Future> futureStream = list.stream();
+        futureStream.forEach(x -> {
+            try {
+                System.out.println("Среднее значение: " + x.get());
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+        });
+        executor.shutdown();
     }
 }
