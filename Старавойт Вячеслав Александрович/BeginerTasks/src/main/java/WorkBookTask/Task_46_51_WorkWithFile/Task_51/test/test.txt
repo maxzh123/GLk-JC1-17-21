@@ -1,0 +1,10 @@
+Person{name='Николай', surname='Старавойт', age=61} 
+Person{name='Владимир', surname='Петров', age=19} 
+Person{name='Вячеслав', surname='Васильев', age=97} 
+Person{name='Владимир', surname='Васильев', age=28} 
+Person{name='Иван', surname='Александров', age=47} 
+Person{name='Михаил', surname='Иванов', age=69} 
+Person{name='Владимир', surname='Федоров', age=46} 
+Person{name='Михаил', surname='Федоров', age=10} 
+Person{name='Николай', surname='Старавойт', age=56} 
+Person{name='Александр', surname='Старавойт', age=7} 

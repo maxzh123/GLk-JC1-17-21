@@ -8,7 +8,7 @@ public class Garage<TYPE extends Vehicle> {
     public static void main(String[] args) {
     Car car=new Car("Volkswagen");
     Motorcycle moto = new Motorcycle("Suzuki GSX-1000");
-    Boat boat = new Boat("Аврора");
+//    Boat boat = new Boat("Аврора");
     Garage<Motorcycle> motoG=new Garage<Motorcycle>();
     Garage<Car> carG=new Garage<Car>();
     Garage<Vehicle> justGarage=new Garage<Vehicle>();
@@ -22,7 +22,7 @@ public class Garage<TYPE extends Vehicle> {
 
         System.out.println(car);
         System.out.println(moto);
-        System.out.println(boat);
+        //System.out.println(boat);
         System.out.println(motoG);
 
     }
