@@ -31,12 +31,12 @@ public class Runner {
 
         File file =new File(ConfigScoring.PATH); // в скобках указали директрию из ConfigScoring куда создавать файл.
         CreatorFile.createFiles(file); // создаем файл куда будем записывать результат поиска.
-        fileEncyclopedia =new File(file,ConfigScoring.NAME_ENCYCLOPEDIA); // создаем Тип <Файл> для нашей энцеклопедии.
-
+        // Че это за порнография? fileEncyclopedia =new File(file,ConfigScoring.NAME_ENCYCLOPEDIA); // создаем Тип <Файл> для нашей энцеклопедии.
        // word = WordInput.readerWordInput(); // делаем запрос на ввод слова, и обработки.
-          word ="АМПЛУА"; // для проверки и отладки
+          word ="ОМПЛУА"; // для проверки и отладки
         try {
-            ReaderBook.readingFile(fileEncyclopedia); // будем читать нашу энциклопедию и производить всю магию.
+            ReaderBook.readingFile(Runner.class.getClassLoader().getResourceAsStream(ConfigScoring.NAME_ENCYCLOPEDIA1)); // будем читать нашу энциклопедию и производить всю магию.
+            ReaderBook.readingFile(Runner.class.getClassLoader().getResourceAsStream(ConfigScoring.NAME_ENCYCLOPEDIA2)); // будем читать нашу энциклопедию и производить всю магию.
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
