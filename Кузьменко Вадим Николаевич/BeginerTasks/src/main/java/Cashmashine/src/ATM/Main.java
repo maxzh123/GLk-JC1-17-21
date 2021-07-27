@@ -8,21 +8,31 @@ public class Main {
             Thread thread1 = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    atm.withdraw("Серега", 300);
+                    atm.withdraw("Андрей", 300);
                 }
             });
 
             Thread thread2 = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    atm.withdraw("Лешка", 500);
+                    try {
+                        thread1.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    atm.withdraw("Алексей", 500);
                 }
             });
 
             Thread thread3 = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    atm.withdraw("Изя", 400);
+                    try {
+                        thread2.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    atm.withdraw("Лошка", 400);
                 }
             });
 
