@@ -6,17 +6,18 @@ public class Task_52 {
 
 static ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
           createThread(10);
     }
 
 
-    static void createThread(int count){
+    static void createThread(int count) throws InterruptedException {
             NewThread[] newThreads = new NewThread[count];
             for(int i =0; i < count; i++){
                 newThreads[i]=new NewThread();
                 newThreads[i].start();
+                Thread.sleep(500);
         }
     }
     static ArrayList<Integer> createArrayList(){
