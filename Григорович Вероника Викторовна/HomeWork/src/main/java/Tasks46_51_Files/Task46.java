@@ -10,7 +10,7 @@ public class Task46 {
 
 
     public static void main(String[] args) throws IOException {
-        try (DirectoryStream<Path> path = Files.newDirectoryStream(p)) {
+       try (DirectoryStream<Path> path = Files.newDirectoryStream(p)) {
             for (Path paths : path) {
                 if (Files.isDirectory(paths)) {
                     System.out.println("Это директория: " + paths);
@@ -18,7 +18,7 @@ public class Task46 {
                 if (Files.isRegularFile(paths)) {
                     System.out.println("Это файл: " + paths);
                 }
-            }
-        }
+           }
+       }
     }
 }

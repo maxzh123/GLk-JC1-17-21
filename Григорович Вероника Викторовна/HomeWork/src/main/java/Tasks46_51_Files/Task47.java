@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 public class Task47 {
         public static int countWords; //количество слов в тексте
-        public static int punctuationMarks; //количество знаков препинания
+       public static int punctuationMarks; //количество знаков препинания
         static List<String> strings;
         static Path path = Path.of("C:\\Users\\WorkBook\\GLk-JC1-17-21\\Григорович Вероника Викторовна\\HomeWork\\src\\main\\java\\Tasks46_51_Files\\sample47.txt");
         public static String str = "\"На какое дело хочу покуситься и в то же время каких пустяков боюсь! — подумал он с странною улыбкой.\n" +
@@ -27,8 +27,8 @@ public class Task47 {
             strings = readFile();
             // for(String str : strings) { //проверяла правильно ли выводится
             //       System.out.println(str);
-            //  }
-            countWordsAndPunctuationMarks(strings);
+           //  }
+           countWordsAndPunctuationMarks(strings);
         }
 
         public static void writeSomething() { //в этом методе я записывала строку в sample.txt
@@ -37,7 +37,7 @@ public class Task47 {
             } catch (Exception e) {
                 System.out.println("Что то не так " + e);
             }
-        }
+       }
 
         public static List<String> readFile() throws IOException {
             return strings = Files.readAllLines(Path.of(String.valueOf(path)));
@@ -45,8 +45,8 @@ public class Task47 {
 
         public static void countWordsAndPunctuationMarks(List<String> strings) {
             for (String str : strings) {
-                Pattern patternPunctuationMarks = Pattern.compile("\\.{3}|,|;|:|—|!|\\.|\\?|\"");
-                Matcher matcherPunctuationMarks = patternPunctuationMarks.matcher(str);
+              Pattern patternPunctuationMarks = Pattern.compile("\\.{3}|,|;|:|—|!|\\.|\\?|\"");
+               Matcher matcherPunctuationMarks = patternPunctuationMarks.matcher(str);
                 while (matcherPunctuationMarks.find()) {
                     punctuationMarks++;
                 }
@@ -56,7 +56,7 @@ public class Task47 {
                     countWords++;
                 }
             }
-            System.out.println("Количество слов в тексте: "+countWords+". Количество знаков препинания в тексте "+punctuationMarks);
+           System.out.println("Количество слов в тексте: "+countWords+". Количество знаков препинания в тексте "+punctuationMarks);
         }
     }
 
