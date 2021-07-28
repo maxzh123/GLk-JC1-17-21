@@ -12,13 +12,14 @@ static ArrayList<String> nextPersonList=new ArrayList<String>();
     public static void main(String[] args) {
         Person person = new Person("name", "surname", 1);
         addToList(person);
+        System.out.println(person);
         Stream<Person> personStream=personList.stream();
          nextPersonList= (ArrayList<String>) personStream //мне так предложила сделать джава, приведение типов, как оказалось все правильно
                 .filter(person1 -> person1.age<21)
                 .peek(System.out::println)
                 .sorted(Comparator.comparing(person1 -> person1.surname))
-                .sorted(Comparator.comparing(person1 -> person1.name))
-                .limit(4)
+               .sorted(Comparator.comparing(person1 -> person1.name))
+               .limit(4)
                 .map(person1 -> person1.surname)
                 .collect(Collectors.toList());
         System.out.println("___________________________");
