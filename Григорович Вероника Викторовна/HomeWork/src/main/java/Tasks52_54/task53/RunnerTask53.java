@@ -9,9 +9,9 @@ public class RunnerTask53 {
             Thread t=new Thread(testTh);
             t.setName("я поток номер "+i);
             t.setDaemon(false);
-            t.start();
             //Thread.sleep(1000);
         }
+
     }
 
 
