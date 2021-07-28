@@ -4,9 +4,9 @@ package Tasks61_63;
 import java.util.Random;
 
 public class Person {
-    Surnames[] surnames=Surnames.values();
-    Names[] names=Names.values();
-    Random random=new Random();
+
+  //  Names[] names=Names.values();
+
     String name;
     String surname;
     int age;
@@ -21,7 +21,7 @@ public class Person {
 
     public Person generateNPerson() {
         for (int i=0; i< people.length; i++) {
-           return people[i]=new Person(String.valueOf(names[random.nextInt(names.length)]), String.valueOf(surnames[random.nextInt(surnames.length)]), (int) ((Math.random() * 15) + 15));
+           return people[i]=new Person(String.valueOf(Names.getNames()), String.valueOf(Surnames.getSurnames()), (int) ((Math.random() * 15) + 15));
 
         }
         return null;
