@@ -8,7 +8,7 @@ public class Cat {
         if (food.foodName==null) {
             throw new Exception();
         } else {
-            System.out.println("Кот накормлен");
+            System.out.println("Кот накормлен+");
         }
 
     }
