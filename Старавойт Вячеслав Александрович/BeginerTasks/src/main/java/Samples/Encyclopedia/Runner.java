@@ -25,15 +25,13 @@ public class Runner {
 
  private static final Scanner scanner =new Scanner(System.in);
  static String word;
- static File fileEncyclopedia;
 
     public static void main(String[] args) {
 
-        File file =new File(ConfigScoring.PATH); // в скобках указали директрию из ConfigScoring куда создавать файл.
+        File file =new File(ConfigScoring.PATH);
         CreatorFile.createFiles(file); // создаем файл куда будем записывать результат поиска.
-        // Че это за порнография? fileEncyclopedia =new File(file,ConfigScoring.NAME_ENCYCLOPEDIA); // создаем Тип <Файл> для нашей энцеклопедии.
        // word = WordInput.readerWordInput(); // делаем запрос на ввод слова, и обработки.
-          word ="ОМПЛУА"; // для проверки и отладки
+          word ="ОМПУЛА"; // для проверки и отладки
         try {
             ReaderBook.readingFile(Runner.class.getClassLoader().getResourceAsStream(ConfigScoring.NAME_ENCYCLOPEDIA1)); // будем читать нашу энциклопедию и производить всю магию.
             ReaderBook.readingFile(Runner.class.getClassLoader().getResourceAsStream(ConfigScoring.NAME_ENCYCLOPEDIA2)); // будем читать нашу энциклопедию и производить всю магию.
