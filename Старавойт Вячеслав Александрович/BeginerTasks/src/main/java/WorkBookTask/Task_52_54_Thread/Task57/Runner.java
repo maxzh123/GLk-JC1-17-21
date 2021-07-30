@@ -10,6 +10,7 @@ public class Runner {
     public static void main(String[] args) {
         createThreadProducer(3); // 3 потока производителя
         createThreadConsumer(2); // 2 потока-потребителя
+
     }
 
     private static void createThreadProducer(int count) {
@@ -30,8 +31,19 @@ public class Runner {
             tc.start();
         }
     }
-//    static synchronized int getQueue(){   //пусть очередь соблюдают когда будут брать.
-//        return queue;
-//    }
+    static  void  ManagerThread(String s) {
 
-}
+            if (s.equals("take") && queue > 0) { // если элементы есть в очереди то забрать
+                System.out.println(Thread.currentThread().getName() + " я забрал элемент, осталось в очереди" + queue--);
+                count--;}
+            else if(s.equals("add")&& queue<=80){
+                System.out.println(Thread.currentThread().getName()+" я положил элемент, всего  в очереди" + queue++ );
+               count--;
+            } else {
+                try {
+                    Thread.sleep(5); //спать потом просыпаться проверять нет ли того чего можно забрать или отдать.
+                } catch (InterruptedException e) {
+                    e.printStackTrace(); }
+            }
+        }
+    }
