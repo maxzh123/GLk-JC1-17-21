@@ -1,7 +1,7 @@
 package Tasks52_54.task53;
 
 public class RunnerTask53 {
-    //static Thread [] threads=new Thread[10];
+    static Thread [] threads=new Thread[10];
 
     public static void main(String[] args) throws InterruptedException {
         TestTh testTh=new TestTh();
@@ -9,7 +9,8 @@ public class RunnerTask53 {
             Thread t=new Thread(testTh);
             t.setName("я поток номер "+i);
             t.setDaemon(false);
-            //Thread.sleep(1000);
+            t.start();
+            Thread.sleep(1000);
         }
 
     }
