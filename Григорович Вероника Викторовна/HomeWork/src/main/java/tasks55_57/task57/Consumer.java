@@ -9,12 +9,13 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-
+        while (Runner.countAll < 10000) {
             for (int i = 0; i < Producer.addRandomNumber; i++) {
                 queue1.get();
             }
         }
     }
+}
 
 
 

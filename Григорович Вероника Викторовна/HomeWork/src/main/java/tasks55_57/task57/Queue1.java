@@ -11,7 +11,8 @@ public class Queue1 {
             }
         }
         count--;
-        System.out.println(Thread.currentThread().getName()+" Потребитель взял товар, товаров осталось: "+count);
+        System.out.println(Thread.currentThread().getName()+" Потребитель взял товар, товаров осталось: "+count+" "+Runner.countAll);
+        Runner.countAll++;
         notify();
     }
     public synchronized void put() {
@@ -24,7 +25,8 @@ public class Queue1 {
         }
         if (count<=80) {
         count++;
-        System.out.println(Thread.currentThread().getName()+" Производитель добавил товар, итого товара: "+count);
+        System.out.println(Thread.currentThread().getName()+" Производитель добавил товар, итого товара: "+count+" "+Runner.countAll);
+        Runner.countAll++;
        notify();
     }
 }

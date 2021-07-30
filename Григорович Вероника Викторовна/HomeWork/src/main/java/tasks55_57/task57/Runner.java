@@ -3,7 +3,7 @@ package tasks55_57.task57;
 
 public class Runner {
 
-
+static volatile int countAll=0;
     public static void main(String[] args) {
         Queue1 queue1=new Queue1();
         createProducer(3, queue1);

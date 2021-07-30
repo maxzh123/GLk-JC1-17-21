@@ -10,11 +10,13 @@ public class Producer implements Runnable {
 
     @Override
     public void run() {
+        while (Runner.countAll < 10000) {
             addRandomNumber = (int) (Math.random() * 100 + 1);
             for (int i = 0; i < addRandomNumber; i++) {
                 queue1.put();
             }
         }
     }
+}
 
 
