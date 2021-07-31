@@ -10,7 +10,7 @@ static volatile int countAll=0;
         createConsumer(2, queue1);
     }
 
-    public static void createProducer(int count, Queue1 queue1) {
+    public static void createProducer(int count, Queue1 queue1)  {
         Producer producer=new Producer(queue1);
         for (int i = 0; i < count; i++) {
             Thread t=new Thread(producer);
@@ -20,7 +20,7 @@ static volatile int countAll=0;
         }
     }
 
-    public static void createConsumer(int count, Queue1 queue1) {
+    public static void createConsumer(int count, Queue1 queue1)  {
         Consumer consumer=new Consumer(queue1);
         for (int i = 0; i < count; i++) {
             Thread t=new Thread(consumer);

@@ -1,7 +1,7 @@
 package tasks55_57.task57;
 
 public class Queue1 {
-    public int count=200;
+    public static volatile int count=200;
     public synchronized void get() {
         while (count<1) {
             try {
@@ -11,9 +11,10 @@ public class Queue1 {
             }
         }
         count--;
-        System.out.println(Thread.currentThread().getName()+" Потребитель взял товар, товаров осталось: "+count+" "+Runner.countAll);
         Runner.countAll++;
+        System.out.println(Thread.currentThread().getName()+" Потребитель взял товар, товаров осталось: "+count+" "+Runner.countAll);
         notify();
+
     }
     public synchronized void put() {
         while (count>=100) {
@@ -25,9 +26,9 @@ public class Queue1 {
         }
         if (count<=80) {
         count++;
-        System.out.println(Thread.currentThread().getName()+" Производитель добавил товар, итого товара: "+count+" "+Runner.countAll);
         Runner.countAll++;
-       notify();
+        System.out.println(Thread.currentThread().getName()+" Производитель добавил товар, итого товара: "+count+" "+Runner.countAll);
+        notify();
     }
 }
 }
