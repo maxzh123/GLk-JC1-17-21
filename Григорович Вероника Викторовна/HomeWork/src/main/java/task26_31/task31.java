@@ -44,7 +44,5 @@ public class task31 {
             stringBuilder.append(string);
             count++;
         }
-
-
     }
 }

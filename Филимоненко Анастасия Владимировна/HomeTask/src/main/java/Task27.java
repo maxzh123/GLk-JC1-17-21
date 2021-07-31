@@ -7,7 +7,7 @@ public class Task27 {
         int n =0;
         Scanner scanner = new Scanner(System.in);
         String s ="Чтобы воспитаться и не стоять ниже уровня среды, в которую попал, недостаточно прочесть Пиквика. Тут нужен беспрерывный дневной и ночной труд, вечное чтение, штудировка воли.";
-        Pattern pattern = Pattern.compile("[а-яЁёА-Я0-9\\-\\_]+[а-яА-ЯЁё0-9]+");
+        Pattern pattern = Pattern.compile("[А-Яа-яЁё][А-Яа-яЁё-]+");
         Matcher matcher = pattern.matcher(s);
         while (matcher.find()){
             n++;

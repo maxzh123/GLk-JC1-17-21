@@ -1,24 +1,21 @@
 package MultyTreadHomeWork;
 
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
 
-class Thread52 extends java.lang.Thread {
+class Thread52 implements Callable {
     @Override
-    public void run(){
+    public Long call() {
+        System.out.println("Запущен поток :" + Thread.currentThread().getName());
         ArrayList<Integer> arrayList;
         arrayList = RunMe.CreateCollectionOfRnd(10);
         try {
-            Thread.sleep(Math.round(Math.random()*2000));//Паузу создал чтобы разнести потоки по времени.
+            Thread.sleep(Math.round(Math.random() * 2000));//Паузу создал чтобы разнести потоки по времени.
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Среднее значение для потока " + getName() + " is - " + RunMe.CalculateAverage(arrayList));
-        try {
-            Thread.sleep(Math.round(Math.random()*2000));//Паузу создал чтобы разнести потоки по времени.
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Поток " + getName() + " закончил работу.");
+        System.out.println("Поток " + Thread.currentThread().getName() + " закончил работу.");
+        return RunMe.CalculateAverage(arrayList);
     }
 }
 
