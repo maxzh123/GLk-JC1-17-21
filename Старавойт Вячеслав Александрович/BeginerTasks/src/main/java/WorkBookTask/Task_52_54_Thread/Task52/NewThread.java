@@ -6,7 +6,7 @@ public class NewThread extends Thread {
 
     public void run(){
        Task_52.arrayList = Task_52.createArrayList();
-       Task_52.arrayList.forEach(System.out::println); //пример с лямбдой то есть на тебе колецию сделай мне вывод
+       Task_52.arrayList.forEach(System.out::print); //пример с лямбдой то есть на тебе колецию сделай мне вывод
 //       for (Integer n: Task_52.arrayList){
 //           System.out.print("["+n+"] ");}
 
