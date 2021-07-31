@@ -8,6 +8,7 @@ public class Queue1 {
                 wait();
             }
             catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
         count--;
@@ -22,6 +23,7 @@ public class Queue1 {
                 wait();
             }
             catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
         if (count<=80) {
