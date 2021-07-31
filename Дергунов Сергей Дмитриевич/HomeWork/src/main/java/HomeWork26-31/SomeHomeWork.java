@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import javax.swing.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,19 +8,20 @@ public class SomeHomeWork {
 
     public static void main(String[] args) {
         // write your code here
-
-        String string = "<p id=”p1”> старый пень,  какое  тебе программирование0F, с  ТебяCD  , песок уже сыпется. <pfsf> ";
-        //   Scanner name = new Scanner(System.in);
-        System.out.println("Введите произвольную строку разумной длины, не увлекайтесь. Не \"Войну и мир\" пишите...");
+        if (JOptionPane.showConfirmDialog(null, "Начнем?") == JOptionPane.YES_OPTION) {
+            String string = "<p id=”p1”> старый пень,  какое  тебе программирование0F, с  ТебяCD  , песок уже сыпется. <pfsf> ";
+            //   Scanner name = new Scanner(System.in);
+            System.out.println("Введите произвольную строку разумной длины, не увлекайтесь. Не \"Войну и мир\" пишите...");
 //        String string = name.nextLine();
-        System.out.println("Исходная строка: \n" + string);
-        System.out.println("\nДлина строки: " + string.length());
-        System.out.println("Количество знаков препинания : " + Punctuation(string));
-        System.out.println("Количество слов: " + WordCount(string));
-        System.out.println("Строка из последних символов слов: " + LastSymbols(string));
-        System.out.println("Шестнадцатеричные числа: " + FindHEX(string));
-        System.out.println("Исходная строка: \n" + string);
-        System.out.println("Скорректированная строка: \n" + FindAndReplace(string));
+            System.out.println("Исходная строка: \n" + string);
+            System.out.println("\nДлина строки: " + string.length());
+            System.out.println("Количество знаков препинания : " + Punctuation(string));
+            System.out.println("Количество слов: " + WordCount(string));
+            System.out.println("Строка из последних символов слов: " + LastSymbols(string));
+            System.out.println("Шестнадцатеричные числа: " + FindHEX(string));
+            System.out.println("Исходная строка: \n" + string);
+            System.out.println("Скорректированная строка: \n" + FindAndReplace(string));
+        }
     }
 
     //Задача 26
@@ -37,7 +38,7 @@ public class SomeHomeWork {
     //Задача 27
     public static int WordCount(String string) {
         count = 0;
-        Pattern space = Pattern.compile("\\W?[0-9a-zA-Zа-яА-Я]+\\W?");
+        Pattern space = Pattern.compile("\\W?[0-9a-zA-Zа-яА-ЯЁё]+\\W?");
         match = space.matcher(string);
         while (match.find()) {
    //         System.out.println(string.substring(match.start(),match.end()));
