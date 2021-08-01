@@ -1,41 +1,40 @@
 package tasks55_57.task57withQueue;
 
 
-import java.util.Queue;
+import java.util.ArrayDeque;
 
 public class ProducerNew implements Runnable {
 
-    Queue<Integer> integerQueue;
+    ArrayDeque<Integer> integerArrayDeque;
     static int addRandomNumber;
 
-    public ProducerNew(Queue<Integer> integerQueue) {
-        this.integerQueue=integerQueue;
+    public ProducerNew(ArrayDeque<Integer> integerArrayDeque) {
+        this.integerArrayDeque = integerArrayDeque;
 
     }
 
 
     @Override
     public void run() {
-        synchronized (integerQueue) {
-            while (RunnerNew.countAll.get() < 10000) {
-                while (integerQueue.size() >= 100) {
+        synchronized (integerArrayDeque) {
+            while (RunnerNew.countAll.get() < 1000) {
+                while (integerArrayDeque.size() >= 100) {
                     try {
-                        integerQueue.wait();
+                        integerArrayDeque.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                if (integerQueue.size() <= 80) {
+           //     if (integerArrayDeque.size() <= 80) {
                     addRandomNumber = (int) (Math.random() * 100 + 1);
-                    integerQueue.offer(addRandomNumber);
+                integerArrayDeque.offer(addRandomNumber);
                     RunnerNew.countAll.addAndGet(1);
-                    System.out.println(Thread.currentThread().getName() + " Производитель добавил товар, итого товара: " + integerQueue.size() + " " + RunnerNew.countAll);
-                    integerQueue.notify();
-
-
+                    System.out.println(Thread.currentThread().getName() + " Производитель добавил товар, итого товара: " + integerArrayDeque.size() + " " + RunnerNew.countAll);
+                    integerArrayDeque.notify();
                 }
 
             }
         }
-    }
+ //   }
 }
+

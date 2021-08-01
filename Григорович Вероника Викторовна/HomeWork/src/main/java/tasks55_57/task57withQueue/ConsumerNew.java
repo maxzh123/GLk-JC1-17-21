@@ -1,29 +1,32 @@
 package tasks55_57.task57withQueue;
 
-import java.util.Queue;
+import java.util.ArrayDeque;
 
 public class ConsumerNew implements Runnable{
-    Queue<Integer> integerQueue;
+    ArrayDeque<Integer> integerArrayDeque;
 
-    public ConsumerNew(Queue<Integer> integerQueue) {
-        this.integerQueue=integerQueue;
+    public ConsumerNew(ArrayDeque<Integer> integerArrayDeque) {
+        this.integerArrayDeque=integerArrayDeque;
 
     }
     @Override
     public void run() {
-            synchronized (integerQueue) {
-                while (RunnerNew.countAll.get() < 10000) {
-                    while (integerQueue.size() == 0) {
+           synchronized (integerArrayDeque) {
+                while (RunnerNew.countAll.get() < 1000) {
+                    while (integerArrayDeque.size() == 0) {
                         try {
-                            integerQueue.wait();
+                            integerArrayDeque.wait();
+                            Thread.sleep(10);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
-                    integerQueue.remove();
-                    System.out.println(Thread.currentThread().getName()+" Потребитель взял товар, товаров осталось: "+integerQueue.size()+" "+ RunnerNew.countAll);
-                    RunnerNew.countAll.addAndGet(1);;
-                    integerQueue.notify();
+
+                    integerArrayDeque.remove();
+                    System.out.println(Thread.currentThread().getName()+" Потребитель взял товар, товаров осталось: "+integerArrayDeque.size()+" "+ RunnerNew.countAll);
+                    RunnerNew.countAll.addAndGet(1);
+                    integerArrayDeque.notify();
+
                 }
             }
         }
