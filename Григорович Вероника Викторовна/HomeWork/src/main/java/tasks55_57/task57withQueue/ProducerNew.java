@@ -16,7 +16,7 @@ public class ProducerNew implements Runnable {
 
     @Override
     public void run() {
-        synchronized (integerArrayDeque) {
+        synchronized (this) {
             while (RunnerNew.countAll.get() < 1000) {
                 while (integerArrayDeque.size() >= 100) {
                     try {
@@ -30,7 +30,7 @@ public class ProducerNew implements Runnable {
                 integerArrayDeque.offer(addRandomNumber);
                     RunnerNew.countAll.addAndGet(1);
                     System.out.println(Thread.currentThread().getName() + " Производитель добавил товар, итого товара: " + integerArrayDeque.size() + " " + RunnerNew.countAll);
-                    integerArrayDeque.notify();
+                integerArrayDeque.notify();
                 }
 
             }

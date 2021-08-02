@@ -11,12 +11,12 @@ public class ConsumerNew implements Runnable{
     }
     @Override
     public void run() {
-           synchronized (integerArrayDeque) {
+           synchronized (this) {
                 while (RunnerNew.countAll.get() < 1000) {
                     while (integerArrayDeque.size() == 0) {
                         try {
                             integerArrayDeque.wait();
-                            Thread.sleep(10);
+
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
