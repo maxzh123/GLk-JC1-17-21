@@ -1,26 +1,32 @@
 package MultyTreadHomeWork;
 
+import java.util.concurrent.Callable;
+
+import static MultyTreadHomeWork.Task57.GetMyStuff;
 import static MultyTreadHomeWork.Task57.stuffCountConsumer;
 
-public class Consumer extends java.lang.Thread {
+public class Consumer implements Callable<Integer> {
 
     @Override
-    public void run() {
+    public Integer call()  {
         int count = 0;
-        System.out.println("Поток потребитель запущен -> " + getName());
-        while (!Task57.produceEnd||Task57.GetListLength()>0) {
+        Integer temp;
+        System.out.println("Поток потребитель запущен -> " + Thread.currentThread().getName());
+        while (!Task57.produceEnd || Task57.GetListLength() > 0) {
             if (Task57.consume) {
-                if (Task57.GetMyStuff()) {
+                temp = GetMyStuff();
+                if (( temp!= null)) {
                     stuffCountConsumer.addAndGet(1);
                     count++;
                 }
             }
             try {
-                Thread.sleep(50);
+                Thread.sleep((int) (Math.random() * 50)+10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
-        System.out.printf("Поток потребитель %s закончил работу. Потребил: %d\n", getName(), count);
+       }
+    System.out.printf("Поток потребитель %s закончил работу. \n", Thread.currentThread().getName());
+        return count;//Возвращаем в основной поток счетчик
     }
 }
