@@ -14,12 +14,11 @@ public class Queue1 {
             count--;
             Runner.countAll++;
             System.out.println(Thread.currentThread().getName() + " Потребитель взял товар, товаров осталось: " + count + " " + Runner.countAll);
-            this.notify();
+        this.notify();
         }
 
 
     public synchronized void put() {
-
             while (count >= 100) {
                 try {
                     this.wait();

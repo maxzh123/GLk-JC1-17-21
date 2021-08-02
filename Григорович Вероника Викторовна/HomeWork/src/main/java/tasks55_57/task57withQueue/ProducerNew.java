@@ -16,11 +16,11 @@ public class ProducerNew implements Runnable {
 
     @Override
     public void run() {
-        synchronized (this) {
+        synchronized (this.integerArrayDeque) {
             while (RunnerNew.countAll.get() < 1000) {
                 while (integerArrayDeque.size() >= 100) {
                     try {
-                        wait();
+                        this.integerArrayDeque.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -30,7 +30,7 @@ public class ProducerNew implements Runnable {
                 integerArrayDeque.offer(addRandomNumber);
                     RunnerNew.countAll.addAndGet(1);
                     System.out.println(Thread.currentThread().getName() + " Производитель добавил товар, итого товара: " + integerArrayDeque.size() + " " + RunnerNew.countAll);
-                Thread.currentThread().notify();
+                this.integerArrayDeque.notify();
                 }
 
             }
