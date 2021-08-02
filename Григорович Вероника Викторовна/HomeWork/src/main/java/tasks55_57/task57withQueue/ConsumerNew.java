@@ -11,12 +11,12 @@ public class ConsumerNew implements Runnable{
     }
     @Override
     public void run() {
-           synchronized (integerArrayDeque) {
+           synchronized (this) {
                 while (RunnerNew.countAll.get() < 1000) {
                     while (integerArrayDeque.size() == 0) {
                         try {
-                            integerArrayDeque.wait();
-                            Thread.sleep(10);
+                            wait();
+
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -25,7 +25,7 @@ public class ConsumerNew implements Runnable{
                     integerArrayDeque.remove();
                     System.out.println(Thread.currentThread().getName()+" Потребитель взял товар, товаров осталось: "+integerArrayDeque.size()+" "+ RunnerNew.countAll);
                     RunnerNew.countAll.addAndGet(1);
-                    integerArrayDeque.notify();
+                    Thread.currentThread().notify();
 
                 }
             }
