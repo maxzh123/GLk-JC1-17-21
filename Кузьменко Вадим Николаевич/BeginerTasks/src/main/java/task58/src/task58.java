@@ -30,6 +30,7 @@ import java.io.Writer;
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(3);
+        CountDownLatch countDownLatch = new CountDownLatch(10);
         List<Future<String>> list = new ArrayList<>();
         Callable<String>callable = new MyCallable();
         for (int i = 0; i < 10; i++) {
@@ -45,6 +46,8 @@ import java.io.Writer;
             }
             executor.shutdown();
             System.out.println(resultList);
+            countDownLatch.countDown();
+
         }
     }
 
