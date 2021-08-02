@@ -4,6 +4,7 @@ import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static task57Example.Runner.INIT;
 import static task57Example.Runner.LIMIT;
 
 public class Consumer implements Runnable{
@@ -20,9 +21,9 @@ public class Consumer implements Runnable{
 
     @Override
     public void run() {
-        while (consumed.get()<LIMIT || q.size()>0){
+        while (consumed.get()<(LIMIT+INIT) || q.size()>0){
             while(q.size()==0){
-                if (consumed.get()>=LIMIT && q.size()==0) return;
+                if (consumed.get()>=(LIMIT+INIT) && q.size()==0) return;
                 waitForData();
             }
             Integer i=q.pool();
