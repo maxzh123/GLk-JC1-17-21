@@ -5,11 +5,13 @@ import java.util.concurrent.Executors;
 
 public class Runner {
     public static final int LIMIT=1000;
+    public static final int INIT=200;
 
     public static void main(String[] args) {
         final int prodCount=3;
         final int consCount=2;
         DummyQueue q=new DummyQueue();
+        q.initWithVals(INIT);
         ExecutorService executor;
         executor = Executors.newFixedThreadPool(prodCount+consCount);
         for(int i=0;i<prodCount;i++){
