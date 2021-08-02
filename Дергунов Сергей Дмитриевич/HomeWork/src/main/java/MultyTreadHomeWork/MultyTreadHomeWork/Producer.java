@@ -9,22 +9,17 @@ public class Producer implements Callable {
     @Override
     public Object call()  {
         int count = 0;
+        String nameThread = Thread.currentThread().getName();
         System.out.println("Поток производитель запущен " + Thread.currentThread().getName());
-        while (!Task57.produceEnd) {
-            if (Task57.produce) {
+        while (!produceEnd) {
+            if (produce) {
                 if (stuffCount.addAndGet(1) > MAX_PRODUCE) {
-                    System.out.println("--->  "+ stuffCount.get());//ни разу не попал на эту строку((
+                    stuffCount.decrementAndGet();//
                     break;
                 }
-                int stuff = (int) (Math.random() * 100) + 1;
-                AddStuff(stuff);
+                AddStuff(stuffCount.get());
                 count++;
-            } else {
-            }
-            try {
-                Thread.sleep((int) (Math.random() * 50));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.printf("%s --> %d в конец очереди--> положил всего-> %d\n",nameThread,stuffCount.get(),count);
             }
         }
         System.out.printf("Поток производитель %s закончил работу. \n", Thread.currentThread().getName());
