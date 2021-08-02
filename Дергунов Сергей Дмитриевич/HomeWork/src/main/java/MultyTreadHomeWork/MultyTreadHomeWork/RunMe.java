@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class RunMe {
 
     public static void main(String[] args) {
-        if (JOptionPane.showConfirmDialog(null, "Запускаем задачу 52,52 CompleatableFuture,54?") == JOptionPane.YES_OPTION) {
+        if (JOptionPane.showConfirmDialog(null, "Запускаем задачу 52,52 CompletableFuture,54?") == JOptionPane.YES_OPTION) {
             System.out.println("----------------TASK 52-------------------");
             Task52 Task52 = new Task52(10);
 
