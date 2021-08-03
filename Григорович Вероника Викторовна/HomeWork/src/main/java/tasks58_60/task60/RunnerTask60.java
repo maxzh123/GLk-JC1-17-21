@@ -16,7 +16,7 @@ import static tasks58_60.task60.FileCreatorTask60.createNewFile;
 // Запустить 10 задач параллельно в пуле из 3 потоков.
 public class RunnerTask60 {
     static List<Future<String>> future1 = new ArrayList<Future<String>>();
-//CJpl
+
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
