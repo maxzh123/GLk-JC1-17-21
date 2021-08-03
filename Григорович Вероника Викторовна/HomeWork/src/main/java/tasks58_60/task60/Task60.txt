@@ -1,0 +1,10 @@
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-2
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-2
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-2
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-2
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-2
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-3
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-3
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-3
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-1
+Hello World Tue Aug 03 06:09:38 BRT 2021 	пишется потоком pool-1-thread-2
