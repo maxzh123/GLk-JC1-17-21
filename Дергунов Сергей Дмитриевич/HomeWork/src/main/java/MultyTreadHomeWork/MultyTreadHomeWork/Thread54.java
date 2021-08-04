@@ -17,5 +17,4 @@ class Thread54 extends java.lang.Thread {
         }
         System.out.println("Поток " + getName() + " закончил работу.");
     }
-
 }
