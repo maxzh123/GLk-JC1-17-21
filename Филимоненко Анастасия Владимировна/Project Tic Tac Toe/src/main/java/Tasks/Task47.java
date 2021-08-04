@@ -12,7 +12,7 @@ public class Task47 {
     private static StringBuffer stringBuffer = new StringBuffer();
 
     public static void main(String[] args) throws IOException {
-        String path = "E:\\english\\files";
+        String path = "E:\\english\\files.txt";
         BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
         readingAndAdding(bufferedReader);
         findPunctuationAndWords();
