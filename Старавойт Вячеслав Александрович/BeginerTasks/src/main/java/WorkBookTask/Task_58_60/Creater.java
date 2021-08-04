@@ -26,7 +26,6 @@ public class Creater {
    //  file1.createNewFile();//тут поток залетел и создал себе файл
      Writer.writeInFile(new File(file, name));
     } catch (Exception e) {
-      System.out.println("Ошибка по файлу, не может создать.");
-    }
+      System.out.println("Ошибка по файлу, не может создать."); }
   }
 }

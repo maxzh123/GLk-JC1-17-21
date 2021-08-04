@@ -1,24 +1,43 @@
 package WorkBookTask.Task_58_60;
 
 
-import java.io.File;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class Runner {
-    private static final int COUNT_TREADS=3;
+    private static final int COUNT_TREADS = 3;
+    //  private static   List<Future<String>> list = new ArrayList<Future<String>>();
 
     public static void main(String[] args) {
 
         ExecutorService executor;
         executor = Executors.newFixedThreadPool(COUNT_TREADS);
         for (int i = 0; i < COUNT_TREADS; i++) {
-            executor.execute(new NewThread1());
+            executor.execute(new NewThread());
         }
         executor.shutdown();
-//        Creater cr =new Creater();
-//        cr.print();
     }
+}
+
+
+//        Callable<String> callable = new MyCallable();
+//        for(int i=0; i< 10; i++){ //10 задач одновременно
+//            Future<String> future = executor.submit(callable);
+//            list.add(future);
+//        }
+//        for(Future<String> fut : list){
+//            try {
+//                // печатаем в консоль возвращенное значение Future
+//                // будет задержка в 1 секунду, потому что Future.get()
+//                // ждет пока таск закончит выполнение
+//                System.out.println("Тут поток был"+new Date()+ "::" + fut.get());
+//            } catch (InterruptedException | ExecutionException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        executor.shutdown();
+////        Creater cr =new Creater();
+////        cr.print();
+//    }
 
 //        public static void runnerGO(){
 //            File file = new File(Creater.PATH);
@@ -28,4 +47,4 @@ public class Runner {
 //                Writer.writeInFile(Creater.array[i]); // во все 10 файлов
 //            }
 //        }
-    }
+

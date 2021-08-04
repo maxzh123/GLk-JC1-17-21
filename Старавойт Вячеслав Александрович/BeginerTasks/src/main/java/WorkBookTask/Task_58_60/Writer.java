@@ -3,7 +3,7 @@ package WorkBookTask.Task_58_60;
 import WorkBookTask.Task_46_51_WorkWithFile.Task_50.Writer2;
 
 import java.io.File;
-
+import java.util.Date;
 
 
 public class Writer {
@@ -11,9 +11,10 @@ public class Writer {
 
     public static void writeInFile(File file) {
         ObjectStateWriter writer = new ObjectStateWriter(file); //создали объект с состоянием
-        for (int i = 0; i < 2; i++) { // заполняем двумя случайными строками.
+        for (int i = 0; i <10 ; i++) { // заполняем двумя случайными строками.
             String random =strings[(int) (Math.random() * 10)]; //генерируем числа 0-9 именно размерность массива)
-            writer.write(random + " ");
+            writer.write(random +" -записал это поток под названием "+Thread.currentThread().getName()+""+
+                    " Время записи "+new Date() + "\n");
         }
         writer.close();
     }

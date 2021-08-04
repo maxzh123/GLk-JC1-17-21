@@ -35,8 +35,7 @@ public class ObjectStateWriter {
 
     private void onError(IOException e){
         this.e=e;
-        e.printStackTrace();
-    }
+        e.printStackTrace();    }
 
     public boolean hasError(){
         return e!=null;
