@@ -21,6 +21,7 @@ static ArrayList<Integer> arrayList = new ArrayList<Integer>();
         }
     }
     static ArrayList<Integer> createArrayList(){
+        arrayList =null;
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         for (int i =0; i<10;i++){
             arrayList.add(i*((int)(Math.random()+5+i)));

@@ -1,13 +1,10 @@
 package Tasks52_54.task53;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
 public class TestTh implements Runnable {
-    Thread thread;
-  static   List<Integer> integerList=new ArrayList<Integer>();
 
 
     @Override
