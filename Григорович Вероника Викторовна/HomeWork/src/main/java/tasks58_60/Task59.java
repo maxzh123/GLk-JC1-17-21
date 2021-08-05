@@ -2,6 +2,7 @@ package tasks58_60;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.*;
 
@@ -13,14 +14,24 @@ public class Task59 {
 
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService executorService= Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
         for (int i = 0; i < 10; i++) {
-           Future<String>future=executorService.submit(new CallableTask59());
-          futures.add(future);
+            Future<String> future = executorService.submit(new CallableTask59());
+            futures.add(future);
         }
-        for (Future<String> future:futures) {
-            System.out.println("Работает поток " + future.get()+new Date());
+
+
+        while (futures.size() > 0) {
+            Iterator<Future<String>> iterator = futures.iterator();
+            while (iterator.hasNext()) {
+                Future<String> stringFuture = iterator.next();
+                if (stringFuture.isDone()) {
+                    System.out.println("Задача завершена у потока " + stringFuture.get() + new Date());
+                 iterator.remove();
+                }
+            }
         }
-        executorService.shutdown();
+            executorService.shutdown();
+        }
     }
-}
+

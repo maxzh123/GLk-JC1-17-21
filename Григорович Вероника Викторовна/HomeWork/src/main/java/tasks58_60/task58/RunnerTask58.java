@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -29,8 +30,15 @@ public class RunnerTask58 {
             futureList.add(future);
 
         }
-        for (Future<String> future:futureList) {
-            System.out.println("Работает поток " + future.get()+new Date());
+        while (futureList.size() > 0) {
+            Iterator<Future<String>> iterator = futureList.iterator();
+            while (iterator.hasNext()) {
+                Future<String> stringFuture = iterator.next();
+                if (stringFuture.isDone()) {
+                    System.out.println("Задача завершена у потока " + stringFuture.get() + new Date());
+                    iterator.remove();
+                }
+            }
         }
         executorService.shutdown();
     }
