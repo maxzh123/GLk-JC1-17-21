@@ -1,4 +1,4 @@
-public class Task25 {
+﻿public class Task25 {
     public static void main(String[] args) {
         int coins20;
         int coins50;
