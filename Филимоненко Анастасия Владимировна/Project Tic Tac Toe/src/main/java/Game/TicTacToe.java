@@ -42,6 +42,8 @@ public class TicTacToe <diag, diag1> extends JComponent {
             //TODO Сделать кнопку новая игра.
         }
     }
+
+
     @Override
     protected void paintComponent(Graphics graphics){
         super.paintComponent(graphics);

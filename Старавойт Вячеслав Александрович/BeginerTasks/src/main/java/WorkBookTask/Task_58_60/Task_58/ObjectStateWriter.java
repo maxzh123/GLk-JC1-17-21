@@ -1,4 +1,4 @@
-package WorkBookTask.Task_58_60;
+package WorkBookTask.Task_58_60.Task_58;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -1,10 +1,8 @@
-package WorkBookTask.Task_58_60;
+package WorkBookTask.Task_58_60.Task_58;
 
 
 
 import java.io.File;
-import java.lang.ref.SoftReference;
-import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class NewThread implements Runnable {
@@ -13,19 +11,17 @@ public class NewThread implements Runnable {
     private final AtomicInteger fileIncrement =new AtomicInteger(0);
     private final AtomicInteger fileIncrementRes =new AtomicInteger(0);
 
-    private final   String nameFile = "test" ;
+    private final   String nameFile = "test"+nameTh.incrementAndGet()+".txt" ;
     private  String nameThreads = " поток №"; // при заходе в класс потоков получат имена потоки
-    private int myFile;
+    private int myFile=0;
     @Override
     public void run() {
-        while (myFile<10) { //пока не достигнет создания 10 файлов
-
+                                 //пока не достигнет создания 10 файло
             myFile++;
-            Creater.createFile(file,"test" +myFile+".txt");
-            System.out.println(Thread.currentThread().getName()+ " отработал! "+"Cоздал файл "+ nameFile+fileIncrement.incrementAndGet()+".txt ");
+            Creater.createFile(file,nameFile);
+            System.out.println(Thread.currentThread().getName()+ " отработал! "+"Cоздал файл "+ nameFile+ "Всего"+myFile);
          }
 
         }
 
-    }
 

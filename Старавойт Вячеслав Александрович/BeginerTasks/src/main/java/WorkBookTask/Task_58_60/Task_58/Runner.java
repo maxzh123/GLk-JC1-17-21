@@ -1,17 +1,18 @@
-package WorkBookTask.Task_58_60;
+package WorkBookTask.Task_58_60.Task_58;
 
 
 import java.util.concurrent.*;
 
 public class Runner {
     private static final int COUNT_TREADS = 3;
+
     //  private static   List<Future<String>> list = new ArrayList<Future<String>>();
 
     public static void main(String[] args) {
 
         ExecutorService executor;
         executor = Executors.newFixedThreadPool(COUNT_TREADS);
-        for (int i = 0; i < COUNT_TREADS; i++) {
+        for (int i = 0; i < 10; i++) { //10 задач будем делать.
             executor.execute(new NewThread());
         }
         executor.shutdown();

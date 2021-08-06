@@ -4,8 +4,6 @@ package tasks58_60.task60;
 
 import java.util.ArrayList;
 
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -28,15 +26,8 @@ public class RunnerTask60 {
             Future<String>future=executorService.submit(new Task60());
             future1.add(future);
         }
-        while (future1.size() > 0) {
-            Iterator<Future<String>> iterator = future1.iterator();
-            while (iterator.hasNext()) {
-                Future<String> stringFuture = iterator.next();
-                if (stringFuture.isDone()) {
-                    System.out.println("Задача завершена у потока " + stringFuture.get() + new Date());
-                    iterator.remove();
-                }
-            }
+        for (Future<String> future:future1) {
+            System.out.println("Работает поток " + future.get());
         }
         executorService.shutdown();
     }
