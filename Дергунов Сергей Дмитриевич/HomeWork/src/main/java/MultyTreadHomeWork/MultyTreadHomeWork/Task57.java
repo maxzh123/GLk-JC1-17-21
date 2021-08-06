@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Queue;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
@@ -18,10 +19,11 @@ import java.util.stream.Stream;
 public class Task57 extends JComponent {
     public static final AtomicInteger stuffCount = new AtomicInteger();
     public static final AtomicInteger stuffCountConsumer = new AtomicInteger();
-    int countProducer = 4;
+    int countProducer = 3;
     int countConsumer = 2;
     static private Queue<Integer> queue = null;
-    volatile static boolean produce = false;
+    public  static final AtomicBoolean produce=new AtomicBoolean(false);
+    //volatile static boolean produce = false;
     static boolean consume = true;
     volatile static boolean produceEnd = false;
     static final int MAX_PRODUCE=1000;
@@ -49,16 +51,29 @@ public class Task57 extends JComponent {
         System.out.println("--------------------------------------");
 
         while (true) {
-          //  System.out.printf("В очереди: %d - произведено: %d - потреблено: %d\n", queue.size(), stuffCount.get(), stuffCountConsumer.get());
-            if (queue.size() > 100) {
-                produce = false;}
-            if (queue.size() < 80) {
-                produce = true;
-              }
-            if (stuffCount.get() >= MAX_PRODUCE) {
-                produceEnd = true;
-                if(queue.size()==0){
-                break;}
+//            try {
+//                //Thread.sleep(50);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+            //System.out.printf("В очереди: %d - произведено: %d - потреблено: %d\n", queue.size(), stuffCount.get(), stuffCountConsumer.get());
+            {
+                if (queue.size() > 100) {
+                    produce.set(false);
+                                    }
+                if (queue.size() < 80 && !produce.get()) {
+                    synchronized (produce) {
+                        produce.set(true);
+                        System.out.println("Пытаемся разбудить все потоки");
+                        produce.notifyAll();
+                    }
+                }
+                if (stuffCount.get() >= MAX_PRODUCE) {
+                    produceEnd = true;
+                    if (queue.size() == 0) {
+                        break;
+                    }
+                }
             }
         }
         executor.shutdown();
