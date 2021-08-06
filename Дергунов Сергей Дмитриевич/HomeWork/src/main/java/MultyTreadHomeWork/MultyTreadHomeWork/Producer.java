@@ -4,10 +4,10 @@ import java.util.concurrent.Callable;
 
 import static MultyTreadHomeWork.Task57.*;
 
-public class Producer implements Callable {
+public class Producer implements Callable <Integer> {
 
     @Override
-    public Object call() throws InterruptedException {
+    public Integer call() throws InterruptedException {
         int count = 0;
         String nameThread = Thread.currentThread().getName();
         System.out.println("Поток производитель запущен " + Thread.currentThread().getName());
