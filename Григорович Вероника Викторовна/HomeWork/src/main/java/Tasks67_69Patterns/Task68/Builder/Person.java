@@ -53,6 +53,5 @@ public class Person {
                 '}';
     }
 
-    public static class PersonBuilder {
-    }
+
 }

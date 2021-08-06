@@ -14,6 +14,7 @@ private Person newPerson;
     }
 
 
+
     public PersonBuilder withName(String name){
         System.out.println("Имя нашего персонажа: ");
         newPerson.name = name;
