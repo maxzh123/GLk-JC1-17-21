@@ -14,7 +14,7 @@ public class NewThread implements Runnable{
         int summ = 0;
         List<Integer> collection = new ArrayList<Integer>();
         while (count < 10) {
-            collection.add(count*((int) Math.random()*5+2));
+            collection.add(count*((int) (Math.random() * 5) +2));
             summ+=collection.get(count);
             count++;
         }

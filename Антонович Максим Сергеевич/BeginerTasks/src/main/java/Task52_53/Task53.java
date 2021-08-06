@@ -5,22 +5,27 @@ import java.util.List;
 
 public class Task53 {
     public static void main(String[] args) {
-        List <Integer> arrayOfRandomNumbers = new ArrayList<Integer>();
-        int count = 0;
-        while (count<10){
-            arrayOfRandomNumbers.add(count);
-            System.out.println("в ячейке"+arrayOfRandomNumbers.get(count));
-            count++;
-        }
-        int max = arrayOfRandomNumbers.get(0);
-        for (int i=1; i<arrayOfRandomNumbers.size();i++)
-         {
-             if (max<arrayOfRandomNumbers.get(i))
-                max = arrayOfRandomNumbers.get(i);
-            }
-        System.out.println("max =" + max);
-        }
-        //завтра все доделать, создать класс поток и запустить 10 потоков
+        NewThreadForTask53 t1 = new NewThreadForTask53();
+        NewThreadForTask53 t2 = new NewThreadForTask53();
+        NewThreadForTask53 t3 = new NewThreadForTask53();
+        NewThreadForTask53 t4 = new NewThreadForTask53();
+        NewThreadForTask53 t5 = new NewThreadForTask53();
+        NewThreadForTask53 t6 = new NewThreadForTask53();
+        NewThreadForTask53 t7 = new NewThreadForTask53();
+        NewThreadForTask53 t8 = new NewThreadForTask53();
+        NewThreadForTask53 t9 = new NewThreadForTask53();
+        NewThreadForTask53 t10 = new NewThreadForTask53();
 
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
+        t7.start();
+        t8.start();
+        t9.start();
+        t10.start();
+    }
     }
 
