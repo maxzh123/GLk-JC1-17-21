@@ -1,7 +1,5 @@
-package Tasks67_69Patterns.Task67Singleton;
+package Tasks67_69Patterns.Task68Syngleton;
 
-
-import java.util.Date;
 
 public class MySingleton {
 //Создайте простейший сервис с методом, который выводит на экран текущую дату. Сделайте его Singleton и используйте в основном теле программы
