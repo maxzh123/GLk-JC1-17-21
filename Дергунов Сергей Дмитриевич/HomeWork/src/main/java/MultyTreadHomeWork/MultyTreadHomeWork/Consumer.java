@@ -8,7 +8,7 @@ import static MultyTreadHomeWork.Task57.stuffCountConsumer;
 public class Consumer implements Callable<Integer> {
 
     @Override
-    public Integer call()  {
+    public Integer call() throws InterruptedException {
         int count = 0;
         String nameThread = Thread.currentThread().getName();
         Integer temp;
@@ -19,6 +19,7 @@ public class Consumer implements Callable<Integer> {
                 if (( temp!= null)) {
                     stuffCountConsumer.addAndGet(1);
                     count++;
+                    //Thread.sleep(100);
                     System.out.printf("%s <-- %d из очереди. Взял всего -> %d \n", nameThread,temp,count);
                 }
             }
