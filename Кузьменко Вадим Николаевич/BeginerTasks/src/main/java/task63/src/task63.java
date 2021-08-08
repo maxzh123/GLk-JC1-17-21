@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class task63 {
     public static void main(String[] args) {
@@ -7,10 +8,11 @@ public class task63 {
         for (int i = 0; i < 100; i++) {
             numbers.add((int) (Math.random() * 1000));
         }
-        List<Integer> filtered = filter(numbers, a -> a%3==0 && a%5==0);
-        for (int i : filtered) {
-            System.out.println(i);
-        }
+
+        boolean result = numbers.stream()
+                .anyMatch(i -> i%3==0 && i%5==0);
+        System.out.println(result);
+
     }
        private static List<Integer> filter (List<Integer> list, Predicate predicate) {
         List<Integer> result = new ArrayList<>();
