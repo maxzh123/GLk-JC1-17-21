@@ -1,6 +1,7 @@
 package task62;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -30,8 +31,8 @@ public class Main {
 
         peoples.stream()
                 .filter(people -> people.getAge() < 21)
-                .sorted(((o1, o2) -> o1.getName().compareTo(o2.getName())))
-                .sorted(((o1, o2) -> o1.getSurname().compareTo(o2.getSurname())))
+                .sorted((Comparator.comparing(People::getName)))
+                .sorted((Comparator.comparing(People::getSurname)))
                 .limit(4)
                 .map(people -> people.getName() + " " + people.getSurname())
                 .forEach(System.out::println);
