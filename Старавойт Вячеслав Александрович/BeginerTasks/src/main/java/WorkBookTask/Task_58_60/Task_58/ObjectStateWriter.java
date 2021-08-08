@@ -1,4 +1,4 @@
-package WorkBookTask.Task_58_60;
+package WorkBookTask.Task_58_60.Task_58;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -35,8 +35,7 @@ public class ObjectStateWriter {
 
     private void onError(IOException e){
         this.e=e;
-        e.printStackTrace();
-    }
+        e.printStackTrace();    }
 
     public boolean hasError(){
         return e!=null;
