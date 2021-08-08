@@ -7,15 +7,15 @@ public class task63 {
         for (int i = 0; i < 100; i++) {
             numbers.add((int) (Math.random() * 1000));
         }
-        List<Integer> filtered = filter(numbers);
+        List<Integer> filtered = filter(numbers, a -> a%3==0 && a%5==0);
         for (int i : filtered) {
             System.out.println(i);
         }
     }
-       private static List<Integer> filter (List<Integer> list) {
+       private static List<Integer> filter (List<Integer> list, Predicate predicate) {
         List<Integer> result = new ArrayList<>();
         for (int i : list) {
-            if (i%2==0 && i%5==0) {
+            if (predicate.test(i)) {
                 result.add(i);
             }
         }
