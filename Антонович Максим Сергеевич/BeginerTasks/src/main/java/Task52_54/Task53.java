@@ -1,7 +1,4 @@
-package Task52_53;
-
-import java.util.ArrayList;
-import java.util.List;
+package Task52_54;
 
 public class Task53 {
     public static void main(String[] args) {
