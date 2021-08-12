@@ -12,7 +12,7 @@ public class ThreadForTask55 implements Runnable{
     }
     public synchronized void  print () throws InterruptedException {
         System.out.println(Thread.currentThread().getName());
-        wait(2000);
+        Thread.sleep(2000);
     }
 }
 
