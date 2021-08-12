@@ -1,24 +1,50 @@
 package ConclusionOfTheNumberInWords;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class Runner {
+    //сюда добавила Таск 69
+    //создала логгер, вывожу сведения об ошибках, плюс о старте и завершении программы
+
+    public static final Logger logger = Logger.getLogger(
+            Runner.class.getName());
      static Scanner scanner=new Scanner(System.in);
      private static final String [] units={"ноль", "один","два","три","четыре","пять","шесть","семь","восемь","девять"};
     private static final String []dozens={"двадцать","тридцать","сорок","пятьдесят","шестьдесят","семьдесят","восемьдесят","девяносто"};
     private static final String [] hundreds={"сто", "двести","триста","четыреста","пятьсот","шестьсот","семьсот","восемьсот","девятьсот"};
     private static final String [] teens={"десять", "одиннадцать", "двеннадцать","тринадцать","четырнадцать","пятнадцать","шестнадцать","семнадцать","восемнадцать","девятнадцать"};
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
+        FileHandler fh;
+        try {
+            fh = new FileHandler("C:\\Users\\WorkBook\\GLk-JC1-17-21\\Григорович Вероника Викторовна\\HomeWork\\src\\main\\java\\ConclusionOfTheNumberInWords\\MyLogFile.log");
+            logger.addHandler(fh);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            logger.setUseParentHandlers(false);
+        } catch (SecurityException e) {
+            logger.log(Level.SEVERE, "Ошибка", e);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Ошибка", e);
+        }
+
+        logger.log(Level.INFO,"Программа стартовала");
         System.out.println("Введите число до 999");
         try {
             int number=scanner.nextInt();
             determineTheNumber(number);
             if ( number>=999) {
             }
-        } catch (Exception e) {
-            System.out.println("Вы ввели не число либо число выходит за рамки указанного диапазона");
+        } catch (ArrayIndexOutOfBoundsException | InputMismatchException e) {
+            logger.log(Level.SEVERE, "Пользователь ввел число выходящее за рамки или пользователь ввел не число", e);
         }
+        logger.log(Level.INFO,"Программа закончена");
     }
 
     private static void determineTheNumber(int number) {
