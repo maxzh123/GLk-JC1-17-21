@@ -1,5 +1,5 @@
 package Task52_54;
-
+//FIXME и с высокой ероятностью потоки убьются, ибо им не сказали что они не демоны.
 public class Task52  {
     public static void main(String[] args) {
         NewThread t1 = new NewThread();

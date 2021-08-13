@@ -3,6 +3,7 @@ package WorkBookTask.Task_58_60.Task_58;
 
 import java.util.concurrent.*;
 
+//Fixme лентяй! Вам вполне по силам было и конструктор с именами файлов замутить.
 public class Runner {
     private static final int COUNT_TREADS = 3;
 

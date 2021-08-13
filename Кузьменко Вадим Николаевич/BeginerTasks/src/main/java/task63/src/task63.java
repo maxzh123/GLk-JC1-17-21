@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-
+//Условно верно. формально в задание не указано что данные недурнобы готовить через стрим апи.
 public class task63 {
     public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();

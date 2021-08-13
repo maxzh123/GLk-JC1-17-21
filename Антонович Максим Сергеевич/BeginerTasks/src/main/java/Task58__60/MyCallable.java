@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+//FIXME будет конкуренция при записи и открытии. по идее должно падать по рандому
 public class MyCallable implements Callable<List<String>> {
     List<String> list = new ArrayList<String>();
     @Override

@@ -1,3 +1,4 @@
+//Все верно
 public class Task43 {
     public static void main(String arg[]) {
         String str = null;

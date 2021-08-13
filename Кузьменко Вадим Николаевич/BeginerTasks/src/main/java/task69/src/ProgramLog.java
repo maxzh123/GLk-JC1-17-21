@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Date;
 
+//FIXME Не верно. логер полезен именно потому, что в файл пишет сразу а не когда вздумается. да и с синглтоном как-то не задалось.
 public class ProgramLog {
     Date date = new Date ();
     File file = new File("Log");
