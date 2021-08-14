@@ -3,6 +3,7 @@ package newDateTimeApi;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.TemporalUnit;
 
 public class NewDateApi {
 /**
@@ -19,6 +20,8 @@ public class NewDateApi {
         localTime();
         localDateTimeTest();
         instant();
+        example();
+        parseAndFormat();
     }
 
     static void localDate(){
@@ -105,7 +108,7 @@ public class NewDateApi {
         System.out.println("20 месяцев до сегодняшнего дня будет: " + today.minusMonths(20));
 
         // Выравнивания
-        System.out.println("Первый день этого месяца : " + today.with(TemporalAdjusters.firstDayOfMonth()));
+        System.out.println("Первый день этого месяца : " + today.with(TemporalAdjusters.lastDayOfMonth()));
         LocalDate lastDayOfYear = today.with(TemporalAdjusters.lastDayOfYear());
         System.out.println("Последний день этой года : " + lastDayOfYear);
 
