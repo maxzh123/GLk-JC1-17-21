@@ -1,8 +1,10 @@
-package Task52_53;
+package Task52_54;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+//FIXME Это очень очень странная конструкция.
 public class NewThreadForTask53 implements Runnable {
     Thread x;
     public NewThreadForTask53 (){

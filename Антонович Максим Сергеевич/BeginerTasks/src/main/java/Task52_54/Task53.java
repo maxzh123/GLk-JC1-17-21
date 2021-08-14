@@ -1,8 +1,6 @@
-package Task52_53;
+package Task52_54;
 
-import java.util.ArrayList;
-import java.util.List;
-
+//FIXME и с высокой ероятностью потоки убьются, ибо им не сказали что они не демоны.
 public class Task53 {
     public static void main(String[] args) {
         NewThreadForTask53 t1 = new NewThreadForTask53();

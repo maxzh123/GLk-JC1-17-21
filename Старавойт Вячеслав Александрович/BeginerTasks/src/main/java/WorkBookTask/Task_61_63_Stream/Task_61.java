@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+//FIXME почти. только надо научится в редьюс.
 public class Task_61 {
 
     public static void main(String[] args) {

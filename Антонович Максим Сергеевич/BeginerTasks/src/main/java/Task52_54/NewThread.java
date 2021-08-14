@@ -1,7 +1,7 @@
-package Task52_53;
+package Task52_54;
 
 import java.util.*;
-
+//FIXME Это очень очень странная конструкция.
 public class NewThread implements Runnable{
     Thread x;
     public NewThread (){

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
+// недурно
 public class Task39 {
     public static void main(String[] arg) {
         ArrayList<Integer> pupils = new ArrayList<>();

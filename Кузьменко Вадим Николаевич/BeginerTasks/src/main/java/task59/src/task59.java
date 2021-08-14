@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-
+//FIXME Я твердно уверен что оно или виснет или падает
 class MyCallable implements Callable<String> {
     @Override
     public String call() throws Exception {
