@@ -1,6 +1,8 @@
 package Tasks67_69Patterns.Task68Syngleton;
 
 
+import java.time.LocalDate;
+
 public class MySingleton {
 //Создайте простейший сервис с методом, который выводит на экран текущую дату. Сделайте его Singleton и используйте в основном теле программы
 
@@ -19,8 +21,8 @@ public class MySingleton {
         }
         return localInstance;
     }
-    public java.util.Date getCurrentDate(){
-        return new java.util.Date();
+    public LocalDate getCurrentDate(){
+        return LocalDate.now();
     }
 
 }
