@@ -4,8 +4,8 @@ package WorkBookTask.Task_52_54_Thread.Task57;
 // и если нет очереди спят потребители, просынаются производ. когда элементов <=80, Все это работает пока
 // обработанных элементов не станет 1000.
 public class Runner {
-    static int  queue = 200; //наша очередь
- static int count =1000;  // наше кол-во операций которое нужно обрабатывать.
+    static volatile int  queue = 200; //наша очередь
+ static volatile int count =1000;  // наше кол-во операций которое нужно обрабатывать.
 
     public static void main(String[] args) {
         createThreadProducer(3); // 3 потока производителя
