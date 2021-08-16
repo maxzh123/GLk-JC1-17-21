@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
+//FIXME Почти.... в конце нужен не фоич а редьюс
 public class Main {
 
        public static void main(String[] args) {

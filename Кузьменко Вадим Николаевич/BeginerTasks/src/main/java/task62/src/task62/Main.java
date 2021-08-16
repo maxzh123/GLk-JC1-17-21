@@ -3,7 +3,7 @@ package task62;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
+//FIXME сортировка выполнена не верно. Агрегации в колекцию нет.
 public class Main {
     public static void main(String[] args) {
         List<People> peoples = new ArrayList<>();

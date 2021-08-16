@@ -1,5 +1,6 @@
 import java.util.HashMap;
 
+//верно
 public class Task42 {
     public static String string = "пока,привет, и снова здравтвуйте,привет и привет,снова Здравствуйте";
 
