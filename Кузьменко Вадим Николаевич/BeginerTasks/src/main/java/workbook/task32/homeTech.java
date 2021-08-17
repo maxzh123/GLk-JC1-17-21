@@ -1,3 +1,5 @@
+package workbook.task32;
+
 public class homeTech {
     public String model;
     public String brand;

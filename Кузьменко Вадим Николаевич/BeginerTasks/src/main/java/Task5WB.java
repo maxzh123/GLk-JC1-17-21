@@ -1,4 +1,4 @@
-public class ch {
+public class Task5WB {
    int timeSecond;
 
     void ShowTime () {
