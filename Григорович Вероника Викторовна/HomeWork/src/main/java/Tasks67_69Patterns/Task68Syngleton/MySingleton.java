@@ -8,11 +8,10 @@ public class MySingleton {
 
     private static volatile MySingleton instance;
     private MySingleton() {}
-//сделала getInstance именно так, потому что почитала на хабре, что рекомендуют исполь зовать именно такой подход к реализации шаблона
-    //DoubleCheckedLocking &volatile
+
     public static MySingleton getInstance() {
+        System.out.println("Привет");
         if (instance==null) {
-            System.out.println("Привет");
             synchronized (MySingleton.class) {
                 if(instance==null) {
                     instance= new MySingleton();
