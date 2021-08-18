@@ -1,4 +1,4 @@
-
+package Task37.src;
 
 public enum Season {
     WINTER(90,"WINTER"),

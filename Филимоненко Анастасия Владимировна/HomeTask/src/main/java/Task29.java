@@ -1,8 +1,8 @@
-﻿import java.util.Scanner;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Task29 {
+public class Task29{
     public static void main(String[] args) {
         int n = 0;
         Scanner scanner =new Scanner(System.in);

@@ -1,4 +1,4 @@
-public class ch {
+public class Task5WorkBook {
    int timeSecond;
 
     void ShowTime () {

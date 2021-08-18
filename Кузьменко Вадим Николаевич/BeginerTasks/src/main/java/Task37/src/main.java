@@ -1,3 +1,4 @@
+package Task37.src;
 import java.util.Locale;
 import java.util.Scanner;
 
