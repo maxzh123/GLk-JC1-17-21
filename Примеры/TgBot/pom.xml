@@ -7,6 +7,7 @@
     <groupId>by.ita</groupId>
     <artifactId>tg-bot-ita-fyo</artifactId>
     <version>1.0</version>
+    <name>ПРИМЕРЫ TG BOT</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
