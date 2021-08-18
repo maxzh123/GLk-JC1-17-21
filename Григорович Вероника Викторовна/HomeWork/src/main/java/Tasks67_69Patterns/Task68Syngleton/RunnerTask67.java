@@ -6,5 +6,6 @@ public class RunnerTask67 {
         System.out.println(ms.getCurrentDate());
         MySingleton ms1= MySingleton.getInstance();
         System.out.println(ms1.getCurrentDate());
+        System.out.println(ms==ms1);
     }
 }
