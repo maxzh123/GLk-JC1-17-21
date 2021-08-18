@@ -1,5 +1,3 @@
-package task59.src;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-//FIXME Я твердно уверен что оно или виснет или падает
+
 class MyCallable implements Callable<String> {
     @Override
     public String call() throws Exception {

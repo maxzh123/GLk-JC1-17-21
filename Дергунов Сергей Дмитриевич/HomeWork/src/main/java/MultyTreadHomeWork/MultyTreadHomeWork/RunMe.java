@@ -30,11 +30,12 @@ public class RunMe {
     }
 
     public static ArrayList<Integer> CreateCollectionOfRnd(int count) {
-        return (ArrayList<Integer>) new Random()
+        ArrayList <Integer> rndArrayList = (ArrayList<Integer>) new Random()
                 .ints(0,1000)
                 .limit(count)
                 .boxed()
                 .collect(Collectors.toList());
+        return rndArrayList;
     }
 
     public static long CalculateAverage(ArrayList<Integer> arrayList) {

@@ -29,7 +29,4 @@ public class DebitCard extends AbstractBankCard{
         System.out.println("Это "+getType()+", на текущий момент ее баланс составляет: "+cardBalance+", в последний день месяца" +
                 " поступит зарплата и баланс карточки составит "+addMoney()+". В копилку на море поступит "+ takeOffMoney());
     }
-    private static void someClass() {
-        System.out.println("Это просто статический класс");
-    }
 }

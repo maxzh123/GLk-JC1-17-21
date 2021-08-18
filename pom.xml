@@ -4,54 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>by.ita</groupId>
+    <groupId>groupId</groupId>
     <artifactId>GLk-JC1-17-21</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-<modules>
-    <module>Примеры/BeginerTasks</module>
-    <module>Примеры/HomeWork</module>
-    <module>Примеры/TgBot</module>
-    <module>Григорович Вероника Викторовна/BeginerTasks</module>
-    <module>Григорович Вероника Викторовна/HomeWork</module>
-    <module>Григорович Вероника Викторовна/TgBot</module>
-
-    <module>Старавойт Вячеслав Александрович/BeginerTasks</module>
-    <module>Старавойт Вячеслав Александрович/HomeWork</module>
-    <module>Старавойт Вячеслав Александрович/TgBot</module>
-
-    <module>Дергунов Сергей Дмитриевич/BeginerTasks</module>
-    <module>Дергунов Сергей Дмитриевич/HomeWork</module>
-    <module>Дергунов Сергей Дмитриевич/TgBot</module>
-
-    <module>Дьяков Игорь Петрович/BeginerTasks</module>
-    <module>Дьяков Игорь Петрович/HomeWork</module>
-    <module>Дьяков Игорь Петрович/TgBot</module>
-
-    <module>Кузьменко Вадим Николаевич/BeginerTasks</module>
-    <module>Кузьменко Вадим Николаевич/HomeWork</module>
-    <module>Кузьменко Вадим Николаевич/TgBot</module>
-
-    <module>Олейник Кирил Андррев/BeginerTasks</module>
-    <module>Олейник Кирил Андррев/HomeWork</module>
-    <module>Олейник Кирил Андррев/TgBot</module>
-
-    <module>Сирож Евгений Адамович/BeginerTasks</module>
-    <module>Сирож Евгений Адамович/HomeWork</module>
-    <module>Сирож Евгений Адамович/TgBot</module>
-
-
-    <module>Филимоненко Анастасия Владимировна/BeginerTasks</module>
-    <module>Филимоненко Анастасия Владимировна/HomeWork</module>
-    <module>Филимоненко Анастасия Владимировна/TgBot</module>
-
-    <module>Хилькевич Илья Сергеевич/BeginerTasks</module>
-    <module>Хилькевич Илья Сергеевич/HomeWork</module>
-    <module>Хилькевич Илья Сергеевич/TgBot</module>
-
-</modules>    
+    
 </project>

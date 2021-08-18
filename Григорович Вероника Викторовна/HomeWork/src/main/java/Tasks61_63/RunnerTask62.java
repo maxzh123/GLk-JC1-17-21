@@ -8,7 +8,6 @@ import java.util.stream.Stream;
 public class RunnerTask62 {
 
 static ArrayList<Person> personList=new ArrayList<Person>();
-//FIXME требуется сделать сортировку по двум полям одновременно. а не сперва отсортировать по одному полю. потом забить болт и отсортировать по второмую
 static ArrayList<String> nextPersonList=new ArrayList<String>();
     public static void main(String[] args) {
         Person person = new Person("name", "surname", 1);

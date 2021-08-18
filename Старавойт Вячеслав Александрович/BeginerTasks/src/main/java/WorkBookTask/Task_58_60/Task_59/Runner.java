@@ -11,7 +11,7 @@ public class Runner {
         ExecutorService executor = Executors.newFixedThreadPool(3);
         List<Future<String>> list = new ArrayList<Future<String>>();
         Callable<String> callable = new MyCallable();
-        for(int i=0; i< 20; i++){ //10 задач одновременно
+        for(int i=0; i< 10; i++){ //10 задач одновременно
             Future<String> future = executor.submit(callable);
             list.add(future);
         }

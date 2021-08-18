@@ -1,8 +1,9 @@
 package tasks58_60.task58;
 
 
+import com.sun.xml.internal.ws.spi.db.DatabindingException;
 
-
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +17,6 @@ import java.util.concurrent.Future;
 //результат выполнения коллекция имен файлов (я решила сделать отдельный Generalfile и туда записать все имеющиеся файлы в папке)
 //запустить 10 задач параллельно в пуле из 3 потоков. Вывести ход программы на экран с указанием имени потока, который выполняет работу
 
-//FIXME Все потоки пользуют одни и теже файлы. что будет приводить к взаимному затиранию данных. а в некоторых случаях и блокировкам.
 public class RunnerTask58 {
     static List<Future<String>> futureList = new ArrayList<Future<String>>();
 

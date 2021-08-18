@@ -11,7 +11,7 @@ public class Task59 {
 // результат выполнения сумма этих чисел в виде строки.
     // запустить 10 задач параллельно в пуле из 3 потоков. вывести ход программы на экран с указанием имени потока который выполняет работу
 
-//FIXME А вот и не будет это так работать. из-за случайных пауз и задач в большем кочичестве чем потоки тупое ожидание будет приводить к тому, что вы никогда не увидите реального хода проуесса.
+
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService= Executors.newFixedThreadPool(3);
         for (int i = 0; i < 10; i++) {

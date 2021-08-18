@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 //сгенерировать List коллекцию целых чисел и n элементов от мин до макс, определить есть ли в этой коллекции которые делятся и на 3 и на 5
-//FIXME нет min|max куча лишних действий. то что надо не сделано.
 public class Task63 {
 
         static List<Integer> integerList = new ArrayList<>();
