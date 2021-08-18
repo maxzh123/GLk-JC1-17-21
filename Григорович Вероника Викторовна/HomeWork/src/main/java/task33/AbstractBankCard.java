@@ -1,7 +1,7 @@
 package task33;
 
 public class AbstractBankCard implements BankCards {
-    protected String type;
+    public String type;
 
     public AbstractBankCard(String type) {
         this.type = type;
