@@ -10,8 +10,8 @@ public class MySingleton {
     private MySingleton() {}
 
     public static MySingleton getInstance() {
-        System.out.println("Привет");
         if (instance==null) {
+            System.out.println("Привет");
             synchronized (MySingleton.class) {
                 if(instance==null) {
                     instance= new MySingleton();
