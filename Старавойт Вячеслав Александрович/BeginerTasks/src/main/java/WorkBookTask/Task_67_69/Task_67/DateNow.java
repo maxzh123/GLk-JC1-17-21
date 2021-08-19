@@ -5,8 +5,7 @@ import java.time.LocalDate;
 //+ Ленивая инициализация
 //+ Высокая производительность
  public  class DateNow {
-
-    private static volatile LocalDate inst;
+     private static volatile LocalDate inst;
 
     private DateNow() {
     }
@@ -24,4 +23,5 @@ import java.time.LocalDate;
         }
         return localDate;
     }
+
 }
