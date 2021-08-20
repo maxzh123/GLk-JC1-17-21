@@ -31,7 +31,7 @@
     <logger name="by.novacom" level="DEBUG"/>
     <logger name="net.nvcm" level="DEBUG"/>
 
-    <root level="ERROR">
+    <root level="INFO">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
