@@ -27,8 +27,10 @@
 
     <logger name="jul.example.anotherPackage" level="DEBUG"/>
     <logger name="jul.example" level="DEBUG"/>
+    <logger name="ch.qos.logback" level="WARN"/>
 
-    <root level="ERROR">
+
+    <root level="INFO">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>

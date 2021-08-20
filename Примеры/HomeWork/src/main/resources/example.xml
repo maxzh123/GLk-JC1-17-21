@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <name>ITA</name>
+    <offices>
+        <office floor="2" room="5">
+            <students>
+                <student name="Женя"/>
+                <student name="Слава"/>
+                <student name="Вероника" />
+            </students>
+        </office>
+        <office floor="2" room="1">
+            <students>
+                <student name="Сергей"/>
+                <student name="Илья"/>
+                <student name="Настя" />
+            </students>
+        </office>
+    </offices>
+</company>
