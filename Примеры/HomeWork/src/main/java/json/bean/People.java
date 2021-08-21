@@ -1,5 +1,6 @@
 package json.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -32,9 +33,12 @@ public class People {
         this.age = age;
     }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     public void setPosition(String[] position) {
         this.position = position;
+    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public String[] getPosition() {
+        return this.position;
     }
 
     public void setSkills(List<String> skills) {
