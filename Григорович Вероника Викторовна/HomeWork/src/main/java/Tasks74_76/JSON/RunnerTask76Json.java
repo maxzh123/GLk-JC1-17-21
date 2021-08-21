@@ -3,6 +3,7 @@ package Tasks74_76.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.Map;
 
 public class RunnerTask76Json {
@@ -15,5 +16,7 @@ public class RunnerTask76Json {
         }
         Person person=objectMapper.readValue(RunnerTask76Json.class.getClassLoader().getResourceAsStream("sample.json"), Person.class);
         System.out.println(person);
+
+      //  System.out.println(objectMapper.writeValueAsString(person));
     }
 }
