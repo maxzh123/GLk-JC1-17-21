@@ -1,10 +1,12 @@
 package DateSingleton;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 
+@Component("dateNow")
 public class DateNow {
 
-    private static volatile DateNow instance;
     private DateNow() {}
 
     public LocalDate getCurrentDate(){

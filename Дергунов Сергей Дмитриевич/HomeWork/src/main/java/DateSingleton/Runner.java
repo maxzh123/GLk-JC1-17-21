@@ -6,8 +6,8 @@ public class Runner {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        DateNow firstDate = context.getBean("myDate", DateNow.class);
-        DateNow secondDate = context.getBean("myDate", DateNow.class);
+        DateNow firstDate = context.getBean("dateNow", DateNow.class);
+        DateNow secondDate = context.getBean("dateNow", DateNow.class);
         System.out.println("Первая дата: " + firstDate.getCurrentDate());
         System.out.println("Вторая дата: " + secondDate.getCurrentDate());
         System.out.println("Но равны ли объекты ДАТА?");
