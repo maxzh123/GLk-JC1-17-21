@@ -11,7 +11,7 @@ import java.util.Locale;
 public class I18nTest {
     final static Logger logger = LoggerFactory.getLogger(I18nTest.class);
 
-    @ParameterizedTest(name = "{0} I18N")
+    @ParameterizedTest(name = "{0} {1} I18N")
     @CsvSource({
             ",",
             "ru,",
@@ -33,7 +33,7 @@ public class I18nTest {
                 b.getMessage("label.button",l),
                 b.getNumberInstance(l,100),
                 b.getCurrencyInstance(l,200),
-                b.getPercentInstance(l,14600)
+                b.getPercentInstance(l,146)
                 );
         logger.info("Старый АПИ Дат {}:\t {}",l,b.getNow(l));
         logger.info("Новый АПИ Дат {}:\t {}",l,b.getNow2(l));
