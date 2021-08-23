@@ -15,6 +15,8 @@ public class Task_61 {
         System.out.println();
         int sum =   list.stream().filter(x->x%2==0).mapToInt(x->x).sum();
         System.out.println("Сумма в сантиметрах: "+ sum);
+        double i =  list.stream().filter(x->x%2==0).peek(x->System.out.print("значение в см - " +x+": ")).mapToDouble(x->x).map(x->x/2.54).peek(x->System.out.print("Значение в дюймах: "+x+": ")).peek(x-> System.out.println()).map(x->x*2.54).sum();
+        System.out.println(i);
     }
 }
 
