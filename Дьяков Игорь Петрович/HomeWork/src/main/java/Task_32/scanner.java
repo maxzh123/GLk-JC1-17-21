@@ -6,6 +6,6 @@ public class scanner extends Abstrakt {
     }
 
     @Override
-    public boolean energy() { return true;}
+    public boolean energy() {return true;}
 }
 

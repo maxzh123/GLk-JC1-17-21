@@ -6,4 +6,5 @@ public interface interfaceHOME {
     boolean userComand(int but);
     void printMenu();
     void TheEndMenu();
+
     }

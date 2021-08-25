@@ -5,7 +5,7 @@ public class Printer extends Abstrakt {
               super(power, damage);
        }
        @Override
-      public boolean energy(){return true;}
+      public boolean energy(){return false;}
 }
 
 

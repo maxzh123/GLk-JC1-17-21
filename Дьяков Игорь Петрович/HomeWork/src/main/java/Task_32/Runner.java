@@ -13,7 +13,6 @@ public class Runner {
     }
 
     private static int readButton(){return scan.nextInt();}
-
     private static void workwithButton(interfaceHOME action) {
         while (action.energy()) {
             if (action.powerON()) {
