@@ -28,8 +28,8 @@
 
 <!--    <logger name="by.novacom" level="INFO"/>
     <logger name="net.nvcm" level="INFO"/>-->
-    <logger name="by.novacom" level="DEBUG"/>
-    <logger name="net.nvcm" level="DEBUG"/>
+    <logger name="WorkBookTask" level="DEBUG"/>
+    <logger name="WorkBookTask.Task_67_69" level="EROR"/>
 
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
