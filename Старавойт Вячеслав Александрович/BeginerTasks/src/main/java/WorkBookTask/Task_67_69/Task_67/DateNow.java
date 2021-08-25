@@ -1,17 +1,27 @@
 package WorkBookTask.Task_67_69.Task_67;
 
-import java.util.Date;
-//Это самый эпичный фэйл. потокобезопасная реализация синглтона и туда пихается не потокобезопасный обьект ))))
-//https://javastudy.ru/interview/jee-spring-questions-answers/
+import java.time.LocalDate;
+//реализация Double Checked Locking & volatile
+//+ Ленивая инициализация
+//+ Высокая производительность
  public  class DateNow {
+     private static volatile LocalDate inst;
 
-    private DateNow(){
+    private DateNow() {
     }
 
-    private static class SingletonHolder{
-        private final static Date date = new Date();
+  public  static LocalDate getInst() {
+        LocalDate localDate = inst;
+        if (localDate == null) {
+            synchronized (LocalDate.class) {
+                localDate = inst;
+                if (localDate == null) {
+                    inst = localDate =LocalDate.now();
+                }
+            }
+
+        }
+        return localDate;
     }
-    public static Date getDate(){
-        return SingletonHolder.date;
-    }
+
 }

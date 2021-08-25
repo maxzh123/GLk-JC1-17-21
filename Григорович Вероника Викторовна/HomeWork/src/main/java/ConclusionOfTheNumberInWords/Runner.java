@@ -23,11 +23,11 @@ public class Runner {
     public static void main(String[] args)  {
         FileHandler fh;
         try {
-            fh = new FileHandler("C:\\Users\\WorkBook\\GLk-JC1-17-21\\Григорович Вероника Викторовна\\HomeWork\\src\\main\\java\\ConclusionOfTheNumberInWords\\MyLogFile.log");
+            fh = new FileHandler("MyLogFile.log");
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();
             fh.setFormatter(formatter);
-            logger.setUseParentHandlers(false);
+        //    logger.setUseParentHandlers(false);
         } catch (SecurityException e) {
             logger.log(Level.SEVERE, "Ошибка", e);
         } catch (IOException e) {

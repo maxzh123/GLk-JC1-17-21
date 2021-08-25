@@ -3,13 +3,12 @@
 <configuration>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <!--<pattern>%d{HH:mm:ss.SSS} %-5level %logger - %msg%n</pattern>-->
             <pattern>%-8level %-25d{YYYY-MM-dd HH:mm:ss.SSS} %logger - %msg%n</pattern>
         </encoder>
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${project.artifactId}.log</file>
+        <file>application.log</file>
         <append>true</append>
         <encoder>
             <charset>UTF-8</charset>
@@ -17,7 +16,7 @@
         </encoder>
         <!-- Архивирование основного лога приложения. 10 файлов по 10 мб -->
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <FileNamePattern>${artifactId}.%i.log.zip</FileNamePattern>
+            <FileNamePattern>application.%i.log.zip</FileNamePattern>
             <MinIndex>1</MinIndex>
             <MaxIndex>21</MaxIndex>
         </rollingPolicy>
@@ -26,10 +25,8 @@
         </triggeringPolicy>
     </appender>
 
-<!--    <logger name="by.novacom" level="INFO"/>
-    <logger name="net.nvcm" level="INFO"/>-->
-    <logger name="by.novacom" level="DEBUG"/>
-    <logger name="net.nvcm" level="DEBUG"/>
+    <logger name="jul.example.anotherPackage" level="DEBUG"/>
+    <logger name="jul.example" level="DEBUG"/>
 
     <root level="ERROR">
         <appender-ref ref="CONSOLE" />

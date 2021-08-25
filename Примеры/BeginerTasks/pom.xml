@@ -7,11 +7,12 @@
     <groupId>by.ita</groupId>
     <artifactId>BeginerTasks-fyo</artifactId>
     <version>1.0</version>
+    <name>ПРИМЕРЫ BeginerTasks</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.11</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
     <dependencies>
