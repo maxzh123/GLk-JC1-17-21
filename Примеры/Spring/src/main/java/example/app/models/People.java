@@ -16,7 +16,7 @@ public class People {
     private Timestamp birthday;
     @OneToMany( orphanRemoval = true,mappedBy = "people")
     @Lazy
-    @JsonIgnoreProperties
+    @Transient
     private Set<Receipt> receipts;
 
     public Long getId() {

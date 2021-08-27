@@ -1,6 +1,5 @@
 package example.app.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
@@ -15,7 +14,7 @@ public class City {
 
     @OneToMany( orphanRemoval = true,mappedBy = "city")
     @Lazy
-    @JsonIgnoreProperties
+    @Transient
     private Set<Shop> shops;
 
     public Set<Shop> getShops() {
