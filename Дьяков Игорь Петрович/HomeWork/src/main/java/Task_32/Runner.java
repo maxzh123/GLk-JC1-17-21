@@ -21,8 +21,11 @@ public class Runner{
                 int a = readButton();
                 action.userComand(a);
                 return;
+
             }
+
         }
+
 
     }
 }

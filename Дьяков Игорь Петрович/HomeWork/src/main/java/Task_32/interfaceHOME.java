@@ -5,5 +5,5 @@ public interface interfaceHOME {
     boolean powerON();
     boolean userComand(int but);
     void printMenu();
-    void TheEndMenu();
+
   }

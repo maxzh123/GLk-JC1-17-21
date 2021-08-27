@@ -34,9 +34,9 @@ public abstract class Abstrakt implements interfaceHOME {
     public boolean userComand(int choise){
         if(choise==1){System.out.println("Ты включил =="+name+" мощностью "+power+"Вт "+mesto+"=="+"\n");return powerON();}
         if(choise==2){System.out.println("Окей идем дальше "+name+" выключен"+"\n");return powerOff();}
-        if(choise==3){System.out.println("Выключил "+name);return powerOff();}
+        else {System.out.println("не жми куда попало, пропуск хода");}
         return true;}
 
-    @Override public void TheEndMenu(){ System.out.println("конец");}
+
 }
 
