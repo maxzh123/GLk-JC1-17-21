@@ -3,6 +3,7 @@ package example.app.models;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 @Entity
 public class Receipt {
@@ -59,5 +60,18 @@ public class Receipt {
 
     public void setProcessedAt(Timestamp processedAt) {
         this.processedAt = processedAt;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Receipt receipt = (Receipt) o;
+        return Objects.equals(id, receipt.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
