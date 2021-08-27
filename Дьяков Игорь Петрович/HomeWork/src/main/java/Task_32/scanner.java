@@ -1,11 +1,19 @@
 package Task_32;
 
 public class scanner extends Abstrakt {
-    public scanner(int power, int damage) {
-        super(power,damage);
+    public scanner(String name, int power, String mesto ) {
+        super(name,power,mesto);
     }
 
     @Override
-    public boolean energy() {return true;}
+    public boolean powerOff() {
+        return true;
+    }
+
+    @Override
+    public boolean powerON() {
+        return false;
+    }
+
 }
 

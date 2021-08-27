@@ -1,23 +1,42 @@
 package Task_32;
 
 public abstract class Abstrakt implements interfaceHOME {
-       public Abstrakt(int power, int damage) {
+
+    protected String mesto;
+    protected int power;
+    protected String name;
+
+
+    public Abstrakt(String name,int power, String mesto) {
+        this.name=name;
+        this.power=power;
+        this.mesto=mesto;
+
     }
 
-   @Override  public boolean powerON() {
-              return true;}
+    public Abstrakt(String name, int damage) {
+        this.name=name;
+        this.power=damage;
+    }
+    @Override
+    public boolean powerOff() { return false; }
 
-   @Override  public void printMenu(){
-       System.out.println("Ты зашел не в ту хату и запустил механизм смерти выбери кнопку");
-       System.out.println("кнопка N-1     |||      N-2 кнопка");
+    @Override
+    public boolean powerON() { return true; }
+
+    @Override
+    public void printMenu(){
+       System.out.println("----------------------Перед тобой "+name+"----------------------");
+       System.out.println("----------------------Выбери кнопку----------------------");
+       System.out.println("(1) запускает "+name+" ----------------------(2) следуем дальше");
     }
 
     public boolean userComand(int choise){
-        if(choise==1){System.out.println("ты сжег сканнер");return true;}
-        if(choise==2){System.out.println("ты сжег принтер");return true;}
-        if(choise==3){System.out.println("Ты пришел и исправил подключение приборов с 380 на 220, ты спас вселенную");return true;}
-        else {System.out.println("Ты застрял в муках выбора1");}
-        return false;}
-    @Override public void TheEndMenu(){ System.out.println("");}
+        if(choise==1){System.out.println("Ты включил =="+name+" мощностью "+power+"Вт "+mesto+"=="+"\n");return powerON();}
+        if(choise==2){System.out.println("Окей идем дальше "+name+" выключен"+"\n");return powerOff();}
+        if(choise==3){System.out.println("Выключил "+name);return powerOff();}
+        return true;}
+
+    @Override public void TheEndMenu(){ System.out.println("конец");}
 }
 

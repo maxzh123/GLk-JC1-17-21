@@ -1,10 +1,9 @@
 package Task_32;
 
 public interface interfaceHOME {
-   boolean energy();
+    boolean powerOff();
     boolean powerON();
     boolean userComand(int but);
     void printMenu();
     void TheEndMenu();
-
-    }
+  }

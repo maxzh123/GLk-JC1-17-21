@@ -1,11 +1,20 @@
 package Task_32;
 
 public class Printer extends Abstrakt {
-       public Printer(int power, int damage) {
-              super(power, damage);
+       public Printer(String name, int power) {
+              super(name, power);
        }
-       @Override
-      public boolean energy(){return false;}
+
+    @Override
+    public boolean powerOff() {
+        return true;
+    }
+
+    @Override
+    public boolean powerON() {
+        return false;
+    }
+
 }
 
 
