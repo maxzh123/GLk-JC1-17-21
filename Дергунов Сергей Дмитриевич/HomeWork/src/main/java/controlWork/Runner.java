@@ -33,15 +33,19 @@ public class Runner {
     public static final int minAge = 20;
     public static final int minAcceptableAge = 25;
     public static final int maxAcceptableAge = 30;
-    public static final int countPlayerTask = 20;
+    public static final int countPlayerTask = 1;
     public static final int countPlayerInList = 10;
     public static volatile AtomicInteger fileCounter = new AtomicInteger(0);
     public static final String filePath= "Дергунов Сергей Дмитриевич\\HomeWork\\src\\main\\java\\";
 
-
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args)  {
         List<CompletableFuture> completableFutures = new CreatePoolAndRunTask().CreatePoolAndRunTask(countPlayerTask);
-        List<Player> playersList = new CollectFromFutureToList().CollectInOneList(completableFutures);
+        List<Player> playersList = null;
+        try {
+            playersList = new CollectFromFutureToList().CollectInOneList(completableFutures);
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
         OutputListToScreen toScreen = new OutputListToScreen();
         System.out.println("-------Выборка из всех файлов------------");
         toScreen.Output(playersList, " ");
