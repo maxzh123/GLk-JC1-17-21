@@ -12,10 +12,14 @@ import java.util.Map;
 public class People {
     @JsonProperty("name")
     private String name;
+    @JsonProperty("age")
     private int age;
 
+    @JsonProperty
     private String[] position;
+    @JsonProperty
     private List<String> skills;
+    @JsonProperty
     private Map<String, BigDecimal> salary;
 
     @Override
