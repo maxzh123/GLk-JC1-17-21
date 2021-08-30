@@ -3,9 +3,12 @@ package controlWork;
 import controlWork.model.Player;
 import controlWork.outPut.OutputListToScreen;
 
-import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *  * @author S.Dergunov sdergynov@gmail.com
@@ -32,46 +35,26 @@ public class Runner {
     public static final int maxAcceptableAge = 30;
     public static final int countPlayerTask = 20;
     public static final int countPlayerInList = 10;
-    public static volatile int fileCounter= 0;
-    static private List<Player> playersList = new ArrayList<>();
+    public static volatile AtomicInteger fileCounter = new AtomicInteger(0);
     public static final String filePath= "Дергунов Сергей Дмитриевич\\HomeWork\\src\\main\\java\\";
 
-    public static void main(String[] args){
-        OutputListToScreen outputListToScreen = new OutputListToScreen();
-        try {
-            new CreatePoolAndRunTask().CreatePoolAndRunTask(countPlayerTask);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-//        String fileName= new  PlayerGeneratorTask().PlayerGeneratorTask();
-//        List<Player> playersList2 = new ArrayList<>();
-//        try {
-//            playersList2 = new PlayerReaderTask().PlayerReaderTask(fileName);
-//        } catch (IOException | ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("---------------------------------------");
-//        outputListToScreen.Output(playersList2," ");
+
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        List<CompletableFuture> completableFutures = new CreatePoolAndRunTask().CreatePoolAndRunTask(countPlayerTask);
+        List<Player> playersList = new CollectFromFutureToList().CollectInOneList(completableFutures);
+        OutputListToScreen toScreen = new OutputListToScreen();
+        System.out.println("-------Выборка из всех файлов------------");
+        toScreen.Output(playersList, " ");
+        System.out.println("----------Конец выборки------------");
+        playersList
+                .stream()
+                .filter(x -> x.getMidiChloriansLevel() > 80)
+                .sorted(Comparator.comparing(Player::getAge)
+                        .thenComparing(Player::getMidiChloriansLevel))
+                .limit(5)
+                .forEach(x -> System.out.println(x.getNickName().toUpperCase(Locale.ROOT)));
+        System.out.println("Все готово");
     }
-
-//        CreatePersonsList();
-//        Stream<HomeWork62.Person> streamPersons = personsList.stream();
-//        PrintList(personsList);
-//        System.out.println();
-//        acceptableSurnames = (ArrayList<String>) streamPersons.
-//                filter(x -> x.age < 21).                            //Фильтр возраст менее 21
-//                peek(System.out::println).                          //напечатать
-//                sorted(Comparator.comparing(HomeWork62.Person::getSurname).    //сортировать по фамилии
-//                thenComparing(HomeWork62.Person::getName)).                    //затем по имени
-//                limit(4).                                           //лимит элементов - первые 4
-//                map(HomeWork62.Person::getSurname).                            //взять фамилии
-//                collect((Collectors.toList()));                     // положить в коллекцию
-//        System.out.println();
-//        PrintSurnameList(acceptableSurnames);
- //     }
-
-
-
 }
+
+

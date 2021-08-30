@@ -11,7 +11,7 @@ import java.util.Random;
  * @author S.Dergunov sdergynov@gmail.com
  */
 
-public class PlayerResolverGenerateRandom implements PlayerResolver{
+public class GenerateRandom implements PlayerResolver{
 
     @Override
     public Player getPlayer() {

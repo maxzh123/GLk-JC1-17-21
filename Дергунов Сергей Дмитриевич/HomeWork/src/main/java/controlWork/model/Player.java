@@ -3,15 +3,16 @@ package controlWork.model;
 import java.io.Serializable;
 
 public class Player implements Serializable {
-    private String nickName;
-    private int age;
-    private int midiСhloriansLevel;
-    private boolean isActive;
+    private final String nickName;
+    private final int age;
+    private final int midiChloriansLevel;
 
-    public Player(String nickName, int age, int midiСhloriansLevel, boolean isActive) {
+    private final boolean isActive;
+
+    public Player(String nickName, int age, int midiChloriansLevel, boolean isActive) {
         this.nickName = nickName;
         this.age = age;
-        this.midiСhloriansLevel = midiСhloriansLevel;
+        this.midiChloriansLevel = midiChloriansLevel;
         this.isActive = isActive;
     }
 
@@ -20,7 +21,7 @@ public class Player implements Serializable {
         return "Player{" +
                 "nickName='" + nickName + '\'' +
                 ", age=" + age +
-                ", midiСhloriansLevel=" + midiСhloriansLevel +
+                ", midiСhloriansLevel=" + midiChloriansLevel +
                 ", isActive=" + isActive +
                 '}';
     }
@@ -33,8 +34,12 @@ public class Player implements Serializable {
         return isActive;
     }
 
-    public void setActive(boolean active) {
-        isActive = active;
+    public int getMidiChloriansLevel() {
+        return midiChloriansLevel;
+    }
+
+    public String getNickName() {
+        return nickName;
     }
 }
 

@@ -19,7 +19,7 @@ public class OutputListToFile implements OutputList {
         }
     }
 
-    private void WriteToMyFile(List<Player> playerList, String filePath) throws IOException, FileNotFoundException {
+    private void WriteToMyFile(List<Player> playerList, String filePath) throws IOException {
         FileOutputStream outputStream = new FileOutputStream(filePath);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
         objectOutputStream.writeObject(playerList);
@@ -31,15 +31,14 @@ public class OutputListToFile implements OutputList {
         try {
             CreateNewFile(filePath);
         } catch (IOException e) {
-            System.out.printf("ERROR! Can't create file.%s",filePath);
+            System.out.printf("ERROR! Can't create file.%s", filePath);
             e.printStackTrace();
         }
         try {
-            WriteToMyFile(playerList,filePath);
+            WriteToMyFile(playerList, filePath);
         } catch (IOException e) {
-            System.out.printf("ERROR! Can't write to file.%s",filePath);
+            System.out.printf("ERROR! Can't write to file.%s", filePath);
             e.printStackTrace();
         }
-        System.out.println("Write to file successfully.");
     }
 }
