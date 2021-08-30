@@ -1,5 +1,7 @@
 package controlWork;
 
+import controlWork.creators.CollectFromFutureToList;
+import controlWork.creators.CreatePoolAndRunTask;
 import controlWork.model.Player;
 import controlWork.outPut.OutputListToScreen;
 
@@ -33,7 +35,7 @@ public class Runner {
     public static final int minAge = 20;
     public static final int minAcceptableAge = 25;
     public static final int maxAcceptableAge = 30;
-    public static final int countPlayerTask = 1;
+    public static final int countPlayerTask = 20;
     public static final int countPlayerInList = 10;
     public static volatile AtomicInteger fileCounter = new AtomicInteger(0);
     public static final String filePath= "Дергунов Сергей Дмитриевич\\HomeWork\\src\\main\\java\\";
@@ -52,7 +54,7 @@ public class Runner {
         System.out.println("----------Конец выборки------------");
         playersList
                 .stream()
-                .filter(x -> x.getMidiChloriansLevel() > 80)
+                .filter(x -> x.getMidiChloriansLevel() > 70)//уровень мидихлорианов выше порогового значения
                 .sorted(Comparator.comparing(Player::getAge)
                         .thenComparing(Player::getMidiChloriansLevel))
                 .limit(5)

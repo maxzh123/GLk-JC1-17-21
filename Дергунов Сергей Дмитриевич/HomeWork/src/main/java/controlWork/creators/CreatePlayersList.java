@@ -1,5 +1,6 @@
-package controlWork;
+package controlWork.creators;
 
+import controlWork.Runner;
 import controlWork.model.Player;
 import controlWork.resolver.*;
 import java.util.ArrayList;
