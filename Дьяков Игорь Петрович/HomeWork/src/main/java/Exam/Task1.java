@@ -5,10 +5,10 @@ public class Task1 {
     private final int y;
     private final int z;
 
-    public Task1() {
-        this.x =(int)((Math.random()*(60+1))-30);
-        this.y = (int)((Math.random()*(60+1))-30);
-        this.z = (int)((Math.random()*(60+1))-30);
+    public Task1(int x,int y,int z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
     public int getX() {
         return x;
@@ -21,7 +21,7 @@ public class Task1 {
     }
 
     public static void main(String[] Args){
-        Task1 xyz=new Task1();
+        Task1 xyz=new Task1((int)((Math.random()*(60+1))-30),(int)((Math.random()*(60+1))-30),(int)((Math.random()*(60+1))-30));
 
         System.out.println("Сгенерированные произвольные числа [-30:30]: X="+xyz.getX()+", Y="+xyz.getY()+", Z="+xyz.getZ());
 
