@@ -1,10 +1,11 @@
-package controlWork;
-
+import controlWork.NickNamePlayersUpperCaseWithFilter;
 import controlWork.model.Player;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
