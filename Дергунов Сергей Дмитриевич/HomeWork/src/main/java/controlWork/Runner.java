@@ -8,7 +8,6 @@ import controlWork.outPut.OutputListToScreen;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author S.Dergunov sdergynov@gmail.com
@@ -35,7 +34,6 @@ public class Runner {
     public static final int maxAcceptableAge = 30;
     public static final int countPlayerTask = 20;
     public static final int countPlayerInList = 10;
-    public static volatile AtomicInteger fileCounter = new AtomicInteger(0);
     public static final String filePath= "Дергунов Сергей Дмитриевич\\HomeWork\\src\\main\\java\\";
 
     public static void main(String[] args)  {

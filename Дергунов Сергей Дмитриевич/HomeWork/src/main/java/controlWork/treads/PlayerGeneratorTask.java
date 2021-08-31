@@ -8,6 +8,7 @@ import controlWork.factory.GenerateRandom;
 import controlWork.factory.PlayerFactory;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author S.Dergunov sdergynov@gmail.com
@@ -17,10 +18,11 @@ import java.util.List;
  * и записывает ее в файл. Поток возвращает имя файла, в который он писал.
  */
 public class PlayerGeneratorTask {
+    public static volatile AtomicInteger fileCounter = new AtomicInteger(0);
 
     static public String playerGeneratorTask(){
         System.out.println("Генератор запущен");
-        String filePath = String.format(Runner.filePath + "examWork_%d.lst",Runner.fileCounter.getAndIncrement());
+        String filePath = String.format(Runner.filePath + "examWork_%d.lst",fileCounter.getAndIncrement());
         PlayerFactory playerResolver = new GenerateRandom();
         List<Player> playersList = new CreatePlayersList().createList(playerResolver);
         OutputListToFile outputListToFile = new OutputListToFile();
