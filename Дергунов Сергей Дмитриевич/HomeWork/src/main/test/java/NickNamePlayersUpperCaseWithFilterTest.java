@@ -21,6 +21,7 @@ class NickNamePlayersUpperCaseWithFilterTest {
         Player player4 = new Player("Андрей 25-78", 25, 78, true);
         Player player5 = new Player("Борис 26-77", 26, 77, true);
         Player player6 = new Player("Андрей 29-75", 29, 75, true);
+        Player player7 = new Player("Коля 28-75", 28, 75, true);
         List<Player> playerList = new ArrayList<>();
 
         playerList.add(player);
@@ -29,7 +30,8 @@ class NickNamePlayersUpperCaseWithFilterTest {
         playerList.add(player4);
         playerList.add(player5);
         playerList.add(player6);
-
+        playerList.add(player7);
+        playerList.add(player5);
         List<String> actual = new NickNamePlayersUpperCaseWithFilter()
                 .nickNamesWithFilter(playerList, 76);
 
@@ -37,10 +39,13 @@ class NickNamePlayersUpperCaseWithFilterTest {
         expected.add("АНДРЕЙ 25-77");
         expected.add("АНДРЕЙ 25-78");
         expected.add("БОРИС 26-77");
+        expected.add("БОРИС 26-77");
         expected.add("БОРИС 27-82");
-        expected.add("ВИКТОР 30-91");
+
+        assertEquals(5,actual.size());
+
         for (int i = 0; i < actual.size(); i++) {
-            assertEquals(actual.get(i), expected.get(i));
+            assertEquals(expected.get(i), actual.get(i));
         }
     }
 }
