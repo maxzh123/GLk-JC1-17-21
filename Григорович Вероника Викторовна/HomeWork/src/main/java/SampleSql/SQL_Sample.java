@@ -20,14 +20,14 @@ public class SQL_Sample {
         try (Connection connection=DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
              Statement statement=connection.createStatement()) {
 
-            String SQL = "CREATE TABLE UserNames (Id INT PRIMARY KEY AUTO_INCREMENT, FirstName VARCHAR(20) not NULL, LastName VARCHAR(20) not NULL)";
+            String SQL = "CREATE TABLE user_names (id INT PRIMARY KEY AUTO_INCREMENT, firstName VARCHAR(20) not NULL, lastName VARCHAR(20) not NULL, password VARCHAR(20) not NULL)";
 
             statement.executeUpdate(SQL);
 //           for (int i = 0; i < 100; i++) {
 //               String firstName = String.valueOf(SampleSql.FirstName.getNames());
 //               String lastName = String.valueOf(LastName.getNames());
-               statement.executeUpdate("INSERT UserNames(FirstName, LastName) VALUES ('Мария', 'Кац')," +
-                       "('Петр', 'Якименко'), ('Николай', 'Штых')");
+               statement.executeUpdate("INSERT user_names(firstName, lastName, password) VALUES ('Мария', 'Кац', 'yfui')," +
+                       "('Петр', 'Якименко', 'gydae'), ('Николай', 'Штых', 'jgyd')");
 //           }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
