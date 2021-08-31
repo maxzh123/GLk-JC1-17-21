@@ -7,8 +7,8 @@ import javax.persistence.*;
 
 @Entity
     @Table(name = "user_names")
-    @Data//ломбок аннотация: генерирует геттеры, сеттеры, иквалс, хеш код методы
-    @NoArgsConstructor//ломбок аннотация: конструктор без аргуметов
+    @Data
+    @NoArgsConstructor
     public class Users {
 
         @Id
