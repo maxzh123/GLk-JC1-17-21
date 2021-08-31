@@ -5,9 +5,7 @@ import controlWork.creators.CreatePoolAndRunTask;
 import controlWork.model.Player;
 import controlWork.outPut.OutputListToScreen;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -41,24 +39,23 @@ public class Runner {
     public static final String filePath= "Дергунов Сергей Дмитриевич\\HomeWork\\src\\main\\java\\";
 
     public static void main(String[] args)  {
-        List<CompletableFuture> completableFutures = new CreatePoolAndRunTask().CreatePoolAndRunTask(countPlayerTask);
+        List<CompletableFuture> completableFutures = new CreatePoolAndRunTask().createPoolAndRunTask(countPlayerTask);
         List<Player> playersList = null;
+
         try {
-            playersList = new CollectFromFutureToList().CollectInOneList(completableFutures);
+            playersList = new CollectFromFutureToList().collectInOneList(completableFutures);
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
+
         OutputListToScreen toScreen = new OutputListToScreen();
         System.out.println("-------Выборка из всех файлов------------");
-        toScreen.Output(playersList, " ");
+        toScreen.output(playersList, " ");
         System.out.println("----------Конец выборки------------");
-        playersList
-                .stream()
-                .filter(x -> x.getMidiChloriansLevel() > 70)//уровень мидихлорианов выше порогового значения
-                .sorted(Comparator.comparing(Player::getAge)
-                        .thenComparing(Player::getMidiChloriansLevel))
-                .limit(5)
-                .forEach(x -> System.out.println(x.getNickName().toUpperCase(Locale.ROOT)));
+
+        List<String> nickNames = new NickNamePlayersUpperCaseWithFilter().nickNamesWithFilter(playersList,70);
+        nickNames.forEach(System.out::println);
+
         System.out.println("Все готово");
     }
 }

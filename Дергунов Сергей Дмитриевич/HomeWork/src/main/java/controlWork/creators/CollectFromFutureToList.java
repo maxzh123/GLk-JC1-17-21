@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutionException;
  * @author S.Dergunov sdergynov@gmail.com
  */
 public class CollectFromFutureToList {
-    public List<Player> CollectInOneList(List<CompletableFuture> completableFutureList) throws ExecutionException, InterruptedException {
+    public List<Player> collectInOneList(List<CompletableFuture> completableFutureList) throws ExecutionException, InterruptedException {
         List<Player> playerList=new ArrayList<>();
             for (CompletableFuture<Player> cf : completableFutureList) {
                 List<Player> temp = (List<Player>) cf.get();

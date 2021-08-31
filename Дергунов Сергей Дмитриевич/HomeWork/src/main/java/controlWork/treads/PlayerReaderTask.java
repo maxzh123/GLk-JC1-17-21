@@ -16,11 +16,11 @@ import java.util.stream.Collectors;
  */
 public class PlayerReaderTask {
 
-    public static List<Player> PlayerReaderTask(String filePath){
+    public static List<Player> playerReaderTask(String filePath){
         System.out.println("Запущен поток чтения из файла:" + filePath);
         List<Player> playersList = null;
         try {
-            playersList = new CreatePlayersListFromFile().CreateList(filePath);
+            playersList = new CreatePlayersListFromFile().createList(filePath);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

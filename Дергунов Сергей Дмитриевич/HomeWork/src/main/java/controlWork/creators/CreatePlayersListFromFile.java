@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CreatePlayersListFromFile{
 
-    public List<Player> CreateList(String filePath) throws IOException, ClassNotFoundException {
+    public List<Player> createList(String filePath) throws IOException, ClassNotFoundException {
         FileInputStream fileInputStream = new FileInputStream(filePath);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         List<Player> playerList = (List<Player>) objectInputStream.readObject();

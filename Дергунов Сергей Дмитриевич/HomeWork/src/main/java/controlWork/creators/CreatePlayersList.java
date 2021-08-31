@@ -2,7 +2,7 @@ package controlWork.creators;
 
 import controlWork.Runner;
 import controlWork.model.Player;
-import controlWork.resolver.*;
+import controlWork.factory.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class CreatePlayersList{
    private List<Player> playersList=new ArrayList<>();
 
-   public List<Player> CreateList(PlayerResolver playerResolver) {
+   public List<Player> createList(PlayerFactory playerResolver) {
          for (int i = 1; i <= Runner.countPlayerInList; i++) {
          playersList.add(playerResolver.getPlayer());
       }

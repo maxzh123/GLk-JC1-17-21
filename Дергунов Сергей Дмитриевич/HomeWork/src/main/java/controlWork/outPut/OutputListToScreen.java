@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class OutputListToScreen implements OutputList {
     @Override
-    public void Output(List<Player> playerList, String string) {
+    public void output(List<Player> playerList, String string) {
             playerList.forEach(System.out::println);
         }
     }

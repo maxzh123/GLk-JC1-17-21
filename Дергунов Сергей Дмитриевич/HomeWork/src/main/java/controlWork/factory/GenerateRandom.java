@@ -1,4 +1,4 @@
-package controlWork.resolver;
+package controlWork.factory;
 
 import controlWork.Runner;
 import controlWork.model.Name;
@@ -11,7 +11,7 @@ import java.util.Random;
  * @author S.Dergunov sdergynov@gmail.com
  */
 
-public class GenerateRandom implements PlayerResolver{
+public class GenerateRandom implements PlayerFactory {
 
     @Override
     public Player getPlayer() {

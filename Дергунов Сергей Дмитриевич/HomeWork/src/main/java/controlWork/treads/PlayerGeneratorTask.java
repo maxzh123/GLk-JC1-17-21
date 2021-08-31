@@ -4,8 +4,8 @@ import controlWork.creators.CreatePlayersList;
 import controlWork.Runner;
 import controlWork.model.Player;
 import controlWork.outPut.OutputListToFile;
-import controlWork.resolver.GenerateRandom;
-import controlWork.resolver.PlayerResolver;
+import controlWork.factory.GenerateRandom;
+import controlWork.factory.PlayerFactory;
 
 import java.util.List;
 
@@ -18,13 +18,13 @@ import java.util.List;
  */
 public class PlayerGeneratorTask {
 
-    static public String PlayerGeneratorTask(){
+    static public String playerGeneratorTask(){
         System.out.println("Генератор запущен");
         String filePath = String.format(Runner.filePath + "examWork_%d.lst",Runner.fileCounter.getAndIncrement());
-        PlayerResolver playerResolver = new GenerateRandom();
-        List<Player> playersList = new CreatePlayersList().CreateList(playerResolver);
+        PlayerFactory playerResolver = new GenerateRandom();
+        List<Player> playersList = new CreatePlayersList().createList(playerResolver);
         OutputListToFile outputListToFile = new OutputListToFile();
-        outputListToFile.Output(playersList,filePath);
+        outputListToFile.output(playersList,filePath);
         System.out.println("Генерация и запись в файл завершена: "+filePath);
         return filePath;
     }

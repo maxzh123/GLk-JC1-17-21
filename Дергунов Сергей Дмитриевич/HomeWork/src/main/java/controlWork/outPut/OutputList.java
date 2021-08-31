@@ -8,5 +8,5 @@ import java.util.List;
  * @author S.Dergunov sdergynov@gmail.com
  */
 public interface OutputList {
-    public void Output(List<Player> playerList, String string);
+    public void output(List<Player> playerList, String string);
 }
