@@ -13,9 +13,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- *  * @author S.Dergunov sdergynov@gmail.com
+ * @author S.Dergunov sdergynov@gmail.com
  *
-  Создать класс потока(PlayerGeneratorTask), который генерирует коллекцию из 10 объектов класса
+  <br>Создать класс потока(PlayerGeneratorTask), который генерирует коллекцию из 10 объектов класса
  Player с полями name(String), age(Integer), isActive(boolean) по условию: name – любое, age – от 20 до 40,
  isActive – true/false и записывает ее в файл. Поток возвращает имя файла, в который он писал.
 
