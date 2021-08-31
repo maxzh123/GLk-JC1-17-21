@@ -18,9 +18,9 @@ public class UsersConverter {
     public UsersDto fromUserToUserDto(Users users) {
         return UsersDto.builder()
                 .id(users.getId())
-                .FirstName(users.getFirstName())
-                .LastName(users.getLastName())
-                .Password(users.getPassword())
+                .firstName(users.getFirstName())
+                .lastName(users.getLastName())
+                .password(users.getPassword())
                 .build();
     }
 }

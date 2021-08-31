@@ -30,7 +30,7 @@ public class UsersController {
 
     @GetMapping("/findByLastName")
     public UsersDto findByLastName(@RequestParam String lastName) {
-        log.info("Handling find by login request: " + lastName);
+        log.info("Handling find by lastName request: " + lastName);
         return usersService.findByLastName(lastName);
     }
 

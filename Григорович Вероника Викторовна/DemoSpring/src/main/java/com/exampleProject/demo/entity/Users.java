@@ -6,22 +6,22 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-    @Table(name = "UserNames")
+    @Table(name = "user_names")
     @Data//ломбок аннотация: генерирует геттеры, сеттеры, иквалс, хеш код методы
     @NoArgsConstructor//ломбок аннотация: конструктор без аргуметов
     public class Users {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer Id;
+        private Integer id;
 
         @Column
-        private String FirstName;
+        private String firstName;
 
         @Column
-        private String LastName;
+        private String lastName;
 
         @Column
-        private String Password;
+        private String password;
     }
 

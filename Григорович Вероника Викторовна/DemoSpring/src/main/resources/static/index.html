@@ -28,16 +28,16 @@
 </table>
 
 <form action="#">
-    <input id="user_firstname" placeholder="User FirsName">
+    <input id="user_firstname" placeholder="User FirstName">
     <input id="user_lastname" placeholder="User LastName">
     <input id="user_password" placeholder="User Password">
     <button onclick="createUser()">Create user</button>
 </form>
 
 <input id="search_field">
-<button onclick="searchByLastname()">Search by LastName</button>
+<button onclick="searchByLastName()">Search by LastName</button>
 <script>
-    function searchByLastname() {
+    function searchByLastName() {
         var LastName = document.getElementById("search_field").value;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -45,20 +45,20 @@
                 var user = JSON.parse(this.responseText);
                 var html = '<tr>\n' +
                     '        <th>User id</th>\n' +
-                    '        <th>User FirstName</th>\n' +
-                    '        <th>User LastName</th>\n' +
-                    '        <th>User Password</th>\n' +
+                    '        <th>User firstName</th>\n' +
+                    '        <th>User lastName</th>\n' +
+                    '        <th>User password</th>\n' +
                     '        <th>Delete</th>\n' +
                     '    </tr>';
                 html = html + '<tr><td>' + user.id + '</td>\n' +
-                    '        <td>' + user.FirstName + '</td>\n' +
-                    '        <td>' + user.LastName + '</td>\n' +
-                    '        <td>' + user.Password + '</td>' +
+                    '        <td>' + user.firstName + '</td>\n' +
+                    '        <td>' + user.lastName + '</td>\n' +
+                    '        <td>' + user.password + '</td>' +
                     '        <td><button onclick="deleteUser(' + user.id + ')">Delete</button></td></tr>';
                 document.getElementById("usersList").innerHTML = html;
             }
         };
-        xhttp.open("GET", "http://localhost:8080/users/findByLastName?lastName=" + lastName, true);
+        xhttp.open("GET", "http://localhost:8080/users/findByLastName?lastName=" + LastName, true);
         xhttp.send();
     }
 
@@ -76,7 +76,7 @@
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
         xmlhttp.open("POST", "http://localhost:8080/users/save");
         xmlhttp.setRequestHeader("Content-Type", "application/json");
-        xmlhttp.send(JSON.stringify({FirstName: userFirstName, LastName: userLastName, Password: userPassword}));
+        xmlhttp.send(JSON.stringify({firstName: userFirstName, lastName: userLastName, password: userPassword}));
 
         loadUsers();
     }
@@ -88,18 +88,18 @@
                 var users = JSON.parse(this.responseText);
                 var html = '<tr>\n' +
                     '        <th>User id</th>\n' +
-                    '        <th>User FirstName</th>\n' +
-                    '        <th>User LastName</th>\n' +
-                    '        <th>User Password</th>\n' +
+                    '        <th>User firstName</th>\n' +
+                    '        <th>User lastName</th>\n' +
+                    '        <th>User password</th>\n' +
                     '        <th>Delete</th>\n' +
                     '    </tr>';
                 for (var i = 0; i < users.length; i++) {
                     var user = users[i];
                     console.log(user);
                     html = html + '<tr><td>' + user.id + '</td>\n' +
-                        '        <td>' + user.FirstName + '</td>\n' +
-                        '        <td>' + user.LastName + '</td>\n' +
-                        '        <td>' + user.Password + '</td>' +
+                        '        <td>' + user.firstName + '</td>\n' +
+                        '        <td>' + user.lastName + '</td>\n' +
+                        '        <td>' + user.password + '</td>' +
                         '        <td><button onclick="deleteUser(' + user.id + ')">Delete</button></td></tr>';
 
                 }
