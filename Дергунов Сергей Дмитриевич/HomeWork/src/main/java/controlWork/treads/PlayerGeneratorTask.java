@@ -18,13 +18,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * и записывает ее в файл. Поток возвращает имя файла, в который он писал.
  */
 public class PlayerGeneratorTask {
-    public static volatile AtomicInteger fileCounter = new AtomicInteger(0);
+    private static volatile AtomicInteger fileCounter = new AtomicInteger(0);
 
     static public String playerGeneratorTask(){
         System.out.println("Генератор запущен");
         String filePath = String.format(Runner.filePath + "examWork_%d.lst",fileCounter.getAndIncrement());
-        PlayerFactory playerResolver = new GenerateRandom();
-        List<Player> playersList = new CreatePlayersList().createList(playerResolver);
+        PlayerFactory playerFactory = new GenerateRandom();
+        List<Player> playersList = new CreatePlayersList().createList(playerFactory);
         OutputListToFile outputListToFile = new OutputListToFile();
         outputListToFile.output(playersList,filePath);
         System.out.println("Генерация и запись в файл завершена: "+filePath);

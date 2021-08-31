@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
  */
 public class NickNamePlayersUpperCaseWithFilter {
     public List<String> nickNamesWithFilter(List<Player> playersList, int midiChlorianLimit) {
-        //                .forEach(x -> System.out.println(x));
         return playersList
                 .stream()
                 .filter(x -> x.getMidiChloriansLevel() > midiChlorianLimit)
