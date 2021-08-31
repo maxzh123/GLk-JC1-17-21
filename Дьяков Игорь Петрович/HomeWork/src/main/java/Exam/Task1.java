@@ -23,15 +23,12 @@ public class Task1 {
     public static void main(String[] Args){
         Task1 xyz=new Task1();
 
-        int x=xyz.getX();
-        int y=xyz.getY();
-        int z=xyz.getZ();
-        System.out.println("Сгенерированные произвольные числа [-30:30]: X="+x+", Y="+y+", Z="+z);
+        System.out.println("Сгенерированные произвольные числа [-30:30]: X="+xyz.getX()+", Y="+xyz.getY()+", Z="+xyz.getZ());
 
-        if (x>z){
-            System.out.println("Выполнено условие X>Z, вывод суммы X+Y="+(x+y));}
+        if (xyz.getX()>xyz.getZ()){
+            System.out.println("Выполнено условие X>Z, вывод суммы X+Y="+(xyz.getX()+xyz.getY()));}
         else{
-            System.out.println("Условие Х>Z не выполнено,среднее арифметическое чисел X,Y,Z= "+((x+y+z)/3));}
+            System.out.println("Условие Х>Z не выполнено,среднее арифметическое чисел X,Y,Z= "+((xyz.getX()+xyz.getY()+xyz.getZ())/3));}
     }
 }
 
