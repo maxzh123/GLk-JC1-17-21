@@ -4,10 +4,10 @@ import controlWork.creators.CollectFromFutureToList;
 import controlWork.creators.CreatePoolAndRunTask;
 import controlWork.model.Player;
 import controlWork.outPut.OutputListToScreen;
+import lombok.SneakyThrows;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 /**
  * @author S.Dergunov sdergynov@gmail.com
@@ -36,25 +36,19 @@ public class Runner {
     public static final int countPlayerInList = 10;
     public static final String filePath= "Дергунов Сергей Дмитриевич\\HomeWork\\src\\main\\java\\";
 
-    public static void main(String[] args)  {
+    @SneakyThrows
+    public static void main(String[] args) {
         List<CompletableFuture> completableFutures = new CreatePoolAndRunTask().createPoolAndRunTask(countPlayerTask);
-        List<Player> playersList = null;
-
-        try {
-            playersList = new CollectFromFutureToList().collectInOneList(completableFutures);
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        List<Player>playersList = new CollectFromFutureToList().collectInOneList(completableFutures);
         OutputListToScreen toScreen = new OutputListToScreen();
         System.out.println("-------Выборка из всех файлов------------");
         toScreen.output(playersList, " ");
         System.out.println("----------Конец выборки------------");
 
-        List<String> nickNames = new NickNamePlayersUpperCaseWithFilter().nickNamesWithFilter(playersList,70);
+        List<String> nickNames = new NickNamePlayersUpperCaseWithFilter().nickNamesWithFilter(playersList, 70);
         nickNames.forEach(System.out::println);
 
-        System.out.println("Все готово");
+        System.out.println("Все готово.");
     }
 }
 

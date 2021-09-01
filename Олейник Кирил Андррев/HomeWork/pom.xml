@@ -15,7 +15,7 @@
     </properties>
 
     <dependencies>
-    </dependencies>
+      </dependencies>
 
     <build>
         <finalName>HomeWork-oka</finalName>
