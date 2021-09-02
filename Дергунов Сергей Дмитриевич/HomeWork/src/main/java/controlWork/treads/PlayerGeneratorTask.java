@@ -4,7 +4,7 @@ import controlWork.creators.CreatePlayersList;
 import controlWork.Runner;
 import controlWork.model.Player;
 import controlWork.outPut.OutputListToFile;
-import controlWork.factory.GenerateRandom;
+import controlWork.factory.RandomPlayer;
 import controlWork.factory.PlayerFactory;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class PlayerGeneratorTask {
     static public String playerGeneratorTask(){
         System.out.println("Генератор запущен");
         String filePath = String.format(Runner.filePath + "examWork_%d.lst",fileCounter.getAndIncrement());
-        PlayerFactory playerFactory = new GenerateRandom();
+        PlayerFactory playerFactory = new RandomPlayer();
         List<Player> playersList = new CreatePlayersList().createList(playerFactory);
         OutputListToFile outputListToFile = new OutputListToFile();
         outputListToFile.output(playersList,filePath);

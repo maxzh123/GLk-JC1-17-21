@@ -5,7 +5,6 @@ import controlWork.creators.CreatePoolAndRunTask;
 import controlWork.model.Player;
 import controlWork.outPut.OutputListToScreen;
 import lombok.SneakyThrows;
-
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 

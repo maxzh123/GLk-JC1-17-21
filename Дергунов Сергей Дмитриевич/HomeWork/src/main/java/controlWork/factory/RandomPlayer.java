@@ -11,14 +11,14 @@ import java.util.Random;
  * @author S.Dergunov sdergynov@gmail.com
  */
 
-public class GenerateRandom implements PlayerFactory {
+public class RandomPlayer implements PlayerFactory {
 
     @Override
     public Player getPlayer() {
         Random random = new Random();
         int age = random.ints(Runner.minAge, Runner.maxAge).findFirst().getAsInt();
-        Name name = Name.values()[(int) (Math.random() * 10)];
-        Nick nick = Nick.values()[(int) (Math.random() * 10)];
+        Name name = Name.values()[(int) (Math.random() * Name.values().length)];
+        Nick nick = Nick.values()[(int) (Math.random() * Nick.values().length)];
         int midiChloriansLevel = (int) (Math.random() * 100);
         boolean isActive = random.nextBoolean();
         String nickName = name + "-"+nick;

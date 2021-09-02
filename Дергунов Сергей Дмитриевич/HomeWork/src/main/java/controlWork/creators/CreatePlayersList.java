@@ -13,9 +13,9 @@ import java.util.List;
 public class CreatePlayersList{
    private List<Player> playersList=new ArrayList<>();
 
-   public List<Player> createList(PlayerFactory playerResolver) {
+   public List<Player> createList(PlayerFactory playerFactory) {
          for (int i = 1; i <= Runner.countPlayerInList; i++) {
-         playersList.add(playerResolver.getPlayer());
+         playersList.add(playerFactory.getPlayer());
       }
       return playersList;
    }
